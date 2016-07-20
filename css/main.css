@@ -70,6 +70,28 @@ these styles to overlaying over the link
 /**--------------------------------------
 SECTIONS
 ------------------------------------*/
+/*ABOUT ME SECTION*/
+#about-section{
+	padding:25px;
+	color: white;
+}
+
+#about-title{
+	font-family: Poiret One, cursive, sans-serif;
+	color:white;
+	font-size: 35px;
+	text-align: center;
+}
+/*social connect title*/
+#connect-about{
+	text-align: center;
+	font-family: Poret One, sans-serif, cursive;
+
+}
+
+#about-text{
+	
+}
 
 
 

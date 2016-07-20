@@ -146,7 +146,7 @@ Main Components
   position: fixed;
   top: 0;
   left: 0;
-  height: 150px !important;
+  height: 150px;
   width: 100%;
   background-color: #000000;
   visibility: hidden;

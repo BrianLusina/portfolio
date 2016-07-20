@@ -23,8 +23,9 @@
 		<link rel="stylesheet" href="css/reset.css">
 		<!--SWEET ALERTS CSS-->
 		<link rel="stylesheet" href="css/sweetalert.css">
-
+		<!--3D PANELS-->
 		<link rel="stylesheet" href="css/3d-panelstyles.css">
+		<!--3D NAVIGATION-->
 		<link rel="stylesheet" href="css/3d-nav.css">
 
 		<!--Google fonts-->
@@ -33,36 +34,14 @@
 
 	<body>
 <!--*-*-*-*-*-*-*-*-*-*-*-*--**-*-HEADER*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-->
-		<header class="cd-header">
-			
-		</header>
-	
-	<nav class="cd-3d-nav-container">
-		<ul class="cd-3d-nav">
-			<li class="cd-selected">
-				<a href="#0">Dashboard</a>
-			</li>
-
-			<li>
-				<a href="#0">Projects</a>
-			</li>
-
-			<li>
-				<a href="#0">Images</a>
-			</li>
-
-			<li>
-				<a href="#0">Settings</a>
-			</li>
-
-			<li>
-				<a href="#0">New</a>
-			</li>
-		</ul> <!-- .cd-3d-nav -->
-
-		<span class="cd-marker color-1"></span>	
-	</nav> <!-- .cd-3d-nav-container -->
-<!-------------------------------------------------------------------------------------------->
+	<header class="cd-header">
+<!--		<a href="#0" class="cd-logo"><img src="img/cd-logo.svg" alt="Logo"></a>-->
+		<a href="#0" class="cd-3d-nav-trigger">
+			Menu
+			<span></span>
+		</a>
+	</header> <!-- .cd-header -->
+<!----------------------------MAIN SECTION, portfolio---------------------------------------------------------------->
 	<main class="cd-main">
 		<ul class="cd-gallery">
 			<li class="cd-item">
@@ -106,7 +85,26 @@
 			</li>
 		</ul> <!-- .cd-gallery -->
 	</main> <!-- .cd-main -->
-
+		<nav class="cd-3d-nav-container">
+			<ul class="cd-3d-nav">
+				<li class="cd-selected">
+					<a href="#0">Dashboard</a>
+				</li>
+				<li>
+					<a href="#0">Projects</a>
+				</li>
+				<li>
+					<a href="#0">Images</a>
+				</li>
+				<li>
+					<a href="#0">Settings</a>
+				</li>
+				<li>
+					<a href="#0">New</a>
+				</li>
+			</ul> <!-- .cd-3d-nav -->
+			<span class="cd-marker color-1"></span>	
+		</nav> <!-- .cd-3d-nav-container -->
 	<div class="cd-folding-panel">
 		
 		<div class="fold-left"></div> <!-- this is the left fold -->

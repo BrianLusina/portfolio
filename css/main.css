@@ -35,14 +35,13 @@ HEADER
 
 /*
 ensure the position is absolute to allow for
-
+these styles to overlaying over the link
 */
 .rolling-links span::before{	
 	position:absolute;
 	top:100%;
 	width: 100%;
 	height: 100%;
-	text-align: center;
 	content:attr(data-hover);
 	-webkit-transition: background 0.3s;
 	-moz-transition: background 0.3s;
@@ -59,7 +58,6 @@ ensure the position is absolute to allow for
 	transform:rotateX(90deg) translateY(-22px);
 	-webkit-transform: rotateX(90deg) translateY(-22px);
 	-moz-transform: rotateX(90deg) translateY(-22px);
-	text-align: center;
 }
 
 .rolling-links:hover span::before,.rolling-links:focus span::before{

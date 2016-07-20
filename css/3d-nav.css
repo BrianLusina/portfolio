@@ -66,6 +66,10 @@ Main Components
 
 .cd-logo {
   float: left;
+	font-family: Poiret One, sans-serif,cursive;
+	font-size: 25px;
+	font-weight: 800;
+	color:white;
   margin-top: 28px;
 }
 

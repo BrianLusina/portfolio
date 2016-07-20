@@ -1,4 +1,4 @@
 $(document).ready(function(){
-	//TODO: insert functions
+	/*ADD bounce effect to social icons*/
 
 });

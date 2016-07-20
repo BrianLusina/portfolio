@@ -3,7 +3,7 @@ $(document).ready(function(){
 	Store social links in variable
 	*/
 	var social = $('.social-links i');
-	social.on('mouseenter', function(){
+	function changeColor(){
 		//perform class checks
 		//if twitter, change to blue
 		if($(this).hasClass('fa-twitter')){
@@ -19,7 +19,12 @@ $(document).ready(function(){
 			$(this).css('color','#DB4437');
 		}else if($(this).hasClass('fa-codepen')){
 			$(this).css('color','#878787');
-		}
-	});
+		}		
+	}
+	
+	social.on('mouseenter',changeColor);
+	social.on('mouseleave', function(){
+		$(this).css('color','white');
+	})
 });
 

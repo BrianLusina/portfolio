@@ -233,9 +233,9 @@ CONTACT SECTION
 #email-me-btn:focus {
 	outline: none;
 }
+
 #email-me-btn > span {
 	vertical-align: middle;
-	display: inline-block;
 	padding: 1em 0;
 	opacity: 0;
 	color: #fff;
@@ -247,7 +247,7 @@ CONTACT SECTION
 	transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
 }
 
-.button--nina::before {
+#email-me-btn::before {
 	content: attr(data-text);
 	position: absolute;
 	top: 0;
@@ -260,56 +260,69 @@ CONTACT SECTION
 	-webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
 	transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
 }
-.button--nina:hover {
+
+#email-me-btn:hover {
 	background-color: #3f51b5;
 }
-.button--nina:hover::before {
+
+#email-me-btn:hover::before {
 	opacity: 0;
 	-webkit-transform: translate3d(0, 100%, 0);
 	transform: translate3d(0, 100%, 0);
 }
-.button--nina:hover > span {
+
+#email-me-btn:hover > span {
 	opacity: 1;
 	-webkit-transform: translate3d(0, 0, 0);
 	transform: translate3d(0, 0, 0);
 }
-.button--nina:hover > span:nth-child(1) {
+
+#email-me-btn:hover > span:nth-child(1) {
 	-webkit-transition-delay: 0.045s;
 	transition-delay: 0.045s;
 }
-.button--nina:hover > span:nth-child(2) {
+
+#email-me-btn:hover > span:nth-child(2) {
 	-webkit-transition-delay: 0.09s;
 	transition-delay: 0.09s;
 }
-.button--nina:hover > span:nth-child(3) {
+
+#email-me-btn:hover > span:nth-child(3) {
 	-webkit-transition-delay: 0.135s;
 	transition-delay: 0.135s;
 }
-.button--nina:hover > span:nth-child(4) {
+
+#email-me-btn:hover > span:nth-child(4) {
 	-webkit-transition-delay: 0.18s;
 	transition-delay: 0.18s;
 }
-.button--nina:hover > span:nth-child(5) {
+
+#email-me-btn:hover > span:nth-child(5) {
 	-webkit-transition-delay: 0.225s;
 	transition-delay: 0.225s;
 }
-.button--nina:hover > span:nth-child(6) {
+
+#email-me-btn:hover > span:nth-child(6) {
 	-webkit-transition-delay: 0.27s;
 	transition-delay: 0.27s;
 }
-.button--nina:hover > span:nth-child(7) {
+
+#email-me-btn:hover > span:nth-child(7) {
 	-webkit-transition-delay: 0.315s;
 	transition-delay: 0.315s;
 }
-.button--nina:hover > span:nth-child(8) {
+
+#email-me-btn:hover > span:nth-child(8) {
 	-webkit-transition-delay: 0.36s;
 	transition-delay: 0.36s;
 }
-.button--nina:hover > span:nth-child(9) {
+
+#email-me-btn:hover > span:nth-child(9) {
 	-webkit-transition-delay: 0.405s;
 	transition-delay: 0.405s;
 }
-.button--nina:hover > span:nth-child(10) {
+
+#email-me-btn:hover > span:nth-child(10) {
 	-webkit-transition-delay: 0.45s;
 	transition-delay: 0.45s;
 }

@@ -67,6 +67,18 @@ these styles to overlaying over the link
 .cd-logo{
 	
 }
+/*-------------------------
+PROJECT SECTION
+--------------------------*/
+#menu-pro-item{
+/*	
+	background-image:url('../img/pro-shots/menu-screenshot.png');
+	background-repeat: no-repeat;
+	background-position:top center;
+	background-size: cover;
+	*/
+}
+/**-*-*-**--*-*--*-*-*-**--*-*-*-*-*-*-*-**-*-*-*/
 /**--------------------------------------
 SECTIONS
 ------------------------------------*/
@@ -95,8 +107,11 @@ SECTIONS
 	font-family: Poiret One, sans-serif, cursive;
 }
 
-#about-text{
-	
+.about-text{
+	font-family: Roboto Condensed, sans-serif, cursive;
+	padding:25px;
+	word-spacing: 2px;
+	line-height: 25px;
 }
 
 .social-links{
@@ -180,7 +195,11 @@ SECTIONS
 	-moz-transform:rotate(0deg) translate(50%);
 }
 
-/**-*-*-**--*-*--*-*-*-**--*-*-*-*-*-*-*-**-*-*-*/
+
+/*-------------------------
+PROJECT SECTION
+--------------------------*/
+
 /*-------------------------
 CONTACT SECTION
 --------------------------*/

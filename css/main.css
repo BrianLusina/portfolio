@@ -166,7 +166,7 @@ SECTIONS
 
 .social-links:hover::before,
 .social-links:focus::before{
-	left:50%;
+	left:70%;
 	transform:rotate(0deg) translateX(-50%);
 	-webkit-transform:rotate(0deg) translate(-50%);
 	-moz-transform:rotate(0deg) translate(-50%);
@@ -174,11 +174,39 @@ SECTIONS
 
 .social-links:hover::after,
 .social-links:hover::after{
-	right:50%;
+	right:70%;
 	transform:rotate(0deg) translateX(50%);
 	-webkit-transform:rotate(0deg) translate(50%);
 	-moz-transform:rotate(0deg) translate(50%);
 }
+
+/**-*-*-**--*-*--*-*-*-**--*-*-*-*-*-*-*-**-*-*-*/
+/*-------------------------
+CONTACT SECTION
+--------------------------*/
+#contact-section{
+	color:wheat;
+}
+
+#contact-header{
+	text-align: center;
+}
+#contact-form{
+	
+}
+
+#contact-title{
+	font-family: Poiret One, sans-serif, cursive;
+	padding:10px;
+	font-weight: 800;
+	letter-spacing: 2px;
+}
+
+#contact-tag{
+	
+}
+
+/**-*-*-**--*-*--*-*-*-**--*-*-*-*-*-*-*-**-*-*-*/
 /**--------------------------------------
 FOOTER
 ------------------------------------*/

@@ -191,21 +191,25 @@ CONTACT SECTION
 #contact-header{
 	text-align: center;
 }
-#contact-form{
-	
-}
 
 #contact-title{
 	font-family: Poiret One, sans-serif, cursive;
 	padding:10px;
-	font-weight: 800;
+	font-weight: bolder;
 	letter-spacing: 2px;
 }
 
 #contact-tag{
-	
+	text-align: center;
+	font-family: Raleway,sans-serif,cursive;
+	padding:10px;
 }
 
+#email-btn-container{
+	text-align: center;	
+}
+#email-me-btn{
+}
 /**-*-*-**--*-*--*-*-*-**--*-*-*-*-*-*-*-**-*-*-*/
 /**--------------------------------------
 FOOTER

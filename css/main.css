@@ -133,6 +133,10 @@ SECTIONS
 	padding:55px;
 }
 
+#social-container{
+	text-align: center;
+}
+
 /*add border effects social media links*/
 .social-links::before,
 .social-links::after{

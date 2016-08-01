@@ -372,7 +372,13 @@ CONTACT SECTION
 }
 
 #form-underline{
-	width:20%;
+	width:10%;
+}
+
+/*display the thank you word
+only after the form has been submitted*/
+.post{
+	display: none;
 }
 /**--------------------------------------
 FOOTER

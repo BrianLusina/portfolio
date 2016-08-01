@@ -357,12 +357,22 @@ CONTACT SECTION
 
 /*close icon in the form*/
 .icon{
+	margin:20px;
 	font-weight: 800;
 	font-size:20px;
 }
 
 #form-header{
 	font-family: Raleway, sans-serif, cursive;
+	padding:5px;
+	font-size: 20px;
+	font-weight: 800;
+	line-height: 2px;
+	word-spacing: 2px;
+}
+
+#form-underline{
+	width:20%;
 }
 /**--------------------------------------
 FOOTER

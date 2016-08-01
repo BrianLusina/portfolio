@@ -350,6 +350,20 @@ CONTACT SECTION
 	transition-delay: 0.45s;
 }
 /**-*-*-**--*-*--*-*-*-**--*-*-*-*-*-*-*-**-*-*-*/
+/*contact form*/
+.form-container{
+	text-align: center;
+}
+
+/*close icon in the form*/
+.icon{
+	font-weight: 800;
+	font-size:20px;
+}
+
+#form-header{
+	font-family: Raleway, sans-serif, cursive;
+}
 /**--------------------------------------
 FOOTER
 ------------------------------------*/

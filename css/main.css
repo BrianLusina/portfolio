@@ -380,6 +380,11 @@ only after the form has been submitted*/
 .post{
 	display: none;
 }
+
+/*class to show the form*/
+#form-overlay{
+	
+}
 /**--------------------------------------
 FOOTER
 ------------------------------------*/

@@ -196,7 +196,15 @@ ABOUT SECTION, featuring a brief history about me and social media contact
 						<div class="form">
 							<form class="small-12 columns">
 								<!--user name-->
-								<input class="input name" name="user_name" placeholder="Your name please" type="text">
+								<span class="input-span kuro-style">
+									<!--input-->
+									<input id="user-name" class="input input-field name" name="user_name" type="text">
+									<!--labels-->
+									<label class="input-label input-kuro" for="user-name">
+										<!--span within label-->
+									<span class="input-label-content input-label-kuro">Your Name</span>
+									</label>
+								</span>
 								<!--contact email-->
 								<input class="input email" name="user_email" placeholder="Your email please" type="email">
 								<select class="input select" name="subject">

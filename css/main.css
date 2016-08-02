@@ -379,10 +379,42 @@ CONTACT SECTION
 only after the form has been submitted*/
 .post{
 	display: none;
+	font-family: Raleway, cursive, sans-serif;
 }
 
 /*class to show the form*/
 #form-overlay{
+	
+}
+
+/*styles for the the span elements containing the inputs for the user contact*/
+.input-span{
+	
+}
+
+.input-field{
+	position:relative;
+	display: block;
+	padding:0.8em;
+	border-radius:0;
+	color:#aaa;
+	font-weight: bold;
+	border:none;
+}
+
+.input-kuro{
+	
+}
+
+.input-label{
+	
+}
+
+.input-label-content{
+	
+}
+
+.input-label-kuro{
 	
 }
 /**--------------------------------------

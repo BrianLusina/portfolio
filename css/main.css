@@ -420,7 +420,7 @@ only after the form has been submitted*/
 	-webkit-transition:opacity 0.3s;
 	color:#9196A1;
 }
-
+	
 .input-label{
 	display: inline-block;
 	padding: 0 1em;
@@ -438,11 +438,27 @@ only after the form has been submitted*/
 	user-select: none;	
 }
 
-/*label style*/
+/*label style for Kuro*/
 .input-kuro{
-	
+	position: absolute;
+	left: 0;
+	width: 100%;
+	color: wheat;
+	pointer-events: none;
 }
 
+.input-kuro::before,
+.input-kuro::after{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50%;
+	height: 100%;
+	border: 4px solid #747981;
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+}
 .input-label{
 	
 }

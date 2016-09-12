@@ -180,9 +180,9 @@ ABOUT SECTION, featuring a brief history about me and social media contact
 						<div class="row">
 							<!--Name-->
 							<div class="small-6 columns">	<span class="input input--kaede">
-								<input class="input__field input__field--kaede" type="text" id="input-35" />
-									<label class="input__label input__label--kaede" for="input-35">
-										<span class="input__label-content input__label-content--kaede">First Name</span>
+								<input class="input__field input__field--kaede" type="text" id="contact-name" />
+									<label class="input__label input__label--kaede" for="contact-name">
+										<span class="input__label-content input__label-content--kaede">Name</span>
 									</label>
 								</span>
 							</div>
@@ -190,8 +190,8 @@ ABOUT SECTION, featuring a brief history about me and social media contact
 							<!--email-->
 							<div class="small-6 columns">
 								<span class="input input--kaede">
-									<input class="input__field input__field--kaede" type="text" id="input-36" />
-									<label class="input__label input__label--kaede" for="input-36">
+									<input class="input__field input__field--kaede" type="text" id="contact-email"/>
+									<label class="input__label input__label--kaede" for="contact-email">
 										<span class="input__label-content input__label-content--kaede">Email</span>
 									</label>
 								</span>
@@ -200,12 +200,12 @@ ABOUT SECTION, featuring a brief history about me and social media contact
 						<!--message-->
 						<div class="row">
 							<div class="small-12 columns">
-								<span class="input input--kaede">
-									<input class="input__field input__field--kaede" type="text" id="input-37" />
-									<label class="input__label input__label--kaede" for="input-37">
-										<span class="input__label-content input__label-content--kaede">Website</span>
-									</label>
-								</span>
+							<span class="input input--kaede" style="height:150px;">
+								<textarea class="input__field input__field--kaede" type="text" id="contact-message"></textarea>
+								<label class="input__label input__label--kaede" for="contact-message">
+									<span class="input__label-content input__label-content--kaede">Message</span>
+								</label>
+							</span>
 							</div>
 						</div>
 					</form>
@@ -279,5 +279,42 @@ ABOUT SECTION, featuring a brief history about me and social media contact
 		<script type ="text/javascript" src = "js/mainscript.js"></script>
 		<script type="text/javascript" src="js/3d-panel.js"></script> 
 		<script type="text/javascript" src="js/3d-nav.js"></script>
+		<script>
+		<script>
+			(function() {
+				// trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+				if (!String.prototype.trim) {
+					(function() {
+						// Make sure we trim BOM and NBSP
+						var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+						String.prototype.trim = function() {
+							return this.replace(rtrim, '');
+						};
+					})();
+				}
+
+				[].slice.call( document.querySelectorAll( 'input.input__field' ) ).forEach( function( inputEl ) {
+					// in case the input is already filled..
+					if( inputEl.value.trim() !== '' ) {
+						classie.add( inputEl.parentNode, 'input--filled' );
+					}
+
+					// events:
+					inputEl.addEventListener( 'focus', onInputFocus );
+					inputEl.addEventListener( 'blur', onInputBlur );
+				} );
+
+				function onInputFocus( ev ) {
+					classie.add( ev.target.parentNode, 'input--filled' );
+				}
+
+				function onInputBlur( ev ) {
+					if( ev.target.value.trim() === '' ) {
+						classie.remove( ev.target.parentNode, 'input--filled' );
+					}
+				}
+			})();
+		</script>		
+		</script>
 	</body>
 </html>

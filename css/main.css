@@ -357,9 +357,12 @@ CONTACT FORM
 	z-index: 1;
 	display: inline-block;
 	margin: 1em;
-	max-width: 350px;
 	width: calc(100% - 2em);
 	vertical-align: top;
+}
+
+.input #contact-message{
+	max-height: 550px;
 }
 
 .input__field {
@@ -371,8 +374,9 @@ CONTACT FORM
 	border: none;
 	border-radius: 0;
 	background: #f0f0f0;
-	color: #aaa;
+	color: black !important;
 	font-weight: bold;
+	font-size: 15px !important;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	-webkit-appearance: none; /* for box shadows to show on iOS */
 }

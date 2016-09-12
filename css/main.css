@@ -362,7 +362,7 @@ CONTACT FORM
 }
 
 .input #contact-message{
-	max-height: 550px;
+	max-height: 150px;
 }
 
 .input__field {
@@ -448,6 +448,8 @@ CONTACT FORM
 }
 
 .input__label-content--kaede {
+	font-family: Raleway;
+	font-size: 15px;
 	padding: 1.5em 0;
 }
 

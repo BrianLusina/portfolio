@@ -176,11 +176,11 @@ ABOUT SECTION, featuring a brief history about me and social media contact
 			<!--contact form-->
 			<div class="row">
 				<div class="small-12 columns">
-					<form id="contact-form">
+					<form id="contact-form" action="https://formspree.io/lusina@gmail.com" method="post">
 						<div class="row">
 							<!--Name-->
 							<div class="small-6 columns">	<span class="input input--kaede">
-								<input class="input__field input__field--kaede" type="text" id="contact-name" />
+								<input class="input__field input__field--kaede" type="text" name="name" id="contact-name" />
 									<label class="input__label input__label--kaede" for="contact-name">
 										<span class="input__label-content input__label-content--kaede">Name</span>
 									</label>
@@ -190,7 +190,7 @@ ABOUT SECTION, featuring a brief history about me and social media contact
 							<!--email-->
 							<div class="small-6 columns">
 								<span class="input input--kaede">
-									<input class="input__field input__field--kaede" type="text" id="contact-email"/>
+									<input class="input__field input__field--kaede" type="text" name="email" id="contact-email"/>
 									<label class="input__label input__label--kaede" for="contact-email">
 										<span class="input__label-content input__label-content--kaede">Email</span>
 									</label>
@@ -201,26 +201,36 @@ ABOUT SECTION, featuring a brief history about me and social media contact
 						<div class="row">
 							<div class="small-12 columns">
 							<span class="input input--kaede" style="height:150px;">
-								<textarea class="input__field input__field--kaede" type="text" id="contact-message"></textarea>
+								<textarea class="input__field input__field--kaede" type="text" name="message" id="contact-message"></textarea>
 								<label class="input__label input__label--kaede" for="contact-message">
 									<span class="input__label-content input__label-content--kaede">Message</span>
 								</label>
 							</span>
 							</div>
 						</div>
+				<!--email button-->
+						<div class="row">
+							<div class="small-12 columns">
+								<div type="submit" id="email-btn-container">
+									<a id="email-me-btn" class="large button animated" data-text="EMAIL ME">
+										<span>E</span><span>M</span><span>A</span><span>I</span><span>L</span> <span>M</span><span>E</span>
+									</a>
+								</div>
+							</div>
+						</div>
 					</form>
 				</div>
 			</div>		
 			<!--email button-->
-			<div class="row">
+	<!--		<div class="row">
 				<div class="small-12 columns">
-					<div id="email-btn-container">
+					<div type="submit" id="email-btn-container">
 						<a id="email-me-btn" class="large button animated" href="mailto:lusinabrian@gmail.com" data-text="EMAIL ME">
 							<span>E</span><span>M</span><span>A</span><span>I</span><span>L</span> <span>M</span><span>E</span>
 						</a>
 					</div>
 				</div>
-			</div>
+			</div>-->
 		</section>
 		<!--CONTACT END-->		
 	</main> <!-- .cd-main -->

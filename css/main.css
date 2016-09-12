@@ -349,43 +349,10 @@ CONTACT SECTION
 	-webkit-transition-delay: 0.45s;
 	transition-delay: 0.45s;
 }
-/**-*-*-**--*-*--*-*-*-**--*-*-*-*-*-*-*-**-*-*-*/
-/*contact form*/
-.form-container{
-	text-align: center;
-}
+/**-*-*-**--*-*--*-*-
+CONTACT FORM 
+*-**--*-*-*-*-*-*-*-**-*-*-*/
 
-/*close icon in the form*/
-.icon{
-	margin:20px;
-	font-weight: 800;
-	font-size:20px;
-}
-
-#form-header{
-	font-family: Raleway, sans-serif, cursive;
-	padding:5px;
-	font-size: 20px;
-	font-weight: 800;
-	line-height: 2px;
-	word-spacing: 2px;
-}
-
-#form-underline{
-	width:10%;
-}
-
-/*display the thank you word
-only after the form has been submitted*/
-.post{
-	display: none;
-	font-family: Raleway, cursive, sans-serif;
-}
-
-/*class to show the form*/
-#form-overlay{
-	
-}
 
 /**--------------------------------------
 FOOTER

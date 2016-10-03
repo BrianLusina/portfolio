@@ -183,6 +183,16 @@ Main content
 	background-color:cadetblue;
 }
 
+/*ACalc app*/
+.cd-item:nth-of-type(7){
+  background-color:#232E42;
+}
+
+/*MovieReel app*/
+.cd-item:nth-of-type(8){
+    background-color:#222B31;
+}
+
 .cd-item h2 {
   font-size: 2.2rem;
 }

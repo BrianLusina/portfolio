@@ -250,17 +250,7 @@ ABOUT SECTION, featuring a brief history about me and social media contact
 						</div>
 					</form>
 				</div>
-			</div>		
-			<!--email button-->
-	<!--		<div class="row">
-				<div class="small-12 columns">
-					<div type="submit" id="email-btn-container">
-						<a id="email-me-btn" class="large button animated" href="mailto:lusinabrian@gmail.com" data-text="EMAIL ME">
-							<span>E</span><span>M</span><span>A</span><span>I</span><span>L</span> <span>M</span><span>E</span>
-						</a>
-					</div>
-				</div>
-			</div>-->
+			</div>
 		</section>
 		<!--CONTACT END-->		
 	</main> <!-- .cd-main -->
@@ -356,6 +346,49 @@ ABOUT SECTION, featuring a brief history about me and social media contact
         emailjs.sendForm("gmail","template_qrsDHDOo","contact-form");
     </script>
 -->
+    <script>
+        var clientId = "737769653941-65s87kmhafi7cb109248pta69em9j8qh.apps.googleusercontent.com";
+        var apiKey = "Xkmhzbq-o6xvX5x0zodEmlh5";
+        var scopes = "https://www.googleapis.com/auth/gmail.send";
+
+        function sendEmail() {
+            $('#email-me-btn');
+            sendMessage({
+                        'To': "lusinabrian@gmail.com",
+                        "FromName":$('#contact-name').val(),
+                        "FromEmail":$('#contact-email').val()
+                    },
+                    $('#contact-message').val(),
+                    composeTidy
+            );
+            return false;
+        }
+        /*This function is where we interact with the Gmail API. It accepts an object of email headers, the email body and a callback function.*/
+        function sendMessage(headers_obj, message, callback) {
+            var email = '';
+
+            for(var header in headers_obj)
+                email += header += ": "+headers_obj[header]+"\r\n";
+
+            email += "\r\n" + message;
+
+            var sendRequest = gapi.client.gmail.users.messages.send({
+                'userId': clientId,
+                'resource': {
+                    'raw': window.btoa(email).replace(/\+/g, '-').replace(/\//g, '_')
+                }
+            });
+
+            return sendRequest.execute(callback);
+        }
+
+        /*clear all the fields*/
+        function composeTidy() {
+            $('#contact-name').val("");
+            $('#contact-email').val("");
+            $('#contact-message').val("");
+        }
+    </script>
 
 	</body>
 </html>

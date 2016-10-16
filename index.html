@@ -39,12 +39,14 @@
 		<!--Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Raleway|Alegreya+Sans|Cormorant|Cormorant+SC|Cormorant+Upright|Poiret+One|Raleway" rel="stylesheet">
 
+<!--
 		<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
 		<script type="text/javascript">
 			(function(){
 				emailjs.init("user_n6D1blF4cSJhBZkK6Qugw");
 			})();
 		</script>
+-->
 	</head>
 
 	<body>
@@ -204,7 +206,7 @@ ABOUT SECTION, featuring a brief history about me and social media contact
 			<!--contact form-->
 			<div class="row">
 				<div class="small-12 columns">
-					<form id="contact-form" method="POST">
+					<form onsubmit="return sendEmail();" id="contact-form" method="POST">
 						<div class="row">
 							<!--Name-->
 							<div class="small-6 columns">	<span class="input input--kaede">
@@ -349,8 +351,11 @@ ABOUT SECTION, featuring a brief history about me and social media contact
 				}
 			})();
 		</script>
+<!--
     <script>
         emailjs.sendForm("gmail","template_qrsDHDOo","contact-form");
     </script>
+-->
+
 	</body>
 </html>

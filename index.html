@@ -29,7 +29,7 @@
 		<!--RESET CSS-->
 		<link rel="stylesheet" href="css/reset.css">
 		<!--SWEET ALERTS CSS-->
-		<link rel="stylesheet" href="css/sweetalert.css">
+		<link rel="stylesheet" href="css/dist/sweetalert.css">
 		<!--3D PANELS-->
 		<link rel="stylesheet" href="css/3d-panelstyles.css">
 		<!--3D NAVIGATION-->
@@ -38,15 +38,6 @@
 
 		<!--Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Raleway|Alegreya+Sans|Cormorant|Cormorant+SC|Cormorant+Upright|Poiret+One|Raleway" rel="stylesheet">
-
-<!--
-		<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-		<script type="text/javascript">
-			(function(){
-				emailjs.init("user_n6D1blF4cSJhBZkK6Qugw");
-			})();
-		</script>
--->
 	</head>
 
 	<body>
@@ -207,13 +198,19 @@ ABOUT SECTION, featuring a brief history about me and social media contact
 			<div class="row">
 				<div class="small-12 columns">
                     <!--id="contact-form" -->
-					<form onsubmit="return sendEmail();" id="contact-form" method="POST">
+					<form id="contact-form" action="https://formspree.io/lusinabrian@gmail.com" method="POST">
+                        <!--prevent formspree default-->
+<!--
+                        <input type="hidden" name="_next" value="//formspree.io/thanks.html" />
+-->
+
 						<div class="row">
 							<!--Name-->
-							<div class="small-6 columns">	<span class="input input--kaede">
-								<input class="input__field input__field--kaede" type="text" name="name" id="contact-name" />
-									<label class="input__label input__label--kaede" for="contact-name">
-										<span class="input__label-content input__label-content--kaede">Name</span>
+							<div class="small-6 columns">
+                                <span class="input input--kaede">
+                                    <input class="input__field input__field--kaede" type="text" name="name" id="contact-name" required/>
+                                    <label class="input__label input__label--kaede" for="contact-name">
+                                        <span class="input__label-content input__label-content--kaede">Name</span>
 									</label>
 								</span>
 							</div>
@@ -221,7 +218,7 @@ ABOUT SECTION, featuring a brief history about me and social media contact
 							<!--email-->
 							<div class="small-6 columns">
 								<span class="input input--kaede">
-									<input class="input__field input__field--kaede" type="email" name="email" id="contact-email"/>
+									<input class="input__field input__field--kaede" type="email" name="email" id="contact-email" required/>
 									<label class="input__label input__label--kaede" for="contact-email">
 										<span class="input__label-content input__label-content--kaede">Email</span>
 									</label>
@@ -232,19 +229,20 @@ ABOUT SECTION, featuring a brief history about me and social media contact
 						<div class="row">
 							<div class="small-12 columns">
 							<span class="input input--kaede" style="height:150px;">
-								<textarea class="input__field input__field--kaede" type="text" name="message" id="contact-message"></textarea>
+								<textarea class="input__field input__field--kaede" type="text" name="message" id="contact-message" required></textarea>
 								<label class="input__label input__label--kaede" for="contact-message">
 									<span class="input__label-content input__label-content--kaede">Message</span>
 								</label>
 							</span>
 							</div>
 						</div>
+
 				<!--email button-->
 						<div class="row">
 							<div class="small-12 columns">
 								<div type="submit" id="email-btn-container">
 									<button type="submit" id="email-me-btn" class="large button animated" data-text="EMAIL ME">
-										<span>E</span><span>M</span><span>A</span><span>I</span><span>L</span> <span>M</span><span>E</span>
+										<span>S</span><span>E</span><span>N</span><span>D</span> <span>M</span><span>A</span><span>I</span><span>L</span>
 									</button>
 								</div>
 							</div>
@@ -252,6 +250,7 @@ ABOUT SECTION, featuring a brief history about me and social media contact
 					</form>
 				</div>
 			</div>
+
 		</section>
 		<!--CONTACT END-->		
 	</main> <!-- .cd-main -->
@@ -297,15 +296,13 @@ ABOUT SECTION, featuring a brief history about me and social media contact
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.5.3/modernizr.min.js" type="text/javascript"></script>
 
 		<!--Vendor Scripts hosted in project-->
-		<script type ="text/javascript" src = "js/vendor/jquery-3.0.0.min.js"></script>
 		<script type="text/javascript" src="js/vendor/foundation.min.js"></script>
-		<script type="text/javascript" src="js/vendor/jquery-2.1.1.js"></script>
-		<script type="text/javasctipt" src="js/vendor/sweetalert.min.js"></script>
+		<script type="text/javascript" src="js/vendor/jquery-3.1.1.min.js"></script>
+		<script type="text/javasctipt" src="js/vendor/dist/sweetalert.min.js"></script>
 		<script src="js/vendor/classie.js"></script>
 
 		<!--Custom JS-->		
-		<script type ="text/javascript" src = "js/mainscript.js"></script>
-		<script type="text/javascript" src="js/3d-panel.js"></script> 
+		<script type="text/javascript" src="js/3d-panel.js"></script>
 		<script type="text/javascript" src="js/3d-nav.js"></script>
 		<script>
 			(function() {
@@ -342,54 +339,8 @@ ABOUT SECTION, featuring a brief history about me and social media contact
 				}
 			})();
 		</script>
-<!--
-    <script>
-        emailjs.sendForm("gmail","template_qrsDHDOo","contact-form");
-    </script>
--->
-    <script>
-        var clientId = "737769653941-65s87kmhafi7cb109248pta69em9j8qh.apps.googleusercontent.com";
-        var apiKey = "Xkmhzbq-o6xvX5x0zodEmlh5";
-        var scopes = "https://www.googleapis.com/auth/gmail.send";
 
-        function sendEmail() {
-            $('#email-me-btn');
-            sendMessage({
-                        'To': "lusinabrian@gmail.com",
-                        "FromName":$('#contact-name').val(),
-                        "FromEmail":$('#contact-email').val()
-                    },
-                    $('#contact-message').val(),
-                    composeTidy
-            );
-            return false;
-        }
-        /*This function is where we interact with the Gmail API. It accepts an object of email headers, the email body and a callback function.*/
-        function sendMessage(headers_obj, message, callback) {
-            var email = '';
-
-            for(var header in headers_obj)
-                email += header += ": "+headers_obj[header]+"\r\n";
-
-            email += "\r\n" + message;
-
-            var sendRequest = gapi.client.gmail.users.messages.send({
-                'userId': clientId,
-                'resource': {
-                    'raw': window.btoa(email).replace(/\+/g, '-').replace(/\//g, '_')
-                }
-            });
-
-            return sendRequest.execute(callback);
-        }
-
-        /*clear all the fields*/
-        function composeTidy() {
-            $('#contact-name').val("");
-            $('#contact-email').val("");
-            $('#contact-message').val("");
-        }
-    </script>
+        <script type ="text/javascript" src = "js/mainscript.js"></script>
 
 	</body>
 </html>

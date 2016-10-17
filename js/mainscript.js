@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-	$("#contact-form").submit(function(e){
+    $("#contact-form").submit(function(e){
 	    e.preventDefault();
         $.ajax({
 			url: "https://formspree.io/lusinabrian@gmail.com",

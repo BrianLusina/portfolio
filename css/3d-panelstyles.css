@@ -193,6 +193,17 @@ Main content
     background-color:#222B31;
 }
 
+/*TreasureGram*/
+.cd-item:nth-of-type(9){
+    background-color:#E64A19;
+}
+
+/*Food Hut*/
+.cd-item:nth-of-type(10){
+    background-color:#512DA8;
+}
+
+
 .cd-item h2 {
   font-size: 2.2rem;
 }

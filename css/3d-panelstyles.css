@@ -35,6 +35,15 @@ Patterns - reusable parts of our design
 .overflow-hidden {
   overflow: hidden;
 }
+
+/*resume link*/
+#resume-link{
+    color:white;
+}
+
+#resume-link:hover{
+    color:wheat;
+}
 /* -------------------------------- 
 
 Main content

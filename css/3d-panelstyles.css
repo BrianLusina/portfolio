@@ -228,6 +228,11 @@ Main content
     background-color:#A81144;    
 }
 
+/*Markdown journal*/
+.cd-item:nth-of-type(14){
+    background-color:#2BBBAD;    
+}
+
 .cd-item h2 {
   font-size: 2.2rem;
 }

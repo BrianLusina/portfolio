@@ -215,17 +215,17 @@ Main content
 
 /*Pomodoro clock*/
 .cd-item:nth-of-type(11){
-    background-color:#512DA8;
+    background-color:#274140;
 }
 
 /*Quote Machine*/
 .cd-item:nth-of-type(12){
-    background-color:#627BP5;    
+    background-color:#E74C3C;    
 }
 
 /*JS Calculator*/
 .cd-item:nth-of-type(13){
-    background-color:#627BP5;    
+    background-color:#A81144;    
 }
 
 .cd-item h2 {

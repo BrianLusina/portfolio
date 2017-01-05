@@ -233,8 +233,14 @@ Main content
     background-color:#2BBBAD;    
 }
 
+/*Dev conference*/
 .cd-item:nth-of-type(15){
     background-color:#293F50;
+}
+
+/*Hadithi*/
+.cd-item:nth-of-type(16){
+    background-color:#92CC94;
 }
 
 .cd-item h2 {

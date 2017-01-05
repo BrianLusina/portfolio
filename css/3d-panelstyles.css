@@ -233,6 +233,10 @@ Main content
     background-color:#2BBBAD;    
 }
 
+.cd-item:nth-of-type(15){
+    background-color:#293F50;
+}
+
 .cd-item h2 {
   font-size: 2.2rem;
 }

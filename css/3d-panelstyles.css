@@ -243,6 +243,16 @@ Main content
     background-color:#92CC94;
 }
 
+/*TicTacToe*/
+.cd-item:nth-of-type(17){
+    background-color:#E44B23;
+}
+
+/*Simon game*/
+.cd-item:nth-of-type(18){
+    background-color:#CCA707;
+}
+
 .cd-item h2 {
   font-size: 2.2rem;
 }

@@ -1,0 +1,31 @@
+{
+  "name": "brianlusina.surge.sh",
+  "version": "1.0.0",
+  "description": "Brian Lusina's Portfolio site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrianLusina/brianlusina.git"
+  },
+  "keywords": [
+    "brianlusina",
+    "portfolio"
+  ],
+  "author": "Brian Lusina",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BrianLusina/brianlusina/issues"
+  },
+  "homepage": "https://github.com/BrianLusina/brianlusina#readme",
+  "devDependencies": {
+    "git-scripts": "^0.2.1"
+  },
+  "git": {
+    "scripts": {
+      "pre-push": "surge --project . --domain brianlusina.surge.sh"
+    }
+  }
+}

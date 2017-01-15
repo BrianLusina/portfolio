@@ -253,6 +253,11 @@ Main content
     background-color:#CCA707;
 }
 
+/*Camper leaderboard*/
+.cd-item:nth-of-type(19){
+    background-color: #006400;
+}
+
 .cd-item h2 {
   font-size: 2.2rem;
 }

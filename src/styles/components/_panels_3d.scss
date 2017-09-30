@@ -1,33 +1,4 @@
-/* -------------------------------- 
-
-Primary style
-
--------------------------------- */
-*, *::after, *::before {
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 62.5%;
-}
-
-body {
-  font-size: 1.6rem;
-  font-family: "Open Sans", sans-serif;
-  color: #363558;
-  background-color: #1c1726;
-}
-
-a {
-  color: #544173;
-  text-decoration: none;
-}
-
-h1, h2 {
-  font-family: "Vollkorn", serif;
-}
-
-/* -------------------------------- 
+/* --------------------------------
 
 Patterns - reusable parts of our design
 
@@ -38,13 +9,13 @@ Patterns - reusable parts of our design
 
 /*resume link*/
 #resume-link{
-    color:white;
+  color:white;
 }
 
 #resume-link:hover{
-    color:wheat;
+  color:wheat;
 }
-/* -------------------------------- 
+/* --------------------------------
 
 Main content
 
@@ -180,12 +151,12 @@ Main content
 
 /*zenith*/
 .cd-item:nth-of-type(4){
-	background-color:firebrick;
+  background-color:firebrick;
 }
 
 /*Mini Wiki*/
 .cd-item:nth-of-type(5){
-	background-color:cadetblue;
+  background-color:cadetblue;
 }
 
 /*Pet Shelter*/
@@ -200,62 +171,62 @@ Main content
 
 /*MovieReel app*/
 .cd-item:nth-of-type(8){
-    background-color:#222B31;
+  background-color:#222B31;
 }
 
 /*TreasureGram*/
 .cd-item:nth-of-type(9){
-    background-color:#E64A19;
+  background-color:#E64A19;
 }
 
 /*Food Hut*/
 .cd-item:nth-of-type(10){
-    background-color:#512DA8;
+  background-color:#512DA8;
 }
 
 /*Pomodoro clock*/
 .cd-item:nth-of-type(11){
-    background-color:#274140;
+  background-color:#274140;
 }
 
 /*Quote Machine*/
 .cd-item:nth-of-type(12){
-    background-color:#E74C3C;    
+  background-color:#E74C3C;
 }
 
 /*JS Calculator*/
 .cd-item:nth-of-type(13){
-    background-color:#A81144;    
+  background-color:#A81144;
 }
 
 /*Markdown journal*/
 .cd-item:nth-of-type(14){
-    background-color:#2BBBAD;    
+  background-color:#2BBBAD;
 }
 
 /*Dev conference*/
 .cd-item:nth-of-type(15){
-    background-color:#293F50;
+  background-color:#293F50;
 }
 
 /*Hadithi*/
 .cd-item:nth-of-type(16){
-    background-color:#92CC94;
+  background-color:#92CC94;
 }
 
 /*TicTacToe*/
 .cd-item:nth-of-type(17){
-    background-color:#E44B23;
+  background-color:#E44B23;
 }
 
 /*Simon game*/
 .cd-item:nth-of-type(18){
-    background-color:#CCA707;
+  background-color:#CCA707;
 }
 
 /*Camper leaderboard*/
 .cd-item:nth-of-type(19){
-    background-color: #006400;
+  background-color: #006400;
 }
 
 .cd-item h2 {
@@ -353,7 +324,7 @@ Main content
   }
 }
 
-/* -------------------------------- 
+/* --------------------------------
 
 folding panel
 
@@ -664,7 +635,7 @@ folding panel
   }
 }
 
-/* -------------------------------- 
+/* --------------------------------
 
 Javascript disabled
 

@@ -3,17 +3,17 @@ import React from 'react';
 import {render} from "react-dom";
 import {mount, shallow, configure} from 'enzyme';
 import Adapter from "enzyme-adapter-react-16";
-import App from '../app/App';
+import Contact from '../app/components/contact/Contact';
 
 configure({adapter: new Adapter()});
 
 function setup() {
     const props = {};
 
-    return shallow(<App {...props}/>);
+    return shallow(<Contact {...props}/>);
 }
 
-describe("App should", () => {
+describe("Contact should", () => {
     let wrapper;
     beforeEach(() => {
         wrapper = setup();
@@ -23,10 +23,8 @@ describe("App should", () => {
         render(<wrapper/>, document.createElement("div"));
     });
 
-    it("contain body element as root tag", () => {
-
-        expect(wrapper.find("body").length).toBe(1);
+    it("contain 1 section element as root", () => {
+        expect(wrapper.find("section").length).toBe(1);
     });
 
-    // TODO: other test cases
 });

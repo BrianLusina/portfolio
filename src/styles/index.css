@@ -9818,19 +9818,19 @@ Main Components
 
 /*Projects*/
 .cd-3d-nav li:first-of-type a::before {
-  background-image: url(../img/svg/icon-2.svg); }
+  background-image: url(../img/icon-2.svg); }
 
 /*Blog*/
 .cd-3d-nav li:nth-of-type(2) a::before {
-  background-image: url(../img/svg/icon-1.svg); }
+  background-image: url(../img/icon-1.svg); }
 
 /*about me*/
 .cd-3d-nav li:nth-of-type(3) a::before {
-  background-image: url(../img/svg/icon-4.svg); }
+  background-image: url(../img/icon-4.svg); }
 
 /*contact*/
 .cd-3d-nav li:nth-of-type(4) a::before {
-  background-image: url(../img/svg/icon-5.svg); }
+  background-image: url(../img/icon-5.svg); }
 
 .cd-3d-nav a {
   position: relative;
@@ -10311,11 +10311,6 @@ Main content
     -ms-transform: translateX(400px);
     -o-transform: translateX(400px);
     transform: translateX(400px); } }
-/* --------------------------------
-
-folding panel
-
--------------------------------- */
 .cd-folding-panel {
   position: fixed;
   z-index: 1;
@@ -10328,18 +10323,6 @@ folding panel
   -webkit-transition: visibility 0s 0.9s;
   -moz-transition: visibility 0s 0.9s;
   transition: visibility 0s 0.9s; }
-
-.cd-folding-panel .fold-left,
-.cd-folding-panel .fold-right {
-  /* the :after elements of .fold-left and .fold-right are the 2 fold sides */
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
-  /* enable a 3D-space for children elements */
-  -webkit-perspective: 2000px;
-  -moz-perspective: 2000px;
-  perspective: 2000px; }
 
 .cd-folding-panel .fold-left::after,
 .cd-folding-panel .fold-right::after {
@@ -10516,6 +10499,18 @@ folding panel
     -ms-transform: translateX(100%) rotateY(90deg);
     -o-transform: translateX(100%) rotateY(90deg);
     transform: translateX(100%) rotateY(90deg); } }
+.cd-folding-panel .fold-left,
+.cd-folding-panel .fold-right {
+  /* the :after elements of .fold-left and .fold-right are the 2 fold sides */
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  /* enable a 3D-space for children elements */
+  -webkit-perspective: 2000px;
+  -moz-perspective: 2000px;
+  perspective: 2000px; }
+
 .cd-fold-content {
   position: absolute;
   top: 0;

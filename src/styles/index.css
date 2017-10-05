@@ -3954,8 +3954,8 @@ html.is-reveal-open, html.is-reveal-open body {
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url("../fonts/fontawesome-webfont.eot?v=4.7.0");
-  src: url("../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff2?v=4.7.0") format("woff2"), url("../fonts/fontawesome-webfont.woff?v=4.7.0") format("woff"), url("../fonts/fontawesome-webfont.ttf?v=4.7.0") format("truetype"), url("../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");
+  src: url("/fonts/fontawesome-webfont.eot?v=4.7.0");
+  src: url("/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0") format("embedded-opentype"), url("/fonts/fontawesome-webfont.woff2?v=4.7.0") format("woff2"), url("/fonts/fontawesome-webfont.woff?v=4.7.0") format("woff"), url("/fonts/fontawesome-webfont.ttf?v=4.7.0") format("truetype"), url("/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");
   font-weight: normal;
   font-style: normal; }
 .fa {
@@ -9818,19 +9818,19 @@ Main Components
 
 /*Projects*/
 .cd-3d-nav li:first-of-type a::before {
-  background-image: url(../img/icon-2.svg); }
+  background-image: url(../img/svg/icon-2.svg); }
 
 /*Blog*/
 .cd-3d-nav li:nth-of-type(2) a::before {
-  background-image: url(../img/icon-1.svg); }
+  background-image: url(../img/svg/icon-1.svg); }
 
 /*about me*/
 .cd-3d-nav li:nth-of-type(3) a::before {
-  background-image: url(../img/icon-4.svg); }
+  background-image: url(../img/svg/icon-4.svg); }
 
 /*contact*/
 .cd-3d-nav li:nth-of-type(4) a::before {
-  background-image: url(../img/icon-5.svg); }
+  background-image: url(../img/svg/icon-5.svg); }
 
 .cd-3d-nav a {
   position: relative;

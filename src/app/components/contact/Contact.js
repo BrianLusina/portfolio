@@ -12,8 +12,9 @@ const Contact = () => {
                     <div id="contact-header">
                         <i className="fa fa-envelope"></i>
                         <h3 id="contact-title">CONTACT</h3>
-                        <p id="contact-tag">Feel free to reach out for projects you may want me to work on.<i
-                            className="fa fa-smile-o"></i>
+                        <p id="contact-tag">
+                            Feel free to reach out for projects you may want me to work on.
+                            <i className="fa fa-smile-o"></i>
                         </p>
                     </div>
                 </div>

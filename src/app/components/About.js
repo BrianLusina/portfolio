@@ -32,27 +32,27 @@ const About = () => {
 
             <div id="social-container" className="row">
                 <a href="https://twitter.com/brianlusina" className="social-links">
-                    <i className="fa fa-twitter fa-2x"></i>
+                    <i className="fa fa-twitter fa-2x"/>
                 </a>
 
                 <a href="https://www.linkedin.com/in/brianlusina" className="social-links">
-                    <i className="fa fa-linkedin fa-2x"></i>
+                    <i className="fa fa-linkedin fa-2x"/>
                 </a>
 
                 <a href="https://github.com/BrianLusina" className="social-links">
-                    <i className="fa fa-github fa-2x"></i>
+                    <i className="fa fa-github fa-2x"/>
                 </a>
 
                 <a href="https://medium.com/@lusinabrian" className="social-links">
-                    <i className="fa fa-medium fa-2x"></i>
+                    <i className="fa fa-medium fa-2x"/>
                 </a>
 
                 <a href="https://plus.google.com/102302755150765254402" className="social-links">
-                    <i className="fa fa-google-plus fa-2x"></i>
+                    <i className="fa fa-google-plus fa-2x"/>
                 </a>
 
                 <a href="http://codepen.io/thelusina/" className="social-links">
-                    <i className="fa fa-codepen fa-2x"></i>
+                    <i className="fa fa-codepen fa-2x"/>
                 </a>
             </div>
         </section>

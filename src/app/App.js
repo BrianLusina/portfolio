@@ -9,7 +9,7 @@ import ProjectList from "./components/projects/ProjectList";
 class App extends Component {
     render() {
         return (
-            <body>
+            <div>
                 <Header/>
                 <main className="cd-main" id="projects-main">
                     <ProjectList />
@@ -20,7 +20,7 @@ class App extends Component {
 
                 <Navigation/>
                 <FoldingPanel/>
-            </body>
+            </div>
         );
     }
 }

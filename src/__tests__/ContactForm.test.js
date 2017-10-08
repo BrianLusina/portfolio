@@ -8,8 +8,7 @@ import ContactForm from '../app/components/contact/ContactForm';
 configure({adapter: new Adapter()});
 
 function setup() {
-    const props = {
-    };
+    const props = {};
 
     return shallow(<ContactForm {...props}/>);
 }
@@ -42,9 +41,9 @@ describe("ContactForm should", () => {
         let classes = ["large", "button", "animated"];
         let buttonElement = wrapper.find("button");
         expect(buttonElement.length).toBe(1);
-        expect(buttonElement.props().id).toBe("email-me-btn");
+        expect(buttonElement.props().id).toEqual("email-me-btn");
         expect(buttonElement.props().type).toBe("submit");
-        expect(buttonElement.props()["data-text"]).toBe("EMAIL ME");
+        expect(buttonElement.props()["data-text"]).toEqual("EMAIL ME");
         classes.map((item, index) => {
             expect(buttonElement.hasClass(item)).toBe(true);
         });

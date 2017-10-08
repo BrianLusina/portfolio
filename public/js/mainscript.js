@@ -8,7 +8,6 @@ $(document).ready(function(){
 			data: $(this).serialize(),
             dataType: "json",
             success:function(){
-                console.log('success');
                 swal({
                     title:"Thanks for the email",
                     text:"I\'ll be in touch promptly.",

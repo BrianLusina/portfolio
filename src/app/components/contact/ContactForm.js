@@ -16,7 +16,6 @@ export default class ContactForm extends Component {
         return (
             <form id="contact-form" action="https://formspree.io/lusinabrian@gmail.com" method="POST">
                 <div className="row">
-
                     <div className="small-6 columns">
                                 <span className="input input--kaede">
                                     <input className="input__field input__field--kaede" type="text" name="name"

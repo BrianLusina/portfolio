@@ -40,9 +40,11 @@ export default class ContactForm extends Component {
                 <div className="row">
                     <div className="small-12 columns">
 							<span className="input input--kaede" style={{height:"150px"}}>
-								<textarea className="input__field input__field--kaede" type="text" name="message"
-                                          id="contact-message" required></textarea>
-								<label className="input__label input__label--kaede" for="contact-message">
+								<textarea className="input__field input__field--kaede"
+                                          type="text" name="message"
+                                          id="contact-message" required/>
+								<label className="input__label input__label--kaede"
+                                       htmlFor="contact-message">
 									<span className="input__label-content input__label-content--kaede">Message</span>
 								</label>
 							</span>

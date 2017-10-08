@@ -23,13 +23,7 @@ export default class ContactForm extends Component {
      * Used to send form data
      * @param event event object obtained from DOM element*/
     handleSubmit(event) {
-        let senderData = {
-            name: this.state.name,
-            email: this.state.email,
-            message: this.state.message
-        };
-
-        sendFormDataApi(senderData).then(() => {
+        sendFormDataApi(this.state).then(() => {
             // resolve
 
         }).catch(error => {

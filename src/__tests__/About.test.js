@@ -8,9 +8,7 @@ import About from '../app/components/About';
 configure({adapter: new Adapter()});
 
 function setup() {
-    const props = {
-        //TODO: props
-    };
+    const props = {};
 
     return shallow(<About {...props}/>);
 }
@@ -44,6 +42,7 @@ describe("About should", () => {
 
     it("have first anchor tag to have link to portfolio", () => {
         expect(wrapper.find("a").at(0).props().href).toEqual("http://lusinaresume.netlify.com/");
+        expect(wrapper.find("a").at(0).props().id).toEqual("resume-link");
     });
 
     it("contain second to last anchor tags with class social links and child i", () => {

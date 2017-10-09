@@ -45,8 +45,11 @@ export default class ContactForm extends Component {
        const value = target.type === 'email' ? target.value : target.value;
        const name = target.name;
 
-       this.setState({
-           [name]: value
+       this.setState(prevState => {
+           let updatedValue;
+           updatedValue = target.type === "email" ?
+               {...prevState.email, [name]: value} : {...prevState.name, [name]: value};
+           return updatedValue
        });
     }
 
@@ -58,7 +61,7 @@ export default class ContactForm extends Component {
                         <span className="input input--kaede">
                             <input className="input__field input__field--kaede" type="text"
                                    name="name" id="contact-name" required
-                                   value={this.state.mame}
+                                   value={this.state.name}
                                    onChange={this.handleInputChange}/>
                                 <label className="input__label input__label--kaede"
                                        htmlFor="contact-name">

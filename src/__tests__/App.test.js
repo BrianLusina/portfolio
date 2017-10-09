@@ -24,9 +24,6 @@ describe("App should", () => {
     });
 
     it("contain body element as root tag", () => {
-
-        expect(wrapper.find("body").length).toBe(1);
+        expect(wrapper.find("div").length).toBe(1);
     });
-
-    // TODO: other test cases
 });

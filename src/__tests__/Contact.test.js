@@ -4,6 +4,7 @@ import {render} from "react-dom";
 import {mount, shallow, configure} from 'enzyme';
 import Adapter from "enzyme-adapter-react-16";
 import Contact from '../app/components/contact/Contact';
+import ContactForm from '../app/components/contact/ContactForm';
 
 configure({adapter: new Adapter()});
 
@@ -21,6 +22,12 @@ describe("Contact should", () => {
 
     it("render without crashing", () => {
         render(<wrapper/>, document.createElement("div"));
+    });
+
+    it("contain contact form contact", () => {
+        const contactWrapper = mount(<Contact />);
+        expect(contactWrapper.find(ContactForm).length).toEqual(1);
+        // render(<wrapper/>, document.createElement("div"));
     });
 
     it("contain 1 section element as root", () => {

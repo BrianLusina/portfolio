@@ -86,3 +86,61 @@ describe("ContactForm should", () => {
     });
 
 });
+
+/**
+ * Tests for contact form state
+ * */
+describe("Contact form component state ", () => {
+    let contactFormWrapper;
+
+    beforeEach(() => {
+        contactFormWrapper = mount(<ContactForm />)
+    });
+
+    it("should be updated when name input text values are changed", () => {
+        let newName = "Brian";
+        const event = {target: {name: "name", value: newName}};
+
+        contactFormWrapper.find("input").at(0).simulate("change", event);
+
+        expect(contactFormWrapper.state().name).toEqual(newName);
+
+        // submit another event
+        const newEvent = {target: {name: "name", value: `${newName} Lusina`}};
+        contactFormWrapper.find("input").at(0).simulate("change", newEvent);
+        expect(contactFormWrapper.state().name).toEqual(`${newName} Lusina`);
+    });
+
+    it("should be updated when email input text values are changed", () => {
+        let newEmail = "brian@example.com";
+        const event = {target: {name: "email", value: newEmail}};
+
+        contactFormWrapper.find("input").at(1).simulate("change", event);
+
+        expect(contactFormWrapper.state().email).toEqual(newEmail);
+
+        // submit another event
+        let newEmail2 = "lusina@example.com";
+        const newEvent = {target: {name: "email", value: newEmail2}};
+        contactFormWrapper.find("input").at(1).simulate("change", newEvent);
+        expect(contactFormWrapper.state().email).toEqual(newEmail2);
+    });
+
+    it("should be updated when message input text values are changed", () => {
+        let newMessage = "new message";
+        const event = {target: {name: "message", value: newMessage}};
+
+        contactFormWrapper.find("textarea").simulate("change", event);
+
+        expect(contactFormWrapper.state().message).toEqual(newMessage);
+
+        // new event
+        let newMessage2 = "new message";
+        const newEvent = {target: {name: "message", value: newMessage2}};
+
+        contactFormWrapper.find("textarea").simulate("change", newEvent);
+
+        expect(contactFormWrapper.state().message).toEqual(newMessage2);
+    });
+
+});

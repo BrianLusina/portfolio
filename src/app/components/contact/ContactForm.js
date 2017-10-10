@@ -5,6 +5,7 @@
 
 import React, {Component} from 'react';
 import {sendFormDataApi} from "../../api/theLusinaApi"
+import swal from "sweetalert";
 
 export default class ContactForm extends Component {
     constructor(props, context) {
@@ -21,14 +22,31 @@ export default class ContactForm extends Component {
 
     /**
      * Used to send form data
-     * @param event event object obtained from DOM element*/
+     * @param event event object obtained from DOM element
+     * */
     handleSubmit(event) {
         sendFormDataApi(this.state).then(() => {
             // resolve
+            swal({
+                title:"Thanks for the email",
+                text:"I\'ll be in touch promptly.",
+                icon:"success",
+                buttons:["Aww Yeah!"],
+                timer: 2500,
+                showConfirmButton: false
+            });
 
+            // update state
+            this.setState({name: "", email:"", message: ""});
         }).catch(error => {
+            console.log(`Error encountered sending email with ${error}`);
             // reject
-
+            swal({
+                title:"Error sending email",
+                text:"Please try again.",
+                icon:"error",
+                showConfirmButton: false
+            });
         });
         event.preventDefault();
     }

@@ -1,22 +1,21 @@
 $(document).ready(function(){
-
-    $("#contact-form").submit(function(e){
-	    e.preventDefault();
-        $.ajax({
-			url: "https://formspree.io/lusinabrian@gmail.com",
-			method: "POST",
-			data: $(this).serialize(),
-            dataType: "json",
-            success:function(){
-                swal({
-                    title:"Thanks for the email",
-                    text:"I\'ll be in touch promptly.",
-                    timer: 2000,
-                    showConfirmButton: false
-                });
-            }
-		});
-	});
+    // $("#contact-form").submit(function(e){
+	//     e.preventDefault();
+     //    $.ajax({
+	// 		url: "https://formspree.io/lusinabrian@gmail.com",
+	// 		method: "POST",
+	// 		data: $(this).serialize(),
+     //        dataType: "json",
+     //        success:function(){
+     //            swal({
+     //                title:"Thanks for the email",
+     //                text:"I\'ll be in touch promptly.",
+     //                timer: 2000,
+     //                showConfirmButton: false
+     //            });
+     //        }
+	// 	});
+	// });
 
 	/*change color of social links
 	Store social links in variable

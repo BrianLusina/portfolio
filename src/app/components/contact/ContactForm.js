@@ -21,7 +21,8 @@ export default class ContactForm extends Component {
 
     /**
      * Used to send form data
-     * @param event event object obtained from DOM element*/
+     * @param event event object obtained from DOM element
+     * */
     handleSubmit(event) {
         sendFormDataApi(this.state).then(() => {
             // resolve

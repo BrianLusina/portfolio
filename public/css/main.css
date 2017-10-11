@@ -1,0 +1,486 @@
+body{
+	margin:0px;
+	color: #888;
+  	font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+/**--------------------------------------
+HEADER
+------------------------------------*/
+/*ADD rolling links to The Lusina title*/
+.rolling-links{
+	perspective: 1000px;
+	-webkit-perspective:1000px;
+	-moz-perspective:1000px;
+}
+
+.rolling-links:hover{
+	color:white;
+}
+
+.rolling-links span{
+	position:relative;
+	display: inline-block;
+	padding:0 15px;
+	background: #485274;
+	transition:transform 0.3s;
+	transform-origin: 50% 0;
+	transform-style: preserve-3d;
+	-webkit-transition: -webkit-transform 0.3s;
+	-moz-transition: -moz-transform 0.3s;
+	-webkit-transform-origin: 50% 0;
+	-moz-transform-origin: 50% 0;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+}
+
+/*
+ensure the position is absolute to allow for
+these styles to overlaying over the link
+*/
+.rolling-links span::before{	
+	position:absolute;
+	top:100%;
+	width: 100%;
+	height: 100%;
+	content:attr(data-hover);
+	-webkit-transition: background 0.3s;
+	-moz-transition: background 0.3s;
+	transition: background 0.3s;
+	-webkit-transform: rotateX(-90deg);
+	-moz-transform: rotateX(-90deg);
+	transform: rotateX(-90deg);
+	-webkit-transform-origin: 50% 0;
+	-moz-transform-origin: 50% 0;
+	transform-origin: 50% 0;
+}
+
+.rolling-links:hover span, .rolling-links:focus span{
+	transform:rotateX(90deg) translateY(-22px);
+	-webkit-transform: rotateX(90deg) translateY(-22px);
+	-moz-transform: rotateX(90deg) translateY(-22px);
+}
+
+.rolling-links:hover span::before,.rolling-links:focus span::before{
+	background:#485274;
+}
+
+.cd-logo{
+	
+}
+/*-------------------------
+PROJECT SECTION
+--------------------------*/
+#menu-pro-item{
+/*	
+	background-image:url('../img/pro-shots/menu-screenshot.png');
+	background-repeat: no-repeat;
+	background-position:top center;
+	background-size: cover;
+	*/
+}
+/**-*-*-**--*-*--*-*-*-**--*-*-*-*-*-*-*-**-*-*-*/
+/**--------------------------------------
+SECTIONS
+------------------------------------*/
+/*ABOUT ME SECTION*/
+#about-section{
+	padding:25px;
+	color: white;
+}
+
+#about-title{
+	font-family: Poiret One, cursive, sans-serif;
+	color:white;
+	font-size: 35px;
+	text-align: center;
+}
+
+#about-text{
+	text-align: center;
+	padding:10px;
+}
+/*social connect title*/
+#connect-about{
+	font-size: 25px;
+	padding:10px;
+	text-align: center;	
+	font-family: Poiret One, sans-serif, cursive;
+}
+
+.about-text{
+	font-family: Roboto Condensed, sans-serif, cursive;
+	padding:25px;
+	word-spacing: 2px;
+	line-height: 25px;
+}
+
+.social-links{
+	color:white;
+	padding:0px;
+	position: relative;
+	display: inline-block;
+	margin: 15px 25px;
+	outline: none;
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 400;
+	text-shadow: 0 0 1px rgba(255,255,255,0.3);
+}
+
+.empty-space{
+	padding:55px;
+}
+
+#social-container{
+	text-align: center;
+}
+
+/*add border effects social media links*/
+.social-links::before,
+.social-links::after{
+	position:absolute;
+	height: 1px;
+	width:42px;
+	margin:-5px;
+	background:#fff;
+	opacity:0.5;
+	transition:all 0.3s;
+	-webkit-transition:all 0.3s;
+	-moz-transition:all 0.3s;
+	content:'';
+}
+
+/*add before and after stylings when user hovers on links*/
+.social-links::before{
+	top: 0;
+	left: 0;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(90deg);
+	transform: rotate(90deg);
+	-webkit-transform-origin: 0 0;
+	-moz-transform-origin: 0 0;
+	transform-origin: 0 0;
+}
+
+.social-links::after{
+	right: 0;
+	bottom: 0;
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	transform: rotate(90deg);
+	-webkit-transform-origin: 100% 0;
+	-moz-transform-origin: 100% 0;
+	transform-origin: 100% 0;
+}
+
+/*'show' the border when user hovers*/
+.social-links:hover::before,
+.social-links:hover::after,
+.social-links:focus::before,
+.social-links:focus::after{
+	opacity: 1;
+}
+
+.social-links:hover::before,
+.social-links:focus::before{
+	left:70%;
+	transform:rotate(0deg) translateX(-50%);
+	-webkit-transform:rotate(0deg) translate(-50%);
+	-moz-transform:rotate(0deg) translate(-50%);
+}
+
+.social-links:hover::after,
+.social-links:hover::after{
+	right:70%;
+	transform:rotate(0deg) translateX(50%);
+	-webkit-transform:rotate(0deg) translate(50%);
+	-moz-transform:rotate(0deg) translate(50%);
+}
+
+
+/*-------------------------
+PROJECT SECTION
+--------------------------*/
+
+/*-------------------------
+CONTACT SECTION
+--------------------------*/
+#contact-section{
+	color:wheat;
+}
+
+#contact-header{
+	text-align: center;
+}
+
+#contact-title{
+	font-family: Poiret One, sans-serif, cursive;
+	padding:10px;
+	font-weight: bolder;
+	letter-spacing: 2px;
+}
+
+#contact-tag{
+	text-align: center;
+	font-family: Raleway,sans-serif,cursive;
+	padding:10px;
+}
+
+#email-btn-container{
+	text-align: center;
+	padding:25px;
+}
+
+#email-me-btn{
+	border-color: cornflowerblue;
+	background: transparent;
+	font-family: Poiret One, cursive,sans-serif;
+	font-weight: bolder;
+	font-size: 18px;
+	letter-spacing: 2px;
+	margin: 1em;
+	width:50%;
+	padding: 1em 2em;
+	color: inherit;
+	vertical-align: middle;
+	position: relative;
+	z-index: 1;
+	-webkit-backface-visibility: hidden;
+	-moz-osx-font-smoothing: grayscale;
+	color: #fff;
+	overflow: hidden;
+	-webkit-transition: background-color 0.3s;
+	transition: background-color 0.3s;	
+}
+
+#email-me-btn:focus {
+	outline: none;
+}
+
+#email-me-btn > span {
+	vertical-align: middle;
+	padding: 1em 0;
+	opacity: 0;
+	color: #fff;
+	-webkit-transform: translate3d(0, -10px, 0);
+	transform: translate3d(0, -10px, 0);
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+	transition: transform 0.3s, opacity 0.3s;
+	-webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+	transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+}
+
+#email-me-btn::before {
+	content: attr(data-text);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 1em 0;
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+	transition: transform 0.3s, opacity 0.3s;
+	-webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+	transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+}
+
+#email-me-btn:hover {
+	background-color: #3f51b5;
+}
+
+#email-me-btn:hover::before {
+	opacity: 0;
+	-webkit-transform: translate3d(0, 100%, 0);
+	transform: translate3d(0, 100%, 0);
+}
+
+#email-me-btn:hover > span {
+	opacity: 1;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+
+#email-me-btn:hover > span:nth-child(1) {
+	-webkit-transition-delay: 0.045s;
+	transition-delay: 0.045s;
+}
+
+#email-me-btn:hover > span:nth-child(2) {
+	-webkit-transition-delay: 0.09s;
+	transition-delay: 0.09s;
+}
+
+#email-me-btn:hover > span:nth-child(3) {
+	-webkit-transition-delay: 0.135s;
+	transition-delay: 0.135s;
+}
+
+#email-me-btn:hover > span:nth-child(4) {
+	-webkit-transition-delay: 0.18s;
+	transition-delay: 0.18s;
+}
+
+#email-me-btn:hover > span:nth-child(5) {
+	-webkit-transition-delay: 0.225s;
+	transition-delay: 0.225s;
+}
+
+#email-me-btn:hover > span:nth-child(6) {
+	-webkit-transition-delay: 0.27s;
+	transition-delay: 0.27s;
+}
+
+#email-me-btn:hover > span:nth-child(7) {
+	-webkit-transition-delay: 0.315s;
+	transition-delay: 0.315s;
+}
+
+#email-me-btn:hover > span:nth-child(8) {
+	-webkit-transition-delay: 0.36s;
+	transition-delay: 0.36s;
+}
+
+#email-me-btn:hover > span:nth-child(9) {
+	-webkit-transition-delay: 0.405s;
+	transition-delay: 0.405s;
+}
+
+#email-me-btn:hover > span:nth-child(10) {
+	-webkit-transition-delay: 0.45s;
+	transition-delay: 0.45s;
+}
+/**-*-*-**--*-*--*-*-
+CONTACT FORM 
+*-**--*-*-*-*-*-*-*-**-*-*-*/
+.input{
+	position: relative;
+	z-index: 1;
+	display: inline-block;
+	margin: 1em;
+	width: calc(100% - 2em);
+	vertical-align: top;
+}
+
+.input #contact-message{
+	max-height: 150px;
+}
+
+.input__field {
+	position: relative;
+	display: block;
+	float: right;
+	padding: 0.8em;
+	width: 60%;
+	border: none;
+	border-radius: 0;
+	background: #f0f0f0;
+	color: black !important;
+	font-weight: bold;
+	font-size: 15px !important;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	-webkit-appearance: none; /* for box shadows to show on iOS */
+}
+
+.input__field:focus {
+	outline: none;
+}
+
+.input__label {
+	display: inline-block;
+	float: right;
+	color:black !important;
+	padding: 0 1em;
+	width: 40%;
+	color: #6a7989;
+	font-weight: bold;
+	font-size: 70.25%;
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.input__label-content {
+	position: relative;
+	display: block;
+	padding: 1.6em 0;
+	width: 100%;
+}
+
+.input--kaede {
+	display: block;
+	overflow: hidden;
+	margin: 1em auto 2em;
+	background: #EFEEEE;
+}
+
+.input__field--kaede {
+	position: absolute;
+	top: 0;
+	right: 100%;
+	width: 60%;
+	height: 100%;
+	background: #fff;
+	color: #9DABBA;
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+	-webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+	transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.input__label--kaede {
+	z-index: 10;
+	display: block;
+	width: 100%;
+	height: 100%;
+	text-align: left;
+	cursor: text;
+	-webkit-transform-origin: 0% 50%;
+	transform-origin: 0% 50%;
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+	-webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+	transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.input__label-content--kaede {
+	font-family: Raleway;
+	font-size: 15px;
+	padding: 1.5em 0;
+}
+
+.input__field--kaede:focus,
+.input--filled .input__field--kaede {
+	-webkit-transform: translate3d(100%, 0, 0);
+	transform: translate3d(100%, 0, 0);
+	-webkit-transition-delay: 0.06s;
+	transition-delay: 0.06s;
+}
+
+.input__field--kaede:focus + .input__label--kaede,
+.input--filled .input__label--kaede  {
+	-webkit-transform: translate3d(60%, 0, 0);
+	transform: translate3d(60%, 0, 0);
+	pointer-events: none;
+}
+
+@media screen and (max-width: 34em) {
+	.input__field--kaede:focus + .input__label--kaede,
+	.input--filled .input__label--kaede  {
+		-webkit-transform: translate3d(65%, 0, 0) scale3d(0.65, 0.65, 1);
+		transform: translate3d(65%, 0, 0) scale3d(0.65, 0.65, 1);
+		pointer-events: none;
+	}
+}
+
+
+
+/**--------------------------------------
+FOOTER
+------------------------------------*/

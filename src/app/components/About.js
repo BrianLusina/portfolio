@@ -13,9 +13,7 @@ const About = () => {
 
             <div className="row">
                 <div className="small-12 columns">
-                    <p className="about-text">I am <em>Brian Lusina</em>. I
-                        <span style={{textDecoration:"line-through"}}>make things</span>
-                        build websites and Android applications. I love creating products that work well, feel good and
+                    <p className="about-text">I am <em>Brian Lusina</em>. I <span style={{textDecoration:"line-through"}}>make things</span> build websites and Android applications. I love creating products that work well, feel good and
                         achieve both the end-user and the business goal.
                         <span style={{ textAlign:"center"}}>View my resume
                             <a id="resume-link"

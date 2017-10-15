@@ -43,7 +43,11 @@ const projects = [
         id:"acalc-pro-item",
         projectPage:"acalc.html",
         projectTitle:"ACalc",
-        projectShortDesc:"Small material design calculator."
+        projectShortDesc:"Small material design calculator.",
+        projectLongDesc:"Designed with simplicity in mind and compact with complexity yet very simple to navigate and interact with.",
+        projectImg:"",
+        projectUrl:"https://play.google.com/store/apps/details?id=com.netlify.thelusina.acalc",
+        projectType: "app"
     },
     {
         id:"moviereel-pro-item",

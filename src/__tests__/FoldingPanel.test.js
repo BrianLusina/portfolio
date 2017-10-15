@@ -3,7 +3,7 @@ import React from 'react';
 import { render } from "react-dom"
 import {mount, shallow, configure} from 'enzyme';
 import Adapter from "enzyme-adapter-react-16";
-import FoldingPanel from '../app/components/FoldingPanel';
+import FoldingPanel from '../app/components/foldingpanel/FoldingPanel';
 
 configure({adapter: new Adapter()});
 

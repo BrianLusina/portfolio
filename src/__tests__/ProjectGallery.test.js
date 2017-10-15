@@ -3,7 +3,7 @@ import React from 'react';
 import {render} from "react-dom";
 import {mount, shallow, configure} from 'enzyme';
 import Adapter from "enzyme-adapter-react-16";
-import ProjectList from '../app/components/projects/ProjectList';
+import ProjectList from '../app/components/projects/ProjectGallery';
 
 configure({adapter: new Adapter()});
 
@@ -13,7 +13,7 @@ function setup() {
     return shallow(<ProjectList {...props}/>);
 }
 
-describe("ProjectList should", () => {
+describe("ProjectGallery should", () => {
     let wrapper;
     beforeEach(() => {
         wrapper = setup();

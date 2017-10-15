@@ -1,6 +1,6 @@
 import React from 'react';
 import {BrowserRouter, Link, Route} from "react-router-dom";
-import ProjectList from "./projects/ProjectList";
+import ProjectList from "./projects/ProjectGallery";
 import Contact from "./contact/Contact";
 import About from "./About";
 
@@ -18,7 +18,8 @@ const Navigation = () => {
                             {/*<a href="#projects-main">Projects</a>*/}
                         </li>
                         <li>
-                            <a href="https://brianlusina.github.io" target="_blank">Blog</a>
+                            <a href="https://brianlusina.github.io" target="_blank"
+                               rel="noopener noreferrer">Blog</a>
                         </li>
                         <li>
                             <Link to="/about">About Me</Link>
@@ -29,7 +30,7 @@ const Navigation = () => {
                             {/*<a href="#contact-section">Contact</a>*/}
                         </li>
                     </ul>
-                    <span className="cd-marker color-1"></span>
+                    <span className="cd-marker color-1"/>
                 </nav>
 
                 <Route path="/projects" component={ProjectList}/>

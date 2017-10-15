@@ -58,5 +58,20 @@ describe("About should", () => {
         expect(wrapper.find("h4").text()).toEqual("Feel free to connect.");
     });
 
+    // TODO: test mouse events
+    // it("change color of i icons when mouse enters view bounds", () => {
+    //     const event = { target : {
+    //         className : "fa-twitter"
+    //     }, style : {color: "white"} };
+    //     let elementClasses = wrapper.find("i").at(0).props().className;
+    //     let faClass = elementClasses.split(" ")[1];
+    //
+    //     console.log(wrapper.find("i").at(0).props());
+    //
+    //     wrapper.find("i").at(0).simulate("mouseLeave", event);
+    //     console.log(wrapper.find("i").at(0).props());
+    //
+    //     expect(wrapper.find("i").at(0).props().hasOwnProperty("style")).toEqual(true);
+    // });
 
 });

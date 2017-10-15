@@ -3,12 +3,15 @@ import React from 'react';
 import {render} from "react-dom";
 import {mount, shallow, configure} from 'enzyme';
 import Adapter from "enzyme-adapter-react-16";
-import ProjectItem from '../app/components/projects/ProjectItem';
+import ProjectItem from '../app/components/projects/ProjectGalleryItem';
 
 configure({adapter: new Adapter()});
 
 function setup() {
     const props = {
+        onClickHandler: () => {
+
+        },
         projectId:"1",
         projectTitle:"Zenith",
         projectShortDesc:"Sample design site",
@@ -18,7 +21,7 @@ function setup() {
     return shallow(<ProjectItem {...props}/>);
 }
 
-describe("ProjectItem should", () => {
+describe("ProjectGalleryItem should", () => {
     let wrapper;
     beforeEach(() => {
         wrapper = setup();

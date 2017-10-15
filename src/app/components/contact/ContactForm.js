@@ -29,7 +29,7 @@ export default class ContactForm extends Component {
             // resolve
             swal({
                 title:"Thanks for the email",
-                text:"I\'ll be in touch promptly.",
+                text:"I'll be in touch promptly.",
                 icon:"success",
                 buttons:["Aww Yeah!"],
                 timer: 2500,

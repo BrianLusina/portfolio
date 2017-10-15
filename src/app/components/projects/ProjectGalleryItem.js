@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 /**
- * ProjectItem stateless component
+ * ProjectGalleryItem stateless component
  */
-const ProjectItem = ({onClickHandler, projectId, projectTitle, projectShortDesc, projectPageLink}) => {
+const ProjectGalleryItem = ({onClickHandler, projectId, projectTitle, projectShortDesc, projectPageLink}) => {
     return (
         <li id={projectId} className="cd-item">
             <a href={projectPageLink} onClick={onClickHandler}>
@@ -21,7 +21,7 @@ const ProjectItem = ({onClickHandler, projectId, projectTitle, projectShortDesc,
 /**
  * Prop validation
  */
-ProjectItem.propTypes = {
+ProjectGalleryItem.propTypes = {
     onClickHandler: PropTypes.func.isRequired,
     projectId: PropTypes.string.isRequired,
     projectTitle: PropTypes.string.isRequired,
@@ -29,4 +29,4 @@ ProjectItem.propTypes = {
     projectPageLink: PropTypes.string.isRequired
 };
 
-export default ProjectItem;
+export default ProjectGalleryItem;

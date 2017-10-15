@@ -1,6 +1,7 @@
 import React from 'react';
 import $ from "jquery";
 import PropTypes from "prop-types";
+import FoldingPanelItem from "./FoldingPanelItem";
 
 /**
  * FoldingPanel stateless component
@@ -24,10 +25,16 @@ const FoldingPanel = ({ onFoldingPanelToggle }) => {
 
             <div className="fold-right"/>
 
+            {/*Content will be filled using JS*/}
             <div className="cd-fold-content">
-                {/*Content will be filled using JS*/}
+                <FoldingPanelItem
+                    projectTitle={"Acalc"}
+                    projectLongDesc={"material design calc"}
+                    projectUrl={"some long url"}
+                    projectImg={""}
+                    projectType={"app"}/>
             </div>
-            <a className="cd-close" href="#0" onClick={closeFoldingPanel}/>
+            <a className="cd-close" href="#" onClick={closeFoldingPanel}/>
         </div>
     );
 };

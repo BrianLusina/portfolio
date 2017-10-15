@@ -4,7 +4,7 @@
  */
 
 import React, {Component} from 'react';
-import ProjectItem from "./ProjectItem";
+import ProjectGalleryItem from "./ProjectGalleryItem";
 import {getAllLocalProjects} from "../../api/lusinaProjectsApi";
 import $ from "jquery";
 import PropTypes from "prop-types";
@@ -28,7 +28,7 @@ class ProjectGallery extends Component {
      * */
     createProjectList() {
         return this.state.projects.map((item, index) => {
-            return <ProjectItem
+            return <ProjectGalleryItem
                 key={index}
                 onClickHandler={this.onOpenProjectInfo}
                 projectShortDesc={item.projectShortDesc}
@@ -45,7 +45,7 @@ class ProjectGallery extends Component {
      * */
     onOpenProjectInfo(event) {
         event.preventDefault();
-        const target = event.target;
+        // const target = event.target;
         let mq = this.props.viewportSize;
         let gallery = $('.cd-gallery');
 
@@ -55,7 +55,7 @@ class ProjectGallery extends Component {
             $('body,html').animate({
                 'scrollTop': gallery.offset().top
             }, 100, function () {
-                this.props.onToggleFoldingPanel(/*url,*/ true);
+                this.props.onToggleFoldingPanel(true);
             });
         } else if (gallery.offset().top + gallery.height() < $(window).scrollTop() + $(window).height() && mq !== 'mobile') {
             /* if content is visible below the .cd-gallery - scroll before opening the
@@ -63,7 +63,7 @@ class ProjectGallery extends Component {
             $('body,html').animate({
                 'scrollTop': gallery.offset().top + gallery.height() - $(window).height()
             }, 100, function () {
-                this.props.onToggleFoldingPanel(/*url,*/ true);
+                this.props.onToggleFoldingPanel(true);
             });
         } else {
             this.props.onToggleFoldingPanel(true);
@@ -80,7 +80,7 @@ class ProjectGallery extends Component {
      * */
     closeFoldingPanel(event) {
         const target = event.target;
-        if ($(event.target).is('.cd-gallery') && $('.fold-is-open').length > 0) {
+        if ($(target).is('.cd-gallery') && $('.fold-is-open').length > 0) {
             this.props.onToggleFoldingPanel(false);
         }
         // this.props.onToggleFoldingPanel(false);
@@ -110,7 +110,7 @@ class ProjectGallery extends Component {
 
 ProjectGallery.propTypes = {
     onToggleFoldingPanel: PropTypes.func.isRequired,
-    viewPortSize: PropTypes.number.isRequired
+    viewPortSize: PropTypes.string.isRequired
 };
 
 export default ProjectGallery;

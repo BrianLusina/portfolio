@@ -12,7 +12,7 @@ const Header = () => {
             </a>
             <a href="#" className="cd-3d-nav-trigger">
                 Menu
-                <span></span>
+                <span/>
             </a>
         </header>
     );

@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import About from "./components/About";
 import Contact from "./components/contact/Contact";
 import Navigation from "./components/Navigation";
-import FoldingPanel from "./components/FoldingPanel";
+import FoldingPanel from "./components/foldingpanel/FoldingPanel";
 import ProjectGallery from "./components/projects/ProjectGallery";
 import $ from "jquery";
 
@@ -46,15 +46,19 @@ class App extends Component {
         if(isFoldingPanelOpen){
             /* load and show new content */
             let foldingContent = foldingPanel.find('.cd-fold-content');
-            foldingContent.load(/*url + */' .cd-fold-content > *', function (event) {
-                setTimeout(function () {
-                    $('body').addClass('overflow-hidden');
-                    foldingPanel.addClass('is-open');
-                    mainContent.addClass('fold-is-open');
-                }, 100);
-            });
+            setTimeout(function () {
+                $('body').addClass('overflow-hidden');
+                foldingPanel.addClass('is-open');
+                mainContent.addClass('fold-is-open');
+            }, 100);
+            // foldingContent.load(/*url + */' .cd-fold-content > *', function (event) {
+            //     setTimeout(function () {
+            //         $('body').addClass('overflow-hidden');
+            //         foldingPanel.addClass('is-open');
+            //         mainContent.addClass('fold-is-open');
+            //     }, 100);
+            // });
         } else {
-            let mainContent = $(".cd-main");
             mainContent.removeClass('fold-is-open');
             let mq = this.state.viewportSize;
 

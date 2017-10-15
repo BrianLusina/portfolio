@@ -9,6 +9,9 @@ configure({adapter: new Adapter()});
 
 function setup() {
     const props = {
+        onClickHandler: () => {
+
+        },
         projectId:"1",
         projectTitle:"Zenith",
         projectShortDesc:"Sample design site",

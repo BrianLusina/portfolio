@@ -1,6 +1,6 @@
 import React from 'react';
 import {BrowserRouter, Link, Route} from "react-router-dom";
-import ProjectList from "./projects/ProjectList";
+import ProjectList from "./projects/ProjectGallery";
 import Contact from "./contact/Contact";
 import About from "./About";
 

@@ -1,10 +1,12 @@
 {
-  "name": "brianlusina.surge.sh",
-  "version": "1.0.0",
-  "description": "Brian Lusina's Portfolio site",
-  "main": "index.js",
+  "name": "thelusina",
+  "version": "2.0.0",
+  "description": "Lusina's Portfolio",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "repository": {
     "type": "git",
@@ -21,11 +23,44 @@
   },
   "homepage": "https://github.com/BrianLusina/brianlusina#readme",
   "devDependencies": {
-    "git-scripts": "^0.4.3"
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.53",
+    "@types/react-dom": "^16.9.8",
+    "git-scripts": "^0.4.3",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.1",
+    "typescript": "^4.0.3",
+    "web-vitals": "^0.2.4"
   },
   "git": {
     "scripts": {
       "pre-push": "surge --project . --domain brianlusina.surge.sh"
     }
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "react-helmet": "^6.1.0"
   }
 }

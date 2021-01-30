@@ -229,16 +229,16 @@ Main Components
 }
 /*Projects*/
 .cd-3d-nav li:first-of-type a::before {
-  background-image: url(../img/icon-2.svg);
+  background-image: url(../../assets/images/icon-2.svg);
 }
 
 /*Blog*/
 .cd-3d-nav li:nth-of-type(2) a::before {
-  background-image: url(../img/icon-1.svg);
+  background-image: url(../../assets/images/icon-1.svg);
 }
 /*about me*/
 .cd-3d-nav li:nth-of-type(3) a::before {
-  background-image: url(../img/icon-4.svg);
+  background-image: url(../../assets/images/icon-4.svg);
 }
 
 /*contact*/

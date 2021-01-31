@@ -21,7 +21,6 @@
   "bugs": {
     "url": "https://github.com/BrianLusina/brianlusina/issues"
   },
-  "homepage": "https://github.com/BrianLusina/brianlusina#readme",
   "devDependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",

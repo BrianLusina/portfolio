@@ -1,0 +1,39 @@
+[
+    {
+        "id": "menu-project",
+        "link": "",
+        "title": "Menu",
+        "description": "Restaurant website"
+    },
+    {
+        "id": "emerald",
+        "link": "emerald",
+        "title": "Emerald",
+        "classname": "dark-text",
+        "description": "Sample website for a design agency"
+    },
+    {
+        "id": "finance-village",
+        "link": "finance-village",
+        "title": "Finance Village",
+        "description": "Kenyan financial market information hub."
+    },
+    {
+        "id": "zenith",
+        "link": "zenith",
+        "title": "Zenith",
+        "description": "Sample portfolio site for tech company"
+    },
+    {
+        "id": "mini-wiki",
+        "link": "mini-wiki",
+        "title": "Mini Wiki",
+        "description": "Small website mirroring Wikipedia"
+    },
+    {
+        "id": "acalc",
+        "link": "acalc",
+        "title": "ACalc",
+        "description": "Small Material Design Calculator"
+    }
+]

@@ -1,19 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/Header';
+import Navigation from './components/navigation/Navigation';
+import FoldingPanel from './components/FoldingPanel';
+import Contact from './components/contact/Contact';
+import About from './components/about/About';
+import ProjectList from './components/projects/ProjectList';
 
 function App() {
   return (
-    <div className="App">
-      <header className="cd-header">
-        <a href="/index.html" className="cd-logo rolling-links">
-          <span data-hover="A Designer">The Lusina</span></a>
-        <a href="#0" className="cd-3d-nav-trigger">
-          Menu
-          <span></span>
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <main className="cd-main" id="projects-main">
+        <ProjectList />
+        <About />
+        <hr />
+        <Contact />
+      </main>
+      <Navigation />
+      <FoldingPanel />
+    </>
   );
 }
 

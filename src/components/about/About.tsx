@@ -13,8 +13,8 @@ const About = () => {
             {/* <!--about me text--> */}
             <div className="row">
                 <div className="small-12 columns">
-                    <p className="about-text">I am <em>Brian Lusina</em>. I <span style={{ textDecoration: "line-through"}}>make things</span> build websites and Android applications. I love creating products that work well, feel good and achieve both the end-user and the business goal.
-                        <span style={{ textAlign:"center" }}>View my resume <a id="resume-link" href="http://lusinaresume.netlify.com/" target="_blank">here</a></span>
+                    <p className="about-text">I am <em>Brian Lusina</em>. I <span style={{ textDecoration: "line-through"}}>make things</span> build systems, websites and applications. I love creating products that work well, feel good and achieve both the end-user and the business goal.
+                        <span style={{ textAlign:"center" }}>View my resume <a id="resume-link" href="http://lusinaresume.netlify.com/" target="_blank" rel="noreferrer">here</a></span>
                     </p>
                 </div>
             </div>
@@ -43,11 +43,6 @@ const About = () => {
                 {/* <!--medium--> */}
                 <a href="https://medium.com/@brianlusina" className="social-links">
                     <i className="fa fa-medium fa-2x"></i>
-                </a>
-
-                {/* google plus */}
-                <a href="https://plus.google.com/102302755150765254402" className="social-links">
-                    <i className="fa fa-google-plus fa-2x"></i>
                 </a>
 
                 {/* code pen */}

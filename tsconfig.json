@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "baseUrl": "src",
+    "target": "es6",
     "lib": [
       "dom",
       "dom.iterable",
@@ -22,5 +23,11 @@
   },
   "include": [
     "src"
+, "scripts/ts/setupTests.ts"  ],
+  "exclude": [
+    "src/**/*.story.mdx",
+    "src/**/*.story.@(js|jsx|ts|tsx)",
+    "src/**/*.stories.mdx",
+    "src/**/*.stories.@(js|jsx|ts|tsx)",
   ]
 }

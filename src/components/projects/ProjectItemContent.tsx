@@ -1,21 +1,23 @@
 import React from 'react'
 
 interface Props {
-    body: string;
+    title: string;
+    description: string;
+    longDescription: string;
+    link: string;
+    imageUrl: string;
 }
 
-const ProjectItemContent = ({ body }: Props) => {
+const ProjectItemContent = ({ title, description, longDescription, imageUrl, link }: Props) => {
     return (
         <div className="cd-fold-content single-page">
-            <h2>ACalc</h2>
-            <em>A simple Material design calculator.</em>
-            <p>A small pocket friendly material design calculator build with material design principles</p>
-            <img src="img/pro-shots/acalc_screenshot.png" />
-            <p>
-                Designed with simplicity in mind and compact with complexity yet very simple to navigate and interact with.
+            <h2>{title}</h2>
+            <p>{description}</p>
+            <img src={imageUrl} />
+            <p>{longDescription}</p>
+            <p style={{ textAlign: "center"}}>Access project
+                <a href={link}>here</a>
             </p>
-            {/* <p style="text-align:center">Download the app <a href="https://play.google.com/store/apps/details?id=com.netlify.thelusina.acalc">here</a>
-            </p> */}
         </div>
     )
 }

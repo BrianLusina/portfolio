@@ -5,7 +5,7 @@ module.exports = function proxy(app) {
   app.use(
     '/api',
     createProxyMiddleware({
-      target: process.env.API_URL,
+      target: 'http://example.com',
       changeOrigin: true,
     }),
   );

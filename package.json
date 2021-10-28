@@ -31,17 +31,6 @@
     "git-scripts": "^0.4.3",
     "typescript": "^4.0.3"
   },
-  "git": {
-    "scripts": {
-      "pre-push": "surge --project . --domain brianlusina.surge.sh"
-    }
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",

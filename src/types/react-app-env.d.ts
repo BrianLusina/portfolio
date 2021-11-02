@@ -4,8 +4,19 @@
 
 declare namespace NodeJS {
   interface ProcessEnv {
+    readonly ENV: 'development' | 'staging' | 'test' | 'production';
     readonly NODE_ENV: 'development' | 'production' | 'test';
     readonly PUBLIC_URL: string;
+    readonly SENTRY_DSN: string;
+    readonly API_KEY: string;
+    readonly AUTH_DOMAIN: string;
+    readonly PROJECT_ID: string;
+    readonly STORAGE_BUCKET: string;
+    readonly MESSAGING_SENDER_ID: string;
+    readonly APP_ID: string;
+    readonly GITHUB_GRAPHQL_URL: string;
+    readonly GITHUB_REST_API_URL: string;
+    readonly GITHUB_TOKEN: string;
   }
 }
 

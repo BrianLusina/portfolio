@@ -19,7 +19,17 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "paths": {
+      "@app": ["App.tsx"],
+      "@config": ["config/index.ts"],
+      "@apiConfig": ["config/api.ts"],
+      "@graphQl/*": ["api/graphql/*"],
+      "@graphQlClient": ["api/graphql/GraphqlClient.ts"],
+      "@providers/*": ["providers/*"],
+      "@components/*": ["components/*"],
+      "@containers/*": ["containers/*"]
+    }
   },
   "include": [
     "src"

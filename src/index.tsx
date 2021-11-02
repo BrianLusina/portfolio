@@ -1,25 +1,21 @@
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
+import GraphqlProvider from './providers/graphql/GraphqlProvider';
+import GraphqlClient from './api/graphql/GraphqlClient';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-// import './styles/css/font-awesome/css/font-awesome.min.css';
-// import './styles/css/ionicons/css/ionicons.min.css';
-// import './styles/css/foundation/foundation.min.css';
-// import './styles/css/main.css';
-// import './styles/css/reset.css';
-// import './styles/css/dist/sweetalert.css';
-// import './styles/css/3d-panelstyles.css';
-// import './styles/css/3d-nav.css';
 import './styles/css/animate.min.css';
 import './styles/css/noscript.css';
 import './styles/css/index.css';
 
 ReactDOM.render(
   <StrictMode>
-    <Router>
-      <App />
-    </Router>
+    <GraphqlProvider client={GraphqlClient}>
+      <Router>
+        <App />
+      </Router>
+    </GraphqlProvider>
   </StrictMode>,
   document.getElementById('root'),
 );

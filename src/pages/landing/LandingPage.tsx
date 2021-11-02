@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import ProjectList from 'components/projects';
+import ProjectList from '@containers/projects';
 
 const LandingPage: FunctionComponent = () => {
   return (

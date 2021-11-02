@@ -1,4 +1,5 @@
 import { FunctionComponent } from 'react';
+import { Link } from 'react-router-dom';
 
 const Menu: FunctionComponent = () => {
   return (
@@ -6,7 +7,7 @@ const Menu: FunctionComponent = () => {
       <h2>Menu</h2>
       <ul>
         <li>
-          <a href="index.html">Home</a>
+          <Link to="/">Home</Link>
         </li>
         <li>
           <a href="generic.html">Ipsum veroeros</a>

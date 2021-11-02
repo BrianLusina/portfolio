@@ -11,7 +11,7 @@ const Footer: FunctionComponent = () => {
         <ul className="copyright">
           <li>&copy; TheLusina. All rights reserved</li>
           <li>
-            Design: <a href="http://html5up.net">HTML5 UP</a>
+            OSS: <a href="https://github.com/BrianLusina/portfolio">Portfolio</a>
           </li>
         </ul>
       </div>

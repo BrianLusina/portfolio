@@ -1,13 +1,15 @@
 import { FunctionComponent } from 'react';
+import { Link } from 'react-router-dom';
+import logo from './logo.svg';
 
 const Logo: FunctionComponent = () => {
   return (
-    <a href="index.html" className="logo">
+    <Link to="/" className="logo">
       <span className="symbol">
-        <img src="images/logo.svg" alt="" />
+        <img src={logo} alt="Liber Logo" />
       </span>
-      <span className="title">Phantom</span>
-    </a>
+      <span className="title">Liber</span>
+    </Link>
   );
 };
 

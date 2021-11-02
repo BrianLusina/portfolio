@@ -1,6 +1,8 @@
 export type TileProps = {
+  className?: string;
   title: string;
   description: string;
-  className?: string;
   onClick: () => void;
+  link: string;
+  poster?: string;
 };

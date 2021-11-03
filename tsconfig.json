@@ -24,11 +24,14 @@
       "@app": ["App.tsx"],
       "@config": ["config/index.ts"],
       "@apiConfig": ["config/api.ts"],
+      "@routes": ["config/routes.ts"],
       "@graphQl/*": ["api/graphql/*"],
       "@graphQlClient": ["api/graphql/GraphqlClient.ts"],
       "@providers/*": ["providers/*"],
       "@components/*": ["components/*"],
-      "@containers/*": ["containers/*"]
+      "@containers/*": ["containers/*"],
+      "@pages/*": ["pages/*"],
+      "@layouts/*": ["layouts/*"],
     }
   },
   "include": [

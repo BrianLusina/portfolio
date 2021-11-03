@@ -1,15 +1,24 @@
-import { FunctionComponent } from 'react';
+import { Suspense, FunctionComponent } from 'react';
+import { Switch } from 'react-router-dom';
 import Menu from 'components/menu';
 import Footer from 'components/footer';
 import Header from 'components/header';
-import LandingPage from 'pages/landing';
+import MainLayout from '@layouts/MainLayout';
+import AppRoutes from 'routes/AppRoutes';
+import PageLoader from '@components/loaders/PageLoader';
 
 const App: FunctionComponent = () => {
   return (
     <div id="wrapper">
       <Header />
       <Menu />
-      <LandingPage />
+      <MainLayout>
+        <Suspense fallback={<PageLoader />}>
+          <Switch>
+            <AppRoutes />
+          </Switch>
+        </Suspense>
+      </MainLayout>
       <Footer />
     </div>
   );

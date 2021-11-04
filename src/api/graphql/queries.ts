@@ -1,9 +1,9 @@
 import { gql, DocumentNode } from '@apollo/client';
 
-export const GET_REPOSITORIES = (first = 10): DocumentNode => gql`
-  query GetRepositories {
+export const GET_REPOSITORIES = gql`
+  query GetRepositories($direction: OrderDirection!, $field: RepositoryOrderField!, $first: Int!) {
     viewer {
-      repositories(orderBy: { direction: ASC, field: NAME }, first: ${first}) {
+      repositories(orderBy: { direction: $direction, field: $field }, first: $first) {
         nodes {
           name
           description
@@ -24,6 +24,11 @@ export const GET_REPOSITORY = (repositoryName: string, owner: string): DocumentN
       name
       description
       url
+      object(expression: "HEAD:README.md") {
+        ... on Blob {
+          text
+        }
+      }
       owner {
         login
         avatarUrl

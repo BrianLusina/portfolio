@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
-import Logo from 'components/logo';
-import Navigation from 'components/navigation';
+import Logo from '@components/logo';
+import Navigation from '@components/navigation';
 
 const Header: FunctionComponent = () => {
   return (

@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
-import Contact from 'components/contact';
-import SocialCard from 'components/socialcard';
+import Contact from '@components/contact';
+import SocialCard from '@components/socialcard';
 
 const Footer: FunctionComponent = () => {
   return (

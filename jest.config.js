@@ -119,6 +119,7 @@ module.exports = {
     '^@pages/(.*)$': '<rootDir>/src/pages/$1',
     '^@layouts/(.*)$': '<rootDir>/src/layouts/$1',
     '^@routes': '<rootDir>/src/config/routes.ts',
+    '^@utils': '<rootDir>/src/utils/utils.ts',
   },
   moduleFileExtensions: [
     'web.js',

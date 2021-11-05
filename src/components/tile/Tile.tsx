@@ -1,22 +1,21 @@
 import { FunctionComponent } from 'react';
 import { Link } from 'react-router-dom';
 import { TileProps } from './Tile.types';
+import TileThumbnail from './TileThumbnail.jpg';
 
 const Tile: FunctionComponent<TileProps> = ({
-  className = '',
+  className,
   title,
   description,
-  onClick,
   link,
   poster,
 }: TileProps) => {
   return (
-    <article className={`${className} style1`}>
+    <article className={`${className || 'tile'}`}>
       <span className="image">
-        {/* TODO: provide fallback image */}
-        <img src={poster} alt={title} />
+        <img src={poster || TileThumbnail} alt={title} />
       </span>
-      <Link to={link} onClick={onClick}>
+      <Link to={link}>
         <h2>{title}</h2>
         <div className="content">
           <p>{description}</p>

@@ -32,6 +32,7 @@
       "@containers/*": ["containers/*"],
       "@pages/*": ["pages/*"],
       "@layouts/*": ["layouts/*"],
+      "@utils": ["utils/utils.ts"],
     }
   },
   "include": [

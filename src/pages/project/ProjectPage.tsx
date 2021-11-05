@@ -1,36 +1,48 @@
+import { useQuery } from '@apollo/client';
+import { GET_REPOSITORY } from '@graphQl/queries';
+import { unsluggify } from '@utils';
 import { FunctionComponent } from 'react';
+import { useParams } from 'react-router-dom';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import ProjectImage from './ProjectImage.jpg';
 
 const ProjectPage: FunctionComponent = () => {
+  const { slug } = useParams<RoutingProjectItemParams>();
+
+  const { loading, error, data } = useQuery<GetRepositoryData, GetRepositoryVariables>(
+    GET_REPOSITORY,
+    {
+      variables: {
+        name: slug,
+        owner: 'BrianLusina',
+      },
+    },
+  );
+
+  // TODO: loading indicator
+  if (loading) return <div>Loading...</div>;
+
+  // TODO: error view
+  if (error) return <div>Error :(</div>;
+
+  // TODO: 404 PAGE
+  if (!data) return <div>Nothing found</div>;
+
+  const { repository } = data;
+  const { name, description, url, object } = repository;
+
   return (
     <>
-      <h1>Generic Page</h1>
+      <h1>{unsluggify(name)}</h1>
       <span className="image main">
-        <img src="images/pic13.jpg" alt="" />
+        <img src={ProjectImage} alt={slug} />
       </span>
+      <p>{description}</p>
+      <br />
+      <ReactMarkdown remarkPlugins={[remarkGfm]}>{object.text}</ReactMarkdown>
       <p>
-        Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-        Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam,
-        vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet,
-        fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in
-        purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum
-        convallis elit. Pellentesque enim turpis, hendrerit tristique.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis.
-        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-        Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula
-        viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet
-        venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in
-        lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-        egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus,
-        vel venenatis mauris vehicula hendrerit.
-      </p>
-      <p>
-        Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor
-        imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit
-        amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget
-        turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem
-        ipsum dolor.
+        View full project on <a href={url}>GitHub</a>
       </p>
     </>
   );

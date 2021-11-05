@@ -1,4 +1,4 @@
-import { gql, DocumentNode } from '@apollo/client';
+import { gql } from '@apollo/client';
 
 export const GET_REPOSITORIES = gql`
   query GetRepositories($direction: OrderDirection!, $field: RepositoryOrderField!, $first: Int!) {
@@ -18,9 +18,9 @@ export const GET_REPOSITORIES = gql`
   }
 `;
 
-export const GET_REPOSITORY = (repositoryName: string, owner: string): DocumentNode => gql`
-  query GetRepository {
-    repository(name: ${repositoryName}, owner: ${owner}) {
+export const GET_REPOSITORY = gql`
+  query GetRepository($name: String!, $owner: String!) {
+    repository(name: $name, owner: $owner) {
       name
       description
       url

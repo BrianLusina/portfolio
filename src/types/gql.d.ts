@@ -8,6 +8,7 @@ declare type RepositoryObject = {
     description: string;
     url: string;
     owner: RepositoryOwner
+    object: any
 }
 
 declare type GetRepositoriesData = {
@@ -18,8 +19,17 @@ declare type GetRepositoriesData = {
     }
 }
 
+declare type GetRepositoryData = {
+    repository: RepositoryObject
+}
+
 declare type GetRepositoriesVariables = {
     direction: 'ASC' | 'DESC';
     field: 'NAME' | 'CREATED_AT' | 'UPDATED_AT' | 'STARGAZERS' | 'PUSHED_AT';
     first: number;
+}
+
+declare type GetRepositoryVariables = {
+    owner: string;
+    name: string;
 }

@@ -2,6 +2,7 @@ import { FunctionComponent } from 'react';
 import Tile from '@components/tile';
 import { useQuery } from '@apollo/client';
 import { GET_REPOSITORIES } from '@graphQl/queries';
+import { randomlyPickCssClass } from './utils';
 
 const ProjectList: FunctionComponent = () => {
   const { loading, error, data } = useQuery<GetRepositoriesData, GetRepositoriesVariables>(
@@ -27,13 +28,10 @@ const ProjectList: FunctionComponent = () => {
         data.viewer.repositories.nodes.map(({ name, description }) => (
           <Tile
             key={name}
+            className={randomlyPickCssClass()}
             title={name}
             description={description}
             link={name}
-            poster=""
-            onClick={() => {
-              console.log('handleOpenProjectItem');
-            }}
           />
         ))}
     </section>

@@ -1,6 +1,7 @@
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { initializeMonitoring } from '@monitoring';
 import GraphqlProvider from './providers/graphql/GraphqlProvider';
 import GraphqlClient from './api/graphql/GraphqlClient';
 import App from './app';
@@ -8,6 +9,8 @@ import reportWebVitals from './reportWebVitals';
 import './styles/css/animate.min.css';
 import './styles/css/noscript.css';
 import './styles/css/index.css';
+
+initializeMonitoring();
 
 ReactDOM.render(
   <StrictMode>

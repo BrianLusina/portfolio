@@ -92,6 +92,16 @@ function getClientEnvironment(publicUrl) {
         GITHUB_GRAPHQL_URL: process.env.GITHUB_GRAPHQL_URL,
         GITHUB_REST_API_URL: process.env.GITHUB_REST_API_URL,
         GITHUB_TOKEN: process.env.GITHUB_TOKEN,
+        NAME: process.env.NAME,
+        TITLE: process.env.TITLE,
+        OWNER: process.env.OWNER,
+        SENTRY_DSN: process.env.SENTRY_DSN,
+        AUTH_DOMAIN: process.env.AUTH_DOMAIN,
+        PROJECT_ID: process.env.PROJECT_ID,
+        STORAGE_BUCKET: process.env.STORAGE_BUCKET,
+        MESSAGING_SENDER_ID: process.env.MESSAGING_SENDER_ID,
+        APP_ID: process.env.APP_ID,
+        MEASUREMENT_ID: process.env.MEASUREMENT_ID,
       },
     );
   // Stringify all values so we can feed into webpack DefinePlugin

@@ -33,6 +33,9 @@
       "@pages/*": ["pages/*"],
       "@layouts/*": ["layouts/*"],
       "@utils": ["utils/utils.ts"],
+      "@hooks/*": ["hooks/*"],
+      "@services/*": ["services/*"],
+      "@monitoring": ["services/monitoring/index.ts"]
     }
   },
   "include": [

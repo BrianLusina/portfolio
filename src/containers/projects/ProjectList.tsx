@@ -25,13 +25,13 @@ const ProjectList: FunctionComponent = () => {
   return (
     <section className="tiles">
       {data &&
-        data.viewer.repositories.nodes.map(({ name, description }) => (
+        data.viewer.repositories.nodes.map(({ name, description, owner: { login } }) => (
           <Tile
             key={name}
             className={randomlyPickCssClass()}
             title={name}
             description={description}
-            link={name}
+            link={`${name}?owner=${login}`}
           />
         ))}
     </section>

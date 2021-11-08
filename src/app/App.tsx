@@ -7,6 +7,8 @@ import MainLayout from '@layouts/MainLayout';
 import PageLoader from '@components/loaders/PageLoader';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import ScrollToTop from '@components/scrolltotop';
+import { withProfiler } from '@sentry/react';
+import config from '@config';
 import AppRoutes from '../routes/AppRoutes';
 import './app.css';
 
@@ -36,4 +38,6 @@ const App: FunctionComponent = () => {
   );
 };
 
-export default App;
+// Profiler
+// Ref: https://docs.sentry.io/platforms/javascript/guides/react/components/profiler/
+export default withProfiler(App, { name: config.name });

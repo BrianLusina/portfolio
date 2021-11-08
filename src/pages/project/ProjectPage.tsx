@@ -5,17 +5,21 @@ import { FunctionComponent } from 'react';
 import { useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import useParseQuery from '@hooks/useParseQuery';
+import config from '@config';
 import ProjectImage from './ProjectImage.jpg';
 
 const ProjectPage: FunctionComponent = () => {
   const { slug } = useParams<RoutingProjectItemParams>();
+  const query = useParseQuery();
+  const owner = query.get('owner');
 
   const { loading, error, data } = useQuery<GetRepositoryData, GetRepositoryVariables>(
     GET_REPOSITORY,
     {
       variables: {
         name: slug,
-        owner: 'BrianLusina',
+        owner: owner || config.owner,
       },
     },
   );

@@ -120,6 +120,9 @@ module.exports = {
     '^@layouts/(.*)$': '<rootDir>/src/layouts/$1',
     '^@routes': '<rootDir>/src/config/routes.ts',
     '^@utils': '<rootDir>/src/utils/utils.ts',
+    '^@hooks/(.*)$': '<rootDir>/src/hooks/$1',
+    '^@services/(.*)$': '<rootDir>/src/services/$1',
+    '^@monitoring': '<rootDir>/src/services/monitoring/index.ts',
   },
   moduleFileExtensions: [
     'web.js',

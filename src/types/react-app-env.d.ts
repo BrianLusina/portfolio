@@ -17,6 +17,9 @@ declare namespace NodeJS {
     readonly GITHUB_GRAPHQL_URL: string;
     readonly GITHUB_REST_API_URL: string;
     readonly GITHUB_TOKEN: string;
+    readonly NAME: string,
+    readonly TITLE: string,
+    readonly OWNER: string,
   }
 }
 

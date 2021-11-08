@@ -21,7 +21,7 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "paths": {
-      "@app": ["App.tsx"],
+      "@app": ["app/index.ts"],
       "@config": ["config/index.ts"],
       "@apiConfig": ["config/api.ts"],
       "@routes": ["config/routes.ts"],

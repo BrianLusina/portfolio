@@ -108,7 +108,7 @@ module.exports = {
   moduleNameMapper: {
     '^react-native$': 'react-native-web',
     '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
-    '^@app': '<rootDir>/src/App.tsx',
+    '^@app': '<rootDir>/src/app/index.ts',
     '^@config': '<rootDir>/src/config/index.ts',
     '^@apiConfig': '<rootDir>/src/config/api.ts',
     '^@graphQl/(.*)$': '<rootDir>/src/api/graphql/$1',

@@ -30,3 +30,4 @@ yarn-error.log*
 !bin
 bin/hadolint
 bin/trivy
+.eslintcache

@@ -10,14 +10,14 @@ import ScrollToTop from '@components/scrolltotop';
 import { withProfiler } from '@sentry/react';
 import config from '@config';
 import AppRoutes from '../routes/AppRoutes';
-import './app.css';
+import { AppWrapper } from './styles';
 
 const App: FunctionComponent = () => {
   const location = useLocation();
 
   return (
     <>
-      <div id="wrapper">
+      <AppWrapper id="wrapper">
         <Header />
         <MainLayout>
           <ScrollToTop />
@@ -32,7 +32,7 @@ const App: FunctionComponent = () => {
           </Suspense>
         </MainLayout>
         <Footer />
-      </div>
+      </AppWrapper>
       <Menu />
     </>
   );

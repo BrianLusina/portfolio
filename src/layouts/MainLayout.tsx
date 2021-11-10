@@ -1,10 +1,21 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, ReactNode } from 'react';
+import { Helmet } from 'react-helmet';
 
-const MainLayout: FunctionComponent = ({ children }) => {
+type MainLayoutProps = {
+  title?: string;
+  children: ReactNode;
+};
+
+const MainLayout: FunctionComponent<MainLayoutProps> = ({ title, children }: MainLayoutProps) => {
   return (
-    <main id="main">
-      <div className="inner">{children}</div>
-    </main>
+    <>
+      <Helmet>
+        <title>{title}</title>
+      </Helmet>
+      <main id="main">
+        <div className="inner">{children}</div>
+      </main>
+    </>
   );
 };
 

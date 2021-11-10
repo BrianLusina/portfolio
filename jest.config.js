@@ -123,6 +123,11 @@ module.exports = {
     '^@hooks/(.*)$': '<rootDir>/src/hooks/$1',
     '^@services/(.*)$': '<rootDir>/src/services/$1',
     '^@monitoring': '<rootDir>/src/services/monitoring/index.ts',
+    '^@testUtils/(.*)$': '<rootDir>/src/test/$1',
+    '^@styles/(.*)$': '<rootDir>/src/styles/$1',
+    '^@styled/(.*)$': '<rootDir>/src/styles/ts/$1',
+    '^@scss/(.*)$': '<rootDir>/src/styles/scss/$1',
+    '^@css/(.*)$': '<rootDir>/src/styles/css/$1',
   },
   moduleFileExtensions: [
     'web.js',

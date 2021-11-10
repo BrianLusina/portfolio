@@ -1,7 +1,10 @@
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import { initializeMonitoring } from '@monitoring';
+import config from '@config';
+import ErrorBoundary from '@components/errors/PageErrorBoundary';
 import GraphqlProvider from './providers/graphql/GraphqlProvider';
 import GraphqlClient from './api/graphql/GraphqlClient';
 import App from './app';
@@ -15,9 +18,12 @@ initializeMonitoring();
 ReactDOM.render(
   <StrictMode>
     <GraphqlProvider client={GraphqlClient}>
-      <Router>
-        <App />
-      </Router>
+      <Helmet titleTemplate={`${config.title} | %s `} defaultTitle={`${config.title}`} />
+      <ErrorBoundary>
+        <Router>
+          <App />
+        </Router>
+      </ErrorBoundary>
     </GraphqlProvider>
   </StrictMode>,
   document.getElementById('root'),

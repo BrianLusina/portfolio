@@ -1,15 +1,16 @@
+import config from '@config';
 import { FunctionComponent } from 'react';
-import { Link } from 'react-router-dom';
+import { LogoProps } from './Logo.interface';
 import logo from './logo.svg';
 
-const Logo: FunctionComponent = () => {
+const Logo: FunctionComponent<LogoProps> = ({ icon }: LogoProps) => {
   return (
-    <Link to="/" className="logo">
+    <a href="/" className="logo">
       <span className="symbol">
-        <img src={logo} alt="Liber Logo" />
+        <img src={(icon as string) || logo} alt="Liber Logo" />
       </span>
-      <span className="title">Liber</span>
-    </Link>
+      <span className="title">{config.title}</span>
+    </a>
   );
 };
 

@@ -1,30 +1,31 @@
 import { FunctionComponent } from 'react';
+import { SocialCardProps } from './SocialCard.interface';
+import socialCardItems from './constants';
+import {
+  SocialCardLink,
+  SocialCardList,
+  SocialCardListItem,
+  SocialCardSpan,
+  SocialCardTitle,
+  SocialCardWrapper,
+} from './styles';
 
-const SocialCard: FunctionComponent = () => {
+const SocialCard: FunctionComponent<SocialCardProps> = ({
+  items = socialCardItems,
+}: SocialCardProps) => {
   return (
-    <section>
-      <h2>Follow</h2>
-      <ul className="icons">
-        <li>
-          <a href="#https://twitter.com/BrianLusina" className="icon brands style2 fa-twitter">
-            <span className="label">Twitter</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/BrianLusina" className="icon brands style2 fa-github">
-            <span className="label">GitHub</span>
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.linkedin.com/in/brianlusina/"
-            className="icon solid style2 fa-linkedin"
-          >
-            <span className="label">LinkedIn</span>
-          </a>
-        </li>
-      </ul>
-    </section>
+    <SocialCardWrapper>
+      <SocialCardTitle>Follow</SocialCardTitle>
+      <SocialCardList className="icons">
+        {items.map(({ label, link, iconName }) => (
+          <SocialCardListItem key={label}>
+            <SocialCardLink href={link} className={`icon brands style2 fa-${iconName}`}>
+              <SocialCardSpan className="label">{label}</SocialCardSpan>
+            </SocialCardLink>
+          </SocialCardListItem>
+        ))}
+      </SocialCardList>
+    </SocialCardWrapper>
   );
 };
 

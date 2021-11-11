@@ -14,9 +14,11 @@ type MockAppRouterProps = {
  * @param {MockAppProps} props to pass in
  * @returns Router Application
  */
-export const MockAppWithRouter: FunctionComponent<MockAppRouterProps> = ({
+const MockAppWithRouter: FunctionComponent<MockAppRouterProps> = ({
   children,
   history = memoryHistory,
 }: MockAppRouterProps) => {
   return <Router history={history}>{children}</Router>;
 };
+
+export default MockAppWithRouter;

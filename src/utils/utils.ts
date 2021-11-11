@@ -39,3 +39,14 @@ export const sluggify = (str: string): string => {
 export const unsluggify = (slug: string): string => {
   return capitalize(slug.replace(/-/g, ' '));
 };
+
+/**
+ * checks if an email address is valid
+ * @param {string} email input
+ * @returns {boolean} true if valid, false if not
+ * */
+export const isEmailValid = (email: string): boolean => {
+  const re =
+    /^(([^<>()\\[\]\\.,;:\s@"]+(\.[^<>()\\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(email);
+};

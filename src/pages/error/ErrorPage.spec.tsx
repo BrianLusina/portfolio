@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { MockAppWithRouter } from '@testUtils/MockAppWithRouter';
+import MockAppWithRouter from '@testUtils/MockAppWithRouter';
 import ErrorPage from './ErrorPage';
 
 describe('ErrorPage', () => {

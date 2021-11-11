@@ -10,7 +10,7 @@ Please describe the tests that you ran to verify your changes.
 
 Please also note any relevant details for your test configuration.
 
-## Checklist:
+## Checklist
 
 - [ ] I have not introduced new bugs :rofl:
 - [ ] My code follows the style guidelines of this project

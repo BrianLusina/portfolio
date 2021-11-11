@@ -1,15 +1,16 @@
 import { FunctionComponent } from 'react';
 import Logo from '@components/logo';
-import Navigation from '@components/navigation';
+import { HeaderWrapper } from './styles';
+import { HeaderProps } from './Header.interface';
 
-const Header: FunctionComponent = () => {
+const Header: FunctionComponent<HeaderProps> = ({ children }: HeaderProps) => {
   return (
-    <header id="header">
+    <HeaderWrapper id="header">
       <div className="inner">
         <Logo />
-        <Navigation />
+        {children}
       </div>
-    </header>
+    </HeaderWrapper>
   );
 };
 

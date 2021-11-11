@@ -9,6 +9,9 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import ScrollToTop from '@components/scrolltotop';
 import { withProfiler } from '@sentry/react';
 import config from '@config';
+import SocialCard from '@components/socialcard';
+import ContactContainer from '@containers/contact';
+import Navigation from '@components/navigation';
 import AppRoutes from '../routes/AppRoutes';
 import { AppWrapper } from './styles';
 
@@ -18,7 +21,9 @@ const App: FunctionComponent = () => {
   return (
     <>
       <AppWrapper id="wrapper">
-        <Header />
+        <Header>
+          <Navigation />
+        </Header>
         <MainLayout>
           <ScrollToTop />
           <Suspense fallback={<PageLoader />}>
@@ -31,9 +36,12 @@ const App: FunctionComponent = () => {
             </TransitionGroup>
           </Suspense>
         </MainLayout>
-        <Footer />
+        <Footer>
+          <ContactContainer />
+          <SocialCard />
+        </Footer>
       </AppWrapper>
-      <Menu />
+      <Menu items={config.menuItems} />
     </>
   );
 };

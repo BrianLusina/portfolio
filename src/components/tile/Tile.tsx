@@ -2,6 +2,14 @@ import { FunctionComponent } from 'react';
 import { Link } from 'react-router-dom';
 import { TileProps } from './Tile.types';
 import TileThumbnail from './TileThumbnail.jpg';
+import {
+  TileContainer,
+  TileContent,
+  TileDescription,
+  TileImage,
+  TileImageContainer,
+  TileTitle,
+} from './styles';
 
 const Tile: FunctionComponent<TileProps> = ({
   className,
@@ -11,17 +19,17 @@ const Tile: FunctionComponent<TileProps> = ({
   poster,
 }: TileProps) => {
   return (
-    <article className={`${className || 'tile'}`}>
-      <span className="image">
-        <img src={poster || TileThumbnail} alt={title} />
-      </span>
+    <TileContainer className={`${className || 'tile'}`}>
+      <TileImageContainer className="image">
+        <TileImage src={poster || TileThumbnail} alt={title} />
+      </TileImageContainer>
       <Link to={link}>
-        <h2>{title}</h2>
-        <div className="content">
-          <p>{description}</p>
-        </div>
+        <TileTitle>{title}</TileTitle>
+        <TileContent className="content">
+          <TileDescription>{description}</TileDescription>
+        </TileContent>
       </Link>
-    </article>
+    </TileContainer>
   );
 };
 

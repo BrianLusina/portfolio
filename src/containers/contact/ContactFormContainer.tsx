@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
-import ContactForm from '@components/contactform';
+import ContactForm from '@components/ContactForm';
 import { FunctionComponent } from 'react';
 
 const ContactFormContainer: FunctionComponent = () => {

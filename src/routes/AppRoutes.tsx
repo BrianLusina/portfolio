@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react';
 import { Route } from 'react-router-dom';
 import routes from '@routes';
-import RouteErrorBoundary from '@components/errors/RouteErrorBoundary';
+import RouteErrorBoundary from '@components/Errors/RouteErrorBoundary';
 
 const AppRoutes: FunctionComponent = () => {
   return (

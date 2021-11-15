@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import ContactForm from './ContactForm';
-import { ContactFormValues } from './ContactForm.interface';
+import { ContactFormValues } from './types';
 
 export default {
   title: 'Components/contact/ContactForm',

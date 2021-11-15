@@ -1,9 +1,29 @@
 import { gql } from '@apollo/client';
 
 export const GET_REPOSITORIES = gql`
-  query GetRepositories($direction: OrderDirection!, $field: RepositoryOrderField!, $first: Int!) {
+  query GetRepositories(
+    $direction: OrderDirection
+    $field: RepositoryOrderField
+    $first: Int
+    $last: Int
+    $after: String
+    $before: String
+  ) {
     viewer {
-      repositories(orderBy: { direction: $direction, field: $field }, first: $first) {
+      login
+      avatarUrl
+      repositories(
+        orderBy: { direction: $direction, field: $field }
+        first: $first
+        last: $last
+        after: $after
+        before: $before
+      ) {
+        pageInfo {
+          startCursor
+          endCursor
+          hasNextPage
+        }
         nodes {
           name
           description

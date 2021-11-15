@@ -1,6 +1,6 @@
 import { Component, ReactChildren, ReactElement, ErrorInfo, ReactNode } from 'react';
 import { captureAndLogError } from '@monitoring';
-import ErrorPage from '@pages/error';
+import ErrorPage from '@pages/Error';
 import { ErrorBoundaryState, ErrorBoundaryProps } from './ErrorBoundary.interface';
 
 /**

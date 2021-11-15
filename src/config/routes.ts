@@ -4,12 +4,12 @@ const routes = [
     {
         path: '/',
         exact: true,
-        component: lazy(() => import('@pages/landing')),
+        component: lazy(() => import('@pages/Landing')),
     },    
     {
         path: '/:slug',
         exact: true,
-        component: lazy(() => import('@pages/project')),
+        component: lazy(() => import('@pages/Project')),
     },
 ];
 

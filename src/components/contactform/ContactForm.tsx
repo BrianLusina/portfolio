@@ -1,7 +1,11 @@
 import { FunctionComponent, useState, FormEvent } from 'react';
 import { isEmailValid } from '@utils';
 import { ContactFormWrapper } from './styles';
-import { ContactFormProps } from './ContactForm.interface';
+import { ContactFormValues } from './types';
+
+type ContactFormProps = {
+  onSubmit: (values: ContactFormValues) => void;
+};
 
 const ContactForm: FunctionComponent<ContactFormProps> = ({ onSubmit }: ContactFormProps) => {
   const [name, setName] = useState<string>('');

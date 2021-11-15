@@ -7,7 +7,8 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import useParseQuery from '@hooks/useParseQuery';
 import config from '@config';
-import PageLoader from '@components/loaders/PageLoader';
+import PageLoader from '@components/Elements/Loaders/PageLoader';
+import ErrorPage from '@pages/Error';
 import ProjectImage from './ProjectImage.jpg';
 
 const ProjectPage: FunctionComponent = () => {
@@ -27,8 +28,7 @@ const ProjectPage: FunctionComponent = () => {
 
   if (loading) return <PageLoader />;
 
-  // TODO: error view
-  if (error) return <div>Error :(</div>;
+  if (error) return <ErrorPage />;
 
   // TODO: 404 PAGE
   if (!data) return <div>Nothing found</div>;

@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import Logo from '@components/logo';
+import Logo from '@components/Elements/Logo';
 import { HeaderWrapper } from './styles';
 import { HeaderProps } from './Header.interface';
 

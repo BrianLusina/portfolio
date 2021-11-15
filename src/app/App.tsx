@@ -1,17 +1,17 @@
 import { Suspense, FunctionComponent } from 'react';
 import { Switch, useLocation } from 'react-router-dom';
-import Menu from '@components/menu';
-import Footer from '@components/footer';
-import Header from '@components/header';
+import Menu from '@components/Menu';
+import Footer from '@components/Footer';
+import Header from '@components/Header';
 import MainLayout from '@layouts/MainLayout';
-import PageLoader from '@components/loaders/PageLoader';
+import PageLoader from '@components/Elements/Loaders/PageLoader';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import ScrollToTop from '@components/scrolltotop';
+import ScrollToTop from '@components/ScrollToTop';
 import { withProfiler } from '@sentry/react';
 import config from '@config';
-import SocialCard from '@components/socialcard';
+import SocialCard from '@components/SocialCard';
 import ContactContainer from '@containers/contact';
-import Navigation from '@components/navigation';
+import Navigation from '@components/Navigation';
 import AppRoutes from '../routes/AppRoutes';
 import { AppWrapper } from './styles';
 

@@ -3,7 +3,3 @@ export type ContactFormValues = {
   email: string;
   message: string;
 };
-
-export type ContactFormProps = {
-  onSubmit: (values: ContactFormValues) => void;
-};

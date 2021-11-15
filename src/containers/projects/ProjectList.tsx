@@ -1,40 +1,72 @@
-import { FunctionComponent } from 'react';
-import Tile from '@components/tile';
+import { FunctionComponent, useState } from 'react';
+import Tile from '@components/Elements/Tile';
 import { useQuery } from '@apollo/client';
 import { GET_REPOSITORIES } from '@graphQl/queries';
+import PageLoader from '@components/Elements/Loaders/PageLoader';
+import ErrorPage from '@pages/Error';
+import Button from '@components/Elements/Button';
 import { randomlyPickCssClass } from './utils';
+import { ProjectsButtonContainer } from './styles';
 
 const ProjectList: FunctionComponent = () => {
-  const { loading, error, data } = useQuery<GetRepositoriesData, GetRepositoriesVariables>(
-    GET_REPOSITORIES,
-    {
-      variables: {
-        direction: 'ASC',
-        field: 'NAME',
-        first: 10,
-      },
+  const itemsPerPage = 20;
+  const [currentSize, setCurrentSize] = useState<number>(itemsPerPage);
+  const { loading, error, data, fetchMore } = useQuery<
+    GetRepositoriesData,
+    GetRepositoriesVariables
+  >(GET_REPOSITORIES, {
+    variables: {
+      direction: 'ASC',
+      field: 'NAME',
+      first: currentSize,
     },
-  );
+  });
 
-  // TODO: loading indicator
-  if (loading) return <div>Loading...</div>;
+  const fetchedProjects = data ? data.viewer.repositories.nodes : [];
+  const hasNextPage = data ? data.viewer.repositories.pageInfo.hasNextPage : false;
+  let fetchedSize = fetchedProjects.length;
 
-  // TODO: error view
-  if (error) return <div>Error :(</div>;
+  if (loading) return <PageLoader />;
+
+  if (error) return <ErrorPage />;
+
+  const handleSeeMore = (): void => {
+    if (hasNextPage) {
+      fetchedSize += currentSize;
+      setCurrentSize(fetchedSize);
+
+      fetchMore({
+        variables: {
+          first: fetchedSize,
+        },
+      });
+    }
+  };
 
   return (
-    <section className="tiles">
-      {data &&
-        data.viewer.repositories.nodes.map(({ name, description, owner: { login } }) => (
-          <Tile
-            key={name}
-            className={randomlyPickCssClass()}
-            title={name}
-            description={description}
-            link={`${name}?owner=${login}`}
-          />
-        ))}
-    </section>
+    <>
+      <section className="tiles">
+        {data &&
+          fetchedProjects.map(({ name, description, owner: { login } }) => (
+            <Tile
+              key={name}
+              className={randomlyPickCssClass()}
+              title={name}
+              description={description}
+              link={`${name}?owner=${login}`}
+            />
+          ))}
+      </section>
+      {hasNextPage && (
+        <ProjectsButtonContainer className="row gtr-uniform">
+          <div className="col-12">
+            <Button variant="primary" onClick={handleSeeMore}>
+              Show more
+            </Button>
+          </div>
+        </ProjectsButtonContainer>
+      )}
+    </>
   );
 };
 

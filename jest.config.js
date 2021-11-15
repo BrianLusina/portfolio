@@ -1,5 +1,6 @@
 module.exports = {
   name: 'Portfolio',
+  preset: 'ts-jest',
   displayName: {
     name: 'Portfolio Frontend',
     color: 'yellow',
@@ -87,6 +88,7 @@ module.exports = {
     '<rootDir>/config/mocks/axios.js',
     '<rootDir>/config/mocks/intersectionObserver.js',
     '<rootDir>/config/mocks/reactRouterDom.js',
+    '<rootDir>/config/mocks/react-markdown.js',
   ],
   setupFilesAfterEnv: ['<rootDir>/scripts/ts/setupTests.ts'],
   testMatch: [
@@ -99,6 +101,9 @@ module.exports = {
     '^.+\\.(js|jsx|mjs|cjs|ts|tsx)$': '<rootDir>/node_modules/babel-jest',
     '^.+\\.css$': '<rootDir>/config/jest/cssTransform.js',
     '^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json)$)': '<rootDir>/config/jest/fileTransform.js',
+    '^.+\\.(ts|tsx)?$': 'ts-jest',
+    // '^.+\\.(js|jsx)$': 'babel-jest',
+    '^.+\\.[t|j]sx?$': 'babel-jest',
   },
   transformIgnorePatterns: [
     '[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs|cjs|ts|tsx)$',
@@ -141,6 +146,7 @@ module.exports = {
     'jsx',
     'node',
   ],
+  moduleDirectories: ['node_modules', 'src'],
   watchPlugins: ['jest-watch-typeahead/filename', 'jest-watch-typeahead/testname'],
   resetMocks: true,
   coverageThreshold: {

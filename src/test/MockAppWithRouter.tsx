@@ -4,7 +4,7 @@ import { createMemoryHistory, History } from 'history';
 
 export const memoryHistory = createMemoryHistory();
 
-type MockAppRouterProps = {
+export type MockAppRouterProps = {
   children?: ReactNode | ReactChildren;
   history?: History;
 };

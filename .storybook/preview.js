@@ -1,5 +1,6 @@
 import { ThemeProvider } from 'styled-components';
 import MockAppWithRouter from '@testUtils/MockAppWithRouter';
+import MockAppWithGraphQlProvider from '@testUtils/MockAppWithGqlProvider';
 import '@css/index.css';
 import '@css/noscript.css';
 
@@ -16,9 +17,11 @@ export const parameters = {
 export const decorators = [
   (Story) => (
     <ThemeProvider theme={{ main: 'default' }}>
-      <MockAppWithRouter>
-        <Story />
-      </MockAppWithRouter>
+      <MockAppWithGraphQlProvider>
+        <MockAppWithRouter>
+          <Story />
+        </MockAppWithRouter>
+      </MockAppWithGraphQlProvider>
     </ThemeProvider>
   ),
 ];

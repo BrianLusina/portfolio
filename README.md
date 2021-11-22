@@ -111,6 +111,20 @@ The CI provider picked here is [Github Actions](https://github.com/features/acti
 
 The workflow files can be found [here](./github/workflows) and more can be added as seen fit.
 
+### Docker Builds
+
+For those who are interested in building the docker image, the following steps are required:
+
+1. If using Github Actions to run the CI pipeline, then you will need to add the DOCKERHUB_USERNAME & DOCKERHUB_PASSWORD environment variables to secrets in the repository.
+2. If using Travis CI, then you will need to add the DOCKERHUB_USERNAME & DOCKERHUB_PASSWORD environment variables to the Travis CI settings.
+3. If using CircleCI, then you will need to add the DOCKERHUB_USERNAME & DOCKERHUB_PASSWORD environment variables to the CircleCI settings.
+4. If using Gitlab CI, then you will need to add the DOCKERHUB_USERNAME & DOCKERHUB_PASSWORD environment variables to the Gitlab CI settings.
+5. If using Bitbucket Pipelines, then you will need to add the DOCKERHUB_USERNAME & DOCKERHUB_PASSWORD environment variables to the Bitbucket Pipelines settings.
+6. If using Azure Pipelines, then you will need to add the DOCKERHUB_USERNAME & DOCKERHUB_PASSWORD environment variables to the Azure Pipelines settings.
+7. If using AWS CodeBuild, then you will need to add the DOCKERHUB_USERNAME & DOCKERHUB_PASSWORD environment variables to the AWS CodeBuild settings.
+8. If using Azure DevOps, then you will need to add the DOCKERHUB_USERNAME & DOCKERHUB_PASSWORD environment variables to the Azure DevOps settings.
+
+
 ## Deploying the application
 
 This is a simple static application, so the deployment options are vast and therfore not covered in this guide. However the options are as follows:

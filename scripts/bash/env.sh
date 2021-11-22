@@ -40,8 +40,6 @@ else
     echo APP_ID=${APP_ID} >> .env
     echo MEASUREMENT_ID=${MEASUREMENT_ID} >> .env
     echo SENTRY_DSN=${SENTRY_DSN} >> .env
-    echo PAPERTRAIL_HOST=${PAPERTRAIL_HOST} >> .env
-    echo PAPERTRAIL_PORT=${PAPERTRAIL_PORT} >> .env
 
     echo "Env file populated..."
 fi

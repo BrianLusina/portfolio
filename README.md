@@ -1,6 +1,9 @@
 # Portfolio
 
 [![Tests](https://github.com/BrianLusina/portfolio/actions/workflows/tests.yml/badge.svg)](https://github.com/BrianLusina/portfolio/actions/workflows/tests.yml)
+[![Lint](https://github.com/BrianLusina/portfolio/actions/workflows/lint.yml/badge.svg)](https://github.com/BrianLusina/portfolio/actions/workflows/lint.yml)
+[![Build](https://github.com/BrianLusina/portfolio/actions/workflows/build.yml/badge.svg)](https://github.com/BrianLusina/portfolio/actions/workflows/build.yml)
+[![Docker Build](https://github.com/BrianLusina/portfolio/actions/workflows/dockerimage.yml/badge.svg)](https://github.com/BrianLusina/portfolio/actions/workflows/dockerimage.yml)
 
 Portfolio site built in React, GraphQl showcasing projects worked on. This fetches information of these projects from Github's GraphQl API, rendering them in a nice simple format for the world to see.
 
@@ -97,6 +100,17 @@ npm run storybook
 
 > you can then be able to view the components in the browser on the address `http://localhost:6006`
 
+## Continuous Integration & Deployment
+
+Commonly abbreviated as CI/CD, this is a process where the application is built, tested, and deployed to a production environment. In this case, the steps are
+`lint` -> `test` -> `build` -> `build-docker-image`(optional depending on requirements and targe deployment environment) -> `deploy`(depending on the target environment and type of deployment) -> `create release`(creates a tagged release of the source code on Github/Gitlab/Bitbucket).
+
+These are the conventional steps usually. In this case however, the steps from build-docker-image upto create release are not hard requirements and really depend on the use case. However, for this project they have been setup to handle the process end to end.
+
+The CI provider picked here is [Github Actions](https://github.com/features/actions) as it is simple to use and has a lot of features already baked in. Of course any other CI provider can be used, the end goal is the same.
+
+The workflow files can be found [here](./github/workflows) and more can be added as seen fit.
+
 ## Deploying the application
 
 This is a simple static application, so the deployment options are vast and therfore not covered in this guide. However the options are as follows:
@@ -129,3 +143,4 @@ These are not the limited tech used, but play a major part in its construction
 [![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/uses-js.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
+ 

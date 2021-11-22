@@ -1,7 +1,15 @@
 # Reference:https://github.com/marketplace/actions/build-and-push-docker-images
-name: Docker Image CI
+name: Docker Build
 
 on:
+  workflow_run:
+    workflows:
+      - "Build"
+    types:
+      - completed
+    branches:
+      - "main"
+      - "develop"
   push:
     branches: [ main, develop ]
 

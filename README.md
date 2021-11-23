@@ -124,7 +124,6 @@ For those who are interested in building the docker image, the following steps a
 7. If using AWS CodeBuild, then you will need to add the DOCKERHUB_USERNAME & DOCKERHUB_PASSWORD environment variables to the AWS CodeBuild settings.
 8. If using Azure DevOps, then you will need to add the DOCKERHUB_USERNAME & DOCKERHUB_PASSWORD environment variables to the Azure DevOps settings.
 
-
 ## Deploying the application
 
 This is a simple static application, so the deployment options are vast and therfore not covered in this guide. However the options are as follows:
@@ -157,4 +156,3 @@ These are not the limited tech used, but play a major part in its construction
 [![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/uses-js.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
- 

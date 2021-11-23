@@ -22,7 +22,8 @@
     "postinstall": "husky install",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "serve": "serve -s build"
+    "serve": "serve -s build",
+    "deploy:staging": "surge build --domain lfolio.surge.sh"
   },
   "repository": {
     "type": "git",
@@ -170,6 +171,7 @@
     "stylelint-config-recommended": "^5.0.0",
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-processor-styled-components": "^1.10.0",
+    "surge": "^0.23.0",
     "terser-webpack-plugin": "4.2.3",
     "ts-jest": "^27.0.7",
     "ts-pnp": "1.2.0",

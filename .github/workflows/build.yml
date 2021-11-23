@@ -3,7 +3,22 @@ name: Build
 on: 
   push:
     branches:
-      - '*'
+      - 'main'
+      - 'develop'
+      - 'feature/*'
+      - 'fix/*'
+      - 'chore/*'
+      - 'release/*'
+      - 'hotfix/*'
+  pull_request:
+    branches:
+      - 'main'
+      - 'develop'
+      - 'feature/*'
+      - 'fix/*'
+      - 'chore/*'
+      - 'release/*'
+      - 'hotfix/*'
   workflow_run:
     workflows:
       - "Tests"

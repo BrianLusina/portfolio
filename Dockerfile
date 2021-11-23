@@ -1,24 +1,24 @@
-# FROM node:alpine as builder
+FROM node:alpine as builder
 
-# # hadolint ignore=DL3018
-# RUN apk add --no-cache \
-#     bash \
-#     lcms2-dev \
-#     libpng-dev \
-#     gcc \
-#     g++ \
-#     make \
-#     autoconf \
-#     automake \
-#   && rm -rf /var/cache/apk/*
+# hadolint ignore=DL3018
+RUN apk add --no-cache \
+    bash \
+    lcms2-dev \
+    libpng-dev \
+    gcc \
+    g++ \
+    make \
+    autoconf \
+    automake \
+  && rm -rf /var/cache/apk/*
 
-# WORKDIR /app
+WORKDIR /app
 
-# COPY . .
+COPY . .
 
-# RUN yarn
+RUN yarn
 
-# RUN yarn build
+RUN yarn build
 
 # => Run container
 FROM nginx:1.19.2-alpine
@@ -28,8 +28,7 @@ RUN rm -rf /etc/nginx/conf.d
 COPY conf /etc/nginx
 
 # Static build
-# COPY --from=builder /app/build /usr/share/nginx/html/
-COPY build /usr/share/nginx/html/
+COPY --from=builder /app/build /usr/share/nginx/html/
 
 # Default port exposure
 EXPOSE 80

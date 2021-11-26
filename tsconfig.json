@@ -44,12 +44,13 @@
     }
   },
   "include": [
-    "src"
-, "scripts/ts/setupTests.ts"  ],
+    "src",
+    "scripts/ts/setupTests.ts"
+  ],
   "exclude": [
     "src/**/*.story.mdx",
     "src/**/*.story.@(js|jsx|ts|tsx)",
     "src/**/*.stories.mdx",
-    "src/**/*.stories.@(js|jsx|ts|tsx)",
+    "src/**/*.stories.@(js|jsx|ts|tsx)"
   ]
 }

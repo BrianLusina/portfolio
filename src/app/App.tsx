@@ -3,7 +3,7 @@ import { Switch, useLocation } from 'react-router-dom';
 import { withProfiler } from '@sentry/react';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import config from '@config';
-import ContactContainer from '../containers/contact';
+import ContactForm from '../components/ContactForm';
 import MainLayout from '../layouts/MainLayout';
 import Menu from '../components/Menu';
 import Footer from '../components/Footer';
@@ -37,7 +37,7 @@ const App: FunctionComponent = () => {
           </Suspense>
         </MainLayout>
         <Footer>
-          <ContactContainer />
+          <ContactForm />
           <SocialCard />
         </Footer>
       </AppWrapper>

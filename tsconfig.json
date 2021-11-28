@@ -43,10 +43,6 @@
       "@css/*": ["styles/css/*"]
     }
   },
-  "include": [
-    "src",
-    "scripts/ts/setupTests.ts"
-  ],
   "exclude": [
     "src/**/*.story.mdx",
     "src/**/*.story.@(js|jsx|ts|tsx)",

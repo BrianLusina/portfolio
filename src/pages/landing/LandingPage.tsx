@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import ProjectList from '@containers/projects';
+import ProjectList from '@containers/ProjectList';
 import MetaInfo from '@components/MetaInfo';
 import config from '@config';
 

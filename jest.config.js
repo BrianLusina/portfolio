@@ -8,7 +8,7 @@ module.exports = {
     name: 'Portfolio Frontend',
     color: 'yellow',
   },
-  roots: ['<rootDir>/src'],
+  roots: ['<rootDir>'],
   collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}', '!src/**/*.d.ts'],
   coveragePathIgnorePatterns: [
     '/node_modules/',
@@ -116,11 +116,11 @@ module.exports = {
     '[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs|cjs|ts|tsx)$',
     '^.+\\.module\\.(css|sass|scss)$',
   ],
-  modulePaths: [],
+  modulePaths: [compilerOptions.baseUrl],
   moduleNameMapper: {
     '^react-native$': 'react-native-web',
     '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
-    ...pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>/src/' }),
+    ...pathsToModuleNameMapper(compilerOptions.paths),
     // '^@app': '<rootDir>/src/app/index.ts',
     // '^@config': '<rootDir>/src/config/index.ts',
     // '^@apiConfig': '<rootDir>/src/config/api.ts',

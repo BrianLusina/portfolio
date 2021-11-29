@@ -53,6 +53,7 @@ jobs:
         SENTRY_DSN: ${{ secreits.SENTRY_DSN }}
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         ENV: staging
+        SENTRY_TRACES_SAMPLE_RATE: 1.0
 
     - name: Build Production
       if: ${{ github.ref }} == 'refs/heads/main'
@@ -61,6 +62,7 @@ jobs:
         SENTRY_DSN: ${{ secreits.SENTRY_DSN }}
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         ENV: production
+        SENTRY_TRACES_SAMPLE_RATE: 0.5
 
     - name: Deploy Staging
       if: ${{ github.ref }} == 'refs/heads/develop'

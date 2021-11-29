@@ -1,5 +1,5 @@
 import SocialCard from '@components/SocialCard';
-import ContactFormContainer from '@containers/contact';
+import ContactFormContainer from '@components/ContactForm';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Footer from './Footer';
 

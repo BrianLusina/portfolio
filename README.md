@@ -1,6 +1,7 @@
 # Portfolio
 
 [![Tests](https://github.com/BrianLusina/portfolio/actions/workflows/tests.yml/badge.svg)](https://github.com/BrianLusina/portfolio/actions/workflows/tests.yml)
+[![codecov](https://codecov.io/gh/BrianLusina/portfolio/branch/develop/graph/badge.svg?token=xuhjRpWJze)](https://codecov.io/gh/BrianLusina/portfolio)
 [![Lint](https://github.com/BrianLusina/portfolio/actions/workflows/lint.yml/badge.svg)](https://github.com/BrianLusina/portfolio/actions/workflows/lint.yml)
 [![Build](https://github.com/BrianLusina/portfolio/actions/workflows/build.yml/badge.svg)](https://github.com/BrianLusina/portfolio/actions/workflows/build.yml)
 [![Docker Build](https://github.com/BrianLusina/portfolio/actions/workflows/dockerimage.yml/badge.svg)](https://github.com/BrianLusina/portfolio/actions/workflows/dockerimage.yml)

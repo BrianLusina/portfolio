@@ -1,19 +1,24 @@
-import { Suspense, FunctionComponent } from 'react';
-import { Switch, useLocation } from 'react-router-dom';
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+import { Suspense, FunctionComponent, lazy } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { withProfiler } from '@sentry/react';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import config from '@config';
-import ContactForm from '../components/ContactForm';
-import MainLayout from '../layouts/MainLayout';
-import Menu from '../components/Menu';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
-import PageLoader from '../components/Elements/Loaders/PageLoader';
-import ScrollToTop from '../components/ScrollToTop';
-import SocialCard from '../components/SocialCard';
-import Navigation from '../components/Navigation';
-import AppRoutes from '../routes/AppRoutes';
+import RouteErrorBoundary from '@components/Errors/RouteErrorBoundary';
+import ContactForm from '@components/ContactForm';
+import MainLayout from '@layouts/MainLayout';
+import Menu from '@components/Menu';
+import Footer from '@components/Footer';
+import Header from '@components/Header';
+import PageLoader from '@components/Elements/Loaders/PageLoader';
+import ScrollToTop from '@components/ScrollToTop';
+import SocialCard from '@components/SocialCard';
+import Navigation from '@components/Navigation';
+
 import { AppWrapper } from './styles';
+
+const LandingPage = lazy(() => import('@pages/Landing'));
+const ProjectPage = lazy(() => import('@pages/Project'));
 
 const App: FunctionComponent = () => {
   const location = useLocation();
@@ -29,9 +34,26 @@ const App: FunctionComponent = () => {
           <Suspense fallback={<PageLoader />}>
             <TransitionGroup>
               <CSSTransition key={location.pathname} classNames="fade" timeout={300}>
-                <Switch location={location}>
-                  <AppRoutes />
-                </Switch>
+                <Routes location={location}>
+                  {/* @ts-ignore */}
+                  <Route
+                    path="/"
+                    element={
+                      <RouteErrorBoundary location="/">
+                        <LandingPage />{' '}
+                      </RouteErrorBoundary>
+                    }
+                  />
+                  {/* @ts-ignore */}
+                  <Route
+                    path="/:slug"
+                    element={
+                      <RouteErrorBoundary location="/:slug">
+                        <ProjectPage />
+                      </RouteErrorBoundary>
+                    }
+                  />
+                </Routes>
               </CSSTransition>
             </TransitionGroup>
           </Suspense>

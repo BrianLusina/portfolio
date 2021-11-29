@@ -1,19 +1,20 @@
-name: Build
+name: Deploy
 
-on: 
+on:
   push:
     branches:
-      - '**'
+      - 'develop'
+      - 'main'
 
 jobs:
-  build:
-    name: Bundle Application
+  deploy:
+    name: Deploy
 
     strategy:
       fail-fast: false
       matrix:
-        os: [macos-latest, ubuntu-latest]
-        node-version: [14.x, 16.x]
+        os: [ubuntu-latest]
+        node-version: [16.x]
 
     runs-on: ${{ matrix.os }}
 
@@ -45,10 +46,28 @@ jobs:
       if: steps.cache.outputs.cache-hit != 'true'    
       run: yarn install
 
-    - name: Build
-      run: yarn build --if-present 
+    - name: Build Staging
+      if: ${{ github.ref }} == 'refs/heads/develop'
+      run: yarn build
+      env:
+        SENTRY_DSN: ${{ secreits.SENTRY_DSN }}
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        ENV: staging
+        SENTRY_TRACES_SAMPLE_RATE: 1.0
 
-    - uses: actions/upload-artifact@v2
-      with:
-        name: build
-        path: build/
+    - name: Build Production
+      if: ${{ github.ref }} == 'refs/heads/main'
+      run: yarn build
+      env:
+        SENTRY_DSN: ${{ secreits.SENTRY_DSN }}
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        ENV: production
+        SENTRY_TRACES_SAMPLE_RATE: 0.5
+
+    - name: Deploy Staging
+      if: ${{ github.ref }} == 'refs/heads/develop'
+      run: yarn deploy:staging -- --token ${{ secrets.SURGE_TOKEN }}
+
+    - name: Deploy Production
+      if: ${{ github.ref }} == 'refs/heads/main'
+      run: yarn deploy:staging -- --token ${{ secrets.SURGE_TOKEN }}

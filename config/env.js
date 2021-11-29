@@ -96,6 +96,7 @@ function getClientEnvironment(publicUrl) {
         TITLE: process.env.TITLE,
         OWNER: process.env.OWNER,
         SENTRY_DSN: process.env.SENTRY_DSN,
+        SENTRY_TRACES_SAMPLE_RATE: process.env.SENTRY_TRACES_SAMPLE_RATE,
         AUTH_DOMAIN: process.env.AUTH_DOMAIN,
         PROJECT_ID: process.env.PROJECT_ID,
         STORAGE_BUCKET: process.env.STORAGE_BUCKET,

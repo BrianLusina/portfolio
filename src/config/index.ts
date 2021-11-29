@@ -1,6 +1,8 @@
 import api from './api';
 import menuItems from './menu';
 import author from './author';
+import monitoring from './monitoring';
+import env from './env';
 
 export default {
   api,
@@ -8,5 +10,7 @@ export default {
   title: process.env.TITLE || 'Liber',
   owner: process.env.OWNER || 'BrianLusina',
   author,
-  menuItems
+  menuItems,
+  monitoring,
+  env,
 };

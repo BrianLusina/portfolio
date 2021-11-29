@@ -66,3 +66,12 @@ Object.defineProperty(window, 'scrollTo', {
   value: jest.fn(),
   writable: true,
 });
+
+Object.defineProperty(window, '_env_', {
+  writable: true,
+  value: {
+    NODE_ENV: 'test',
+    SENTRY_DSN: '',
+    ENV: 'test',
+  },
+});

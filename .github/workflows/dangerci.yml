@@ -1,13 +1,13 @@
-name: Build
+name: Danger CI
 
-on: 
-  push:
+on:
+  pull_request:
     branches:
-      - '**'
+      - 'develop'
 
 jobs:
-  build:
-    name: Bundle Application
+  test:
+    name: Danger CI
 
     strategy:
       fail-fast: false
@@ -44,15 +44,8 @@ jobs:
     - name: Install dependencies
       if: steps.cache.outputs.cache-hit != 'true'    
       run: yarn install
-
-    - name: Run Build
-      run: yarn build --if-present
+    
+    - name: Danger CI Check
+      run: yarn danger ci
       env:
-        SENTRY_DSN: ${{ secreits.SENTRY_DSN }}
-        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-        ENV: production
-
-    - uses: actions/upload-artifact@v2
-      with:
-        name: build
-        path: build/
+        CI: true

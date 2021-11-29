@@ -1,12 +1,8 @@
 import { FunctionComponent, ReactChildren, ReactNode } from 'react';
-import { Router } from 'react-router-dom';
-import { createMemoryHistory, History } from 'history';
-
-export const memoryHistory = createMemoryHistory();
+import { BrowserRouter } from 'react-router-dom';
 
 export type MockAppRouterProps = {
   children?: ReactNode | ReactChildren;
-  history?: History;
 };
 
 /**
@@ -16,9 +12,8 @@ export type MockAppRouterProps = {
  */
 const MockAppWithRouter: FunctionComponent<MockAppRouterProps> = ({
   children,
-  history = memoryHistory,
 }: MockAppRouterProps) => {
-  return <Router history={history}>{children}</Router>;
+  return <BrowserRouter>{children}</BrowserRouter>;
 };
 
 export default MockAppWithRouter;

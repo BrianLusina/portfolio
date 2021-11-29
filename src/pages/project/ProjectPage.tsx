@@ -12,7 +12,7 @@ import ErrorPage from '@pages/Error';
 import ProjectImage from './ProjectImage.jpg';
 
 const ProjectPage: FunctionComponent = () => {
-  const { slug } = useParams<RoutingProjectItemParams>();
+  const { slug } = useParams();
   const query = useParseQuery();
   const owner = query.get('owner');
 
@@ -20,7 +20,9 @@ const ProjectPage: FunctionComponent = () => {
     GET_REPOSITORY,
     {
       variables: {
-        name: slug,
+        // empty string should be fine here, we should get an error from the API
+        // which should just return a 404 PAGE
+        name: slug || '',
         owner: owner || config.owner,
       },
     },

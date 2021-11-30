@@ -50,7 +50,7 @@ jobs:
       if: ${{ github.ref }} == 'refs/heads/develop'
       run: yarn build
       env:
-        SENTRY_DSN: ${{ secreits.SENTRY_DSN }}
+        SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         ENV: staging
         SENTRY_TRACES_SAMPLE_RATE: 1.0
@@ -59,7 +59,7 @@ jobs:
       if: ${{ github.ref }} == 'refs/heads/main'
       run: yarn build
       env:
-        SENTRY_DSN: ${{ secreits.SENTRY_DSN }}
+        SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         ENV: production
         SENTRY_TRACES_SAMPLE_RATE: 0.5

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { Suspense, FunctionComponent, lazy } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { withProfiler } from '@sentry/react';
@@ -35,7 +34,6 @@ const App: FunctionComponent = () => {
             <TransitionGroup>
               <CSSTransition key={location.pathname} classNames="fade" timeout={300}>
                 <Routes location={location}>
-                  {/* @ts-ignore */}
                   <Route
                     path="/"
                     element={
@@ -44,7 +42,6 @@ const App: FunctionComponent = () => {
                       </RouteErrorBoundary>
                     }
                   />
-                  {/* @ts-ignore */}
                   <Route
                     path="/:slug"
                     element={

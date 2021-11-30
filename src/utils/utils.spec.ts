@@ -1,4 +1,10 @@
-import { camelCaseObjectKeys, snakeCaseObjectKeys, sluggify, isEmailValid } from './utils';
+import {
+  camelCaseObjectKeys,
+  snakeCaseObjectKeys,
+  sluggify,
+  isEmailValid,
+  unsluggify,
+} from './utils';
 
 describe('Utils', () => {
   describe('camelCaseObjectKeys', () => {
@@ -55,6 +61,20 @@ describe('Utils', () => {
       const validEmail = 'johndoe@example.com';
       const result = isEmailValid(validEmail);
       expect(result).toEqual(true);
+    });
+  });
+
+  describe('unsluggify', () => {
+    it('should return string as a normal string capitalized without -', () => {
+      const slug = 'my-project';
+      const actual = unsluggify(slug);
+      expect(actual).toEqual('My project');
+    });
+
+    it('should return true for valid emails', () => {
+      const slug = 'my-project-is-awesome';
+      const actual = unsluggify(slug);
+      expect(actual).toEqual('My project is awesome');
     });
   });
 });

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
-import ContactForm from '@components/ContactForm';
 import { FunctionComponent } from 'react';
+import ContactForm from './ContactForm';
 
 const ContactFormContainer: FunctionComponent = () => {
   // eslint-disable-next-line no-unused-vars

@@ -1,8 +1,9 @@
 # Portfolio
 
 [![Tests](https://github.com/BrianLusina/portfolio/actions/workflows/tests.yml/badge.svg)](https://github.com/BrianLusina/portfolio/actions/workflows/tests.yml)
+[![codecov](https://codecov.io/gh/BrianLusina/portfolio/branch/develop/graph/badge.svg?token=xuhjRpWJze)](https://codecov.io/gh/BrianLusina/portfolio)
 [![Lint](https://github.com/BrianLusina/portfolio/actions/workflows/lint.yml/badge.svg)](https://github.com/BrianLusina/portfolio/actions/workflows/lint.yml)
-[![Build](https://github.com/BrianLusina/portfolio/actions/workflows/build.yml/badge.svg)](https://github.com/BrianLusina/portfolio/actions/workflows/build.yml)
+[![Build](https://github.com/BrianLusina/portfolio/actions/workflows/build_app.yml/badge.svg)](https://github.com/BrianLusina/portfolio/actions/workflows/build_app.yml)
 [![Docker Build](https://github.com/BrianLusina/portfolio/actions/workflows/dockerimage.yml/badge.svg)](https://github.com/BrianLusina/portfolio/actions/workflows/dockerimage.yml)
 
 Portfolio site built in React, GraphQl showcasing projects worked on. This fetches information of these projects from Github's GraphQl API, rendering them in a nice simple format for the world to see.
@@ -124,7 +125,6 @@ For those who are interested in building the docker image, the following steps a
 7. If using AWS CodeBuild, then you will need to add the DOCKERHUB_USERNAME & DOCKERHUB_PASSWORD environment variables to the AWS CodeBuild settings.
 8. If using Azure DevOps, then you will need to add the DOCKERHUB_USERNAME & DOCKERHUB_PASSWORD environment variables to the Azure DevOps settings.
 
-
 ## Deploying the application
 
 This is a simple static application, so the deployment options are vast and therfore not covered in this guide. However the options are as follows:
@@ -157,4 +157,3 @@ These are not the limited tech used, but play a major part in its construction
 [![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/uses-js.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
- 

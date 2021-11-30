@@ -9,3 +9,4 @@ server/
 *.d.ts
 scripts/
 config/
+jest.config.js

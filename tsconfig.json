@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": "src",
+    "baseUrl": "./src",
     "target": "es6",
     "lib": [
       "dom",
@@ -43,13 +43,10 @@
       "@css/*": ["styles/css/*"]
     }
   },
-  "include": [
-    "src"
-, "scripts/ts/setupTests.ts"  ],
   "exclude": [
     "src/**/*.story.mdx",
     "src/**/*.story.@(js|jsx|ts|tsx)",
     "src/**/*.stories.mdx",
-    "src/**/*.stories.@(js|jsx|ts|tsx)",
+    "src/**/*.stories.@(js|jsx|ts|tsx)"
   ]
 }

@@ -3,8 +3,8 @@ import Tile from '@components/Elements/Tile';
 import { useQuery } from '@apollo/client';
 import { GET_REPOSITORIES } from '@graphQl/queries';
 import PageLoader from '@components/Elements/Loaders/PageLoader';
-import ErrorPage from '@pages/Error';
 import Button from '@components/Elements/Button';
+import ErrorPage from '@pages/Error';
 import { randomlyPickCssClass } from './utils';
 import { ProjectsButtonContainer } from './styles';
 

@@ -47,7 +47,7 @@ jobs:
       run: yarn install
 
     - name: Build Staging
-      if: ${{ github.ref }} == 'refs/heads/develop'
+      if: github.ref == 'refs/heads/develop'
       run: yarn build
       env:
         SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
@@ -55,19 +55,27 @@ jobs:
         ENV: staging
         SENTRY_TRACES_SAMPLE_RATE: 1.0
 
+    - name: Deploy Staging
+      if: github.ref == 'refs/heads/develop'
+      run: yarn deploy:staging -- --token ${{ secrets.SURGE_TOKEN }}
+
     - name: Build Production
-      if: ${{ github.ref }} == 'refs/heads/main'
-      run: yarn build
+      if: github.ref == 'refs/heads/main'
+      run: |
+        yarn build
+        mv build docs
       env:
         SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         ENV: production
         SENTRY_TRACES_SAMPLE_RATE: 0.5
 
-    - name: Deploy Staging
-      if: ${{ github.ref }} == 'refs/heads/develop'
-      run: yarn deploy:staging -- --token ${{ secrets.SURGE_TOKEN }}
-
-    - name: Deploy Production
-      if: ${{ github.ref }} == 'refs/heads/main'
-      run: yarn deploy:staging -- --token ${{ secrets.SURGE_TOKEN }}
+    # - name: Push Production
+    #   if: github.ref == 'refs/heads/main'
+    #   run: |
+    #     git config --global user.name github-actions
+    #     git config --global user.email '${GITHUB_ACTOR}@users.noreply.github.com'      
+    #     git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
+    #     git add docs
+    #     git commit -am "updating docs" ||  true
+    #     git push --force origin HEAD:$GITHUB_REF || true

@@ -47,7 +47,7 @@ jobs:
       run: yarn install
 
     - name: Run Staging Build
-      if: ${{ github.ref_name }} == 'develop'
+      if: github.ref_name == 'develop'
       run: yarn build --if-present
       env:
         SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
@@ -56,7 +56,7 @@ jobs:
         NODE_ENV: staging
 
     - name: Create Sentry Staging release
-      if: ${{ github.ref_name }} == 'develop'
+      if: github.ref_name == 'develop'
       uses: getsentry/action-release@v1
       env:
         SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
@@ -67,7 +67,7 @@ jobs:
         sourcemaps: ./build/static/js
 
     - name: Run Production Build
-      if: ${{ github.ref_name }} == 'main'
+      if: github.ref_name == 'main'
       run: yarn build --if-present
       env:
         SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
@@ -76,7 +76,7 @@ jobs:
         NODE_ENV: production
 
     - name: Create Sentry Production release
-      if: ${{ github.ref_name }} == 'main'
+      if: github.ref_name == 'main'
       uses: getsentry/action-release@v1
       env:
         SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}

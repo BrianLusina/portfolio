@@ -3,6 +3,7 @@ import menuItems from './menu';
 import author from './author';
 import monitoring from './monitoring';
 import env from './env';
+import firebase from './firebase';
 
 export default {
   api,
@@ -13,4 +14,5 @@ export default {
   menuItems,
   monitoring,
   env,
+  firebase,
 };

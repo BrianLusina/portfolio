@@ -7,7 +7,7 @@ import env from './env';
 export default {
   api,
   name: process.env.NAME || 'Portfolio',
-  title: process.env.TITLE || 'Liber',
+  title: process.env.TITLE || 'Folio',
   owner: process.env.OWNER || 'BrianLusina',
   author,
   menuItems,

@@ -40,11 +40,6 @@ jobs:
 
       - name: Run Build
         run: yarn build --if-present
-        env:
-          SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          ENV: production
-          SENTRY_TRACES_SAMPLE_RATE: 0.5
 
       - name: Release
         run: npx semantic-release

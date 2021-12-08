@@ -5,7 +5,7 @@ module.exports = {
   name: 'Portfolio',
   preset: 'ts-jest',
   displayName: {
-    name: 'Portfolio Frontend',
+    name: 'Folio',
     color: 'yellow',
   },
   roots: ['<rootDir>'],

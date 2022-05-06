@@ -13,6 +13,7 @@ import PageLoader from '@components/Elements/Loaders/PageLoader';
 import ScrollToTop from '@components/ScrollToTop';
 import SocialCard from '@components/SocialCard';
 import Navigation from '@components/Navigation';
+import usePageViews from '@hooks/analytics/usePageView';
 
 import { AppWrapper } from './styles';
 
@@ -21,6 +22,7 @@ const ProjectPage = lazy(() => import('@pages/Project'));
 
 const App: FunctionComponent = () => {
   const location = useLocation();
+  usePageViews();
 
   return (
     <>

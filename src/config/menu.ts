@@ -5,7 +5,7 @@ const menuItems = [
         isExternal: false,
     },
     {
-        link: 'https://blog.lusina.com',
+        link: 'https://blog.brianlusina.com',
         label: 'Blog',
         isExternal: true
     },

@@ -12,8 +12,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [macos-latest, ubuntu-latest]
-        node-version: [14.x, 16.x]
+        os: [ubuntu-latest]
+        node-version: [16.x]
 
     runs-on: ${{ matrix.os }}
 
@@ -51,6 +51,14 @@ jobs:
         SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         ENV: production
+        FIREBASE_API_KEY: ${{ secrets.FIREBASE_API_KEY }}
+        FIREBASE_AUTH_DOMAIN: ${{ secrets.FIREBASE_AUTH_DOMAIN }}
+        FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
+        FIREBASE_STORAGE_BUCKET: ${{ secrets.FIREBASE_STORAGE_BUCKET }}
+        FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.FIREBASE_MESSAGING_SENDER_ID }}
+        FIREBASE_APP_ID: ${{ secrets.FIREBASE_APP_ID }}
+        FIREBASE_MEASUREMENT_ID: ${{ secrets.FIREBASE_MEASUREMENT_ID }}
+        BUGSNAG_API_KEY: ${{ secrets.BUGSNAG_API_KEY }}
 
     - uses: actions/upload-artifact@v2
       with:

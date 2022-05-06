@@ -2,8 +2,8 @@ import { gql } from '@apollo/client';
 
 export const GET_REPOSITORIES = gql`
   query GetRepositories(
-    $direction: OrderDirection
-    $field: RepositoryOrderField
+    $direction: OrderDirection!
+    $field: RepositoryOrderField!
     $first: Int
     $last: Int
     $after: String

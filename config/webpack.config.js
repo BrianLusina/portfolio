@@ -326,6 +326,7 @@ module.exports = function (webpackEnv) {
         '@hooks': path.resolve('src/hooks/'),
         '@services': path.resolve('src/services/'),
         '@monitoring': path.resolve('src/services/monitoring/index.ts'),
+        '@analytics': path.resolve('src/services/analytics/index.ts'),
         '@styles': path.resolve('src/styles/'),
         '@styled': path.resolve('src/styles/ts/'),
         '@scss': path.resolve('src/styles/scss/'),

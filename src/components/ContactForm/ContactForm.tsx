@@ -4,7 +4,7 @@ import { ContactFormWrapper } from './styles';
 import { ContactFormValues } from './types';
 
 type ContactFormProps = {
-  onSubmit: (values: ContactFormValues) => void;
+  onSubmit: (e: ContactFormValues) => void;
 };
 
 const ContactForm: FunctionComponent<ContactFormProps> = ({ onSubmit }: ContactFormProps) => {

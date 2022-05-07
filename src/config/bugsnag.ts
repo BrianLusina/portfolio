@@ -1,4 +1,9 @@
+const {
+  _env_
+} = window
+
+const BUGSNAG_API_KEY = _env_ ? _env_.BUGSNAG_API_KEY : process.env.BUGSNAG_API_KEY || ''
+
 export default {
-  apiKey: process.env.BUGSNAG_API_KEY || window._env_.BUGSNAG_API_KEY || '',
+  apiKey: BUGSNAG_API_KEY,
 };
-  

@@ -1,0 +1,105 @@
+# Enable these for further security scans. Note that some security scans may take a while to run & consume build minutes based on your plan
+# include:
+  # Ref: https://docs.gitlab.com/ee/user/application_security/sast/
+  # Ref: https://docs.gitlab.com/ee/user/application_security/secret_detection/
+  # - template: Security/SAST.gitlab-ci.yml
+  # - template: Security/Secret-Detection.gitlab-ci.yml
+
+image: node:15
+
+stages:
+  - setup
+  - lint
+  - test
+  - build
+  - build_docker_image
+  - push_latest
+  - publish_release
+
+cache:
+  key:
+    prefix: $CI_COMMIT_BRANCH
+    files:
+      - yarn.lock
+      - package.json
+  paths:
+    - node_modules
+  policy: pull-push  
+
+setup:
+  stage: setup
+  script:
+    - yarn install
+
+lint-docker:
+  stage: lint
+  image: docker:latest
+  needs:
+    - setup
+  services:
+    - docker:dind
+  script:
+    - make lint-docker
+
+lint:
+  stage: lint
+  needs:
+    - setup
+  script:
+    - make lint
+    - make lint-styles
+
+test:
+  stage: test
+  needs:
+    - lint-docker
+    - lint
+  script:
+    - make test-cover
+  coverage: '/Code coverage: \d+\.\d+/'
+
+build:
+  stage: build
+  needs:
+    - test
+  script:
+    - make build
+  artifacts:
+    expire_in: 2 days
+    name: $CI_COMMIT_BRANCH-$CI_COMMIT_REF_SLUG
+    when: on_success
+    paths:
+      - build
+
+build_docker:
+  image: docker:latest
+  services:
+    - docker:dind
+  stage: build_docker_image
+  needs:
+    - build
+  dependencies:
+    - build
+  before_script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" registry.gitlab.com/brianlusina/portfolio
+  script:
+    if [ $CI_COMMIT_BRANCH == main ]
+    then
+      docker build -t registry.gitlab.com/brianlusina/portfolio:latest .
+      docker push registry.gitlab.com/brianlusina/portfolio:latest
+    else
+      docker build -t registry.gitlab.com/brianlusina/portfolio:$CI_COMMIT_REF_SLUG .
+      docker push registry.gitlab.com/brianlusina/portfolio:$CI_COMMIT_REF_SLUG
+    fi
+  only:
+    - main
+    - develop
+
+release:
+  stage: publish_release
+  only:
+    - main
+  script:
+    - npx semantic-release    
+
+  

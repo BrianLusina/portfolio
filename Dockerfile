@@ -15,7 +15,7 @@ RUN apk add --no-cache \
 
 COPY . .
 
-RUN npm install --force && npm run build
+RUN yarn install && yarn build
 
 FROM node:14.4-alpine3.12
 
@@ -28,7 +28,7 @@ RUN mkdir /usr/src/app/.pm2 && chmod -R 777 /usr/src/app && chmod -R 777 /usr/sr
 COPY --from=builder app/build build
 COPY --from=builder app/server .
 
-RUN npm install --quiet --no-optional && npm install pm2@5.2.0 -g
+RUN yarn add --quiet --no-optional && yarn add pm2@5.2.0 -g
 
 EXPOSE 8080
 CMD ["pm2-runtime", "start", "ecosystem.config.js", "--only", "folio-client"]

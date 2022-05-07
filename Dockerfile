@@ -1,6 +1,7 @@
 FROM node:alpine as builder
 
-# hadolint ignore=DL3018
+WORKDIR /app
+
 RUN apk add --no-cache \
     bash \
     lcms2-dev \
@@ -12,33 +13,25 @@ RUN apk add --no-cache \
     automake \
   && rm -rf /var/cache/apk/*
 
-WORKDIR /app
-
 COPY . .
 
-RUN yarn
+RUN npm install --omit=dev --force
+RUN npm run build
 
-RUN yarn build
+FROM node:14.4-alpine3.12
 
-# => Run container
-FROM nginx:1.19.2-alpine
+ENV PM2_HOME /usr/src/app/.pm2
 
-# Nginx config
-RUN rm -rf /etc/nginx/conf.d
-COPY conf /etc/nginx
+WORKDIR /usr/src/app
 
-# Static build
-COPY --from=builder /app/build /usr/share/nginx/html/
+RUN mkdir /usr/src/app/.pm2
+RUN chmod -R 777 /usr/src/app
+RUN chmod -R 777 /usr/src/app/.pm2
 
-# Default port exposure
-EXPOSE 80
+COPY --from=builder app/build build
+COPY --from=builder app/server .
 
-# Copy .env file and shell script to container
-WORKDIR /usr/share/nginx/html
+RUN npm install --quiet --no-optional && npm install pm2@5.2.0 -g
 
-# Add bash
-# hadolint ignore=DL3018
-RUN apk add --no-cache bash
-
-# Start Nginx server
-CMD ["/bin/bash", "-c", "nginx -g \"daemon off;\""]
+EXPOSE 8080
+CMD ["pm2-runtime", "start", "ecosystem.config.js", "--only", "folio-client"]

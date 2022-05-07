@@ -4,12 +4,13 @@ import author from './author';
 import monitoring from './monitoring';
 import env from './env';
 import firebase from './firebase';
+import meta from './meta';
 
 export default {
   api,
-  name: process.env.NAME || window._env_.NAME || 'Portfolio',
-  title: process.env.TITLE || window._env_.TITLE || 'Folio',
-  owner: process.env.OWNER || window._env_.OWNER || 'BrianLusina',
+  name: meta.name,
+  title: meta.title,
+  owner: meta.owner,
   author,
   menuItems,
   monitoring,

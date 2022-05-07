@@ -15,7 +15,7 @@ RUN apk add --no-cache \
 
 COPY . .
 
-RUN npm install --omit=dev --force && npm run build
+RUN npm install --force && npm run build
 
 FROM node:14.4-alpine3.12
 

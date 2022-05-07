@@ -15,8 +15,7 @@ RUN apk add --no-cache \
 
 COPY . .
 
-RUN npm install --omit=dev --force
-RUN npm run build
+RUN npm install --omit=dev --force && npm run build
 
 FROM node:14.4-alpine3.12
 
@@ -24,9 +23,7 @@ ENV PM2_HOME /usr/src/app/.pm2
 
 WORKDIR /usr/src/app
 
-RUN mkdir /usr/src/app/.pm2
-RUN chmod -R 777 /usr/src/app
-RUN chmod -R 777 /usr/src/app/.pm2
+RUN mkdir /usr/src/app/.pm2 && chmod -R 777 /usr/src/app && chmod -R 777 /usr/src/app/.pm2
 
 COPY --from=builder app/build build
 COPY --from=builder app/server .

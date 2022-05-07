@@ -39,7 +39,7 @@ lint-docker:
   services:
     - docker:dind
   script:
-    - make lint-docker
+    - docker run --rm -i hadolint/hadolint < Dockerfile
 
 lint:
   stage: lint

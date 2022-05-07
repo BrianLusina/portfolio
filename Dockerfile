@@ -1,4 +1,4 @@
-FROM node:alpine as builder
+FROM node:16-alpine3.15 as builder
 
 WORKDIR /app
 
@@ -17,7 +17,7 @@ COPY . .
 
 RUN yarn install && yarn build
 
-FROM node:14.4-alpine3.12
+FROM node:16-alpine3.15
 
 ENV PM2_HOME /usr/src/app/.pm2
 

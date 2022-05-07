@@ -30,14 +30,6 @@ endif
 echoos:
 	@echo $(OSFLAG)
 
-# TODO: setup hadolint based on the OS of the development machine this is being run on
-# this can be done with the OSFLAG above which already detects the current OS. Currently, this only setups up
-# hadolint on Linux
-setup-hadolint:
-# if running on Linux
-	wget -O ./bin/hadolint https://github.com/hadolint/hadolint/releases/download/v1.16.3/hadolint-Linux-x86_64
-	chmod +x ./bin/hadolint
-
 setup-trivy:
 	curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b ./bin v0.16.0
 
@@ -66,7 +58,7 @@ scan-docker-image:
 # See local hadolint install instructions: https://github.com/hadolint/hadolint
 # This is linter for Dockerfiles
 lint-docker:
-	./bin/hadolint Dockerfile
+	docker run --rm -i hadolint/hadolint < Dockerfile
 
 lint:
 	yarn lint
@@ -92,13 +84,5 @@ push-docker:
 # Validates codecov yml
 validate-codecov:
 	curl --data-binary @codecov.yml https://codecov.io/validate
-
-# See https://circleci.com/docs/2.0/local-cli/#processing-a-config
-validate-circleci:
-	circleci config validate
-
-# See https://circleci.com/docs/2.0/local-cli/#processing-a-config
-process-circleci:
-	circleci config process .circleci/config.yml
 
 all: install lint lint-docker test

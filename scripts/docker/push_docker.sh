@@ -4,7 +4,7 @@
 # Assumes that an image is built via `run_docker.sh`
 
 ID=${DOCKER_ID:-thelusina}
-IMAGE=${DOCKER_IMAGE:-portfolio}
+IMAGE=${DOCKER_IMAGE:-folio}
 TAG=${DOCKER_TAG:-latest}
 
 dockerpath=${ID}/${IMAGE}:${TAG}

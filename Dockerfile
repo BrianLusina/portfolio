@@ -1,6 +1,7 @@
-FROM node:alpine as builder
+FROM node:16-alpine3.15 as builder
 
-# hadolint ignore=DL3018
+WORKDIR /app
+
 RUN apk add --no-cache \
     bash \
     lcms2-dev \
@@ -12,33 +13,22 @@ RUN apk add --no-cache \
     automake \
   && rm -rf /var/cache/apk/*
 
-WORKDIR /app
-
 COPY . .
 
-RUN yarn
+RUN yarn install && yarn build
 
-RUN yarn build
+FROM node:16-alpine3.15
 
-# => Run container
-FROM nginx:1.19.2-alpine
+ENV PM2_HOME /usr/src/app/.pm2
 
-# Nginx config
-RUN rm -rf /etc/nginx/conf.d
-COPY conf /etc/nginx
+WORKDIR /usr/src/app
 
-# Static build
-COPY --from=builder /app/build /usr/share/nginx/html/
+RUN mkdir /usr/src/app/.pm2 && chmod -R 777 /usr/src/app && chmod -R 777 /usr/src/app/.pm2
 
-# Default port exposure
-EXPOSE 80
+COPY --from=builder app/build build
+COPY --from=builder app/server .
 
-# Copy .env file and shell script to container
-WORKDIR /usr/share/nginx/html
+RUN yarn install --quiet --no-optional && yarn cache clean && yarn add pm2@5.2.0 -g
 
-# Add bash
-# hadolint ignore=DL3018
-RUN apk add --no-cache bash
-
-# Start Nginx server
-CMD ["/bin/bash", "-c", "nginx -g \"daemon off;\""]
+EXPOSE 8080
+CMD ["pm2-runtime", "start", "ecosystem.config.js", "--only", "folio-client"]

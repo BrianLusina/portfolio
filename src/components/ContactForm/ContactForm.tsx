@@ -20,7 +20,7 @@ const ContactForm: FunctionComponent<ContactFormProps> = ({ onSubmit }: ContactF
   const isValid = name !== '' && isEmailValid(email) && message !== '';
 
   return (
-    <ContactFormWrapper method="post" onSubmit={handleSubmit}>
+    <ContactFormWrapper name="contact" method="post" onSubmit={handleSubmit}>
       <div className="fields">
         <div className="field half">
           <input

@@ -15,9 +15,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN yarn
-
-RUN yarn build
+RUN yarn && yarn build
 
 # => Run container
 FROM nginx:1.19.2-alpine
@@ -37,11 +35,8 @@ WORKDIR /usr/share/nginx/html
 COPY ./scripts/bash/env.sh .
 COPY .env.sample .
 
-# Add bash
-RUN apk add --no-cache bash
-
-# Make our shell script executable
-RUN chmod +x env.sh
+# Add bash & make script executable
+RUN apk add --no-cache bash && chmod +x env.sh
 
 # Start Nginx server
 CMD ["/bin/bash", "-c", "/usr/share/nginx/html/env.sh && nginx -g \"daemon off;\""]

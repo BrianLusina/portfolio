@@ -5,7 +5,7 @@
   # - template: Security/SAST.gitlab-ci.yml
   # - template: Security/Secret-Detection.gitlab-ci.yml
 
-image: node:15
+image: node:16
 
 stages:
   - setup

@@ -20,7 +20,9 @@ const ContactForm: FunctionComponent<ContactFormProps> = ({ onSubmit }: ContactF
   const isValid = name !== '' && isEmailValid(email) && message !== '';
 
   return (
-    <ContactFormWrapper name="contact" method="post" onSubmit={handleSubmit}>
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    <ContactFormWrapper name="contact" method="post" onSubmit={handleSubmit} netlify>
       <div className="fields">
         <div className="field half">
           <input

@@ -38,6 +38,7 @@ lint-docker:
     - setup
   services:
     - docker:dind
+  allow_failure: true
   script:
     - docker run --rm -i hadolint/hadolint < Dockerfile
 

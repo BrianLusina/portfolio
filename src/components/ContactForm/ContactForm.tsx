@@ -20,9 +20,15 @@ const ContactForm: FunctionComponent<ContactFormProps> = ({ onSubmit }: ContactF
   const isValid = name !== '' && isEmailValid(email) && message !== '';
 
   return (
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    <ContactFormWrapper name="contact" method="post" onSubmit={handleSubmit} netlify>
+    <ContactFormWrapper
+      name="contact"
+      method="post"
+      onSubmit={handleSubmit}
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      netlify
+      data-netlify="true"
+    >
       <div className="fields">
         <div className="field half">
           <input
@@ -53,6 +59,7 @@ const ContactForm: FunctionComponent<ContactFormProps> = ({ onSubmit }: ContactF
             onChange={(e) => setMessage(e.target.value)}
           />
         </div>
+        <input type="hidden" name="form-name" value="contact" />
       </div>
       <ul className="actions">
         <li>

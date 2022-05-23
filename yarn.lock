@@ -202,14 +202,7 @@
     jsesc "^2.5.1"
     source-map "^0.5.0"
 
-"@babel/helper-annotate-as-pure@^7.14.5", "@babel/helper-annotate-as-pure@^7.15.4", "@babel/helper-annotate-as-pure@^7.16.0":
-  version "7.16.0"
-  resolved "https://registry.yarnpkg.com/@babel/helper-annotate-as-pure/-/helper-annotate-as-pure-7.16.0.tgz#9a1f0ebcda53d9a2d00108c4ceace6a5d5f1f08d"
-  integrity sha512-ItmYF9vR4zA8cByDocY05o0LGUkp1zhbTQOH1NFyl5xXEqlTJQCEJjieriw+aFpxo16swMxUnUiKS7a/r4vtHg==
-  dependencies:
-    "@babel/types" "^7.16.0"
-
-"@babel/helper-annotate-as-pure@^7.16.7":
+"@babel/helper-annotate-as-pure@^7.14.5", "@babel/helper-annotate-as-pure@^7.15.4", "@babel/helper-annotate-as-pure@^7.16.0", "@babel/helper-annotate-as-pure@^7.16.7":
   version "7.16.7"
   resolved "https://registry.yarnpkg.com/@babel/helper-annotate-as-pure/-/helper-annotate-as-pure-7.16.7.tgz#bb2339a7534a9c128e3102024c60760a3a7f3862"
   integrity sha512-s6t2w/IPQVTAET1HitoowRGXooX8mCgtuP5195wD/QJPV6wYjpujCGF7JuMODVX2ZAJOf1GT6DT9MHEZvLOFSw==
@@ -234,7 +227,7 @@
     browserslist "^4.20.2"
     semver "^6.3.0"
 
-"@babel/helper-create-class-features-plugin@^7.16.5", "@babel/helper-create-class-features-plugin@^7.16.7", "@babel/helper-create-class-features-plugin@^7.17.12", "@babel/helper-create-class-features-plugin@^7.17.6", "@babel/helper-create-class-features-plugin@^7.18.0":
+"@babel/helper-create-class-features-plugin@^7.16.5", "@babel/helper-create-class-features-plugin@^7.17.12", "@babel/helper-create-class-features-plugin@^7.17.6", "@babel/helper-create-class-features-plugin@^7.18.0":
   version "7.18.0"
   resolved "https://registry.yarnpkg.com/@babel/helper-create-class-features-plugin/-/helper-create-class-features-plugin-7.18.0.tgz#fac430912606331cb075ea8d82f9a4c145a4da19"
   integrity sha512-Kh8zTGR9de3J63e5nS0rQUdRs/kbtwoeQQ0sriS0lItjC96u8XXZN6lKpuyWd2coKSU13py/y+LTmThLuVX0Pg==
@@ -808,7 +801,7 @@
     "@babel/helper-create-class-features-plugin" "^7.17.12"
     "@babel/helper-plugin-utils" "^7.17.12"
 
-"@babel/plugin-proposal-private-property-in-object@^7.12.1":
+"@babel/plugin-proposal-private-property-in-object@^7.12.1", "@babel/plugin-proposal-private-property-in-object@^7.14.5", "@babel/plugin-proposal-private-property-in-object@^7.16.7":
   version "7.17.12"
   resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-private-property-in-object/-/plugin-proposal-private-property-in-object-7.17.12.tgz#b02efb7f106d544667d91ae97405a9fd8c93952d"
   integrity sha512-/6BtVi57CJfrtDNKfK5b66ydK2J5pXUKBKSPD2G1whamMuEnZWgoOIfO8Vf9F/DoD4izBLD/Au4NMQfruzzykg==
@@ -816,16 +809,6 @@
     "@babel/helper-annotate-as-pure" "^7.16.7"
     "@babel/helper-create-class-features-plugin" "^7.17.12"
     "@babel/helper-plugin-utils" "^7.17.12"
-    "@babel/plugin-syntax-private-property-in-object" "^7.14.5"
-
-"@babel/plugin-proposal-private-property-in-object@^7.14.5", "@babel/plugin-proposal-private-property-in-object@^7.16.7":
-  version "7.16.7"
-  resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-private-property-in-object/-/plugin-proposal-private-property-in-object-7.16.7.tgz#b0b8cef543c2c3d57e59e2c611994861d46a3fce"
-  integrity sha512-rMQkjcOFbm+ufe3bTZLyOfsOUOxyvLXZJCTARhJr+8UMSoZmqTe1K1BgkFcrW37rAchWg57yI69ORxiWvUINuQ==
-  dependencies:
-    "@babel/helper-annotate-as-pure" "^7.16.7"
-    "@babel/helper-create-class-features-plugin" "^7.16.7"
-    "@babel/helper-plugin-utils" "^7.16.7"
     "@babel/plugin-syntax-private-property-in-object" "^7.14.5"
 
 "@babel/plugin-proposal-unicode-property-regex@^7.16.7", "@babel/plugin-proposal-unicode-property-regex@^7.4.4":

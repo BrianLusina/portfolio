@@ -10,10 +10,10 @@ const ContactFormContainer: FunctionComponent = () => {
       .join('&');
   };
 
-  const handleSumbit = (values: { email: string; name: string; message: string }) => {
+  const handleSubmit = (values: { email: string; name: string; message: string }) => {
     fetch('/', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      headers: { 'Content-Type': 'application/json' },
       body: encode({ 'form-name': 'contact', ...values }),
     })
       .then(() =>
@@ -31,7 +31,7 @@ const ContactFormContainer: FunctionComponent = () => {
   return (
     <section>
       <h2>Get in touch</h2>
-      <ContactForm onSubmit={handleSumbit} />
+      <ContactForm onSubmit={handleSubmit} />
     </section>
   );
 };

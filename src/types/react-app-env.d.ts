@@ -22,6 +22,10 @@ declare namespace NodeJS {
     readonly FIREBASE_MESSAGING_SENDER_ID: string;
     readonly FIREBASE_APP_ID: string;
     readonly FIREBASE_MEASUREMENT_ID: string;
+    readonly EMAILJS_BASE_URL: string;
+    readonly EMAILJS_SERVICE_ID: string;
+    readonly EMAILJS_TEMPLATE_ID: string;
+    readonly EMAILJS_USER_ID: string;
   }
 }
 

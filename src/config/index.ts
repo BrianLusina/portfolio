@@ -6,11 +6,13 @@ import env from './env';
 import firebase from './firebase';
 import meta from './meta';
 
+const{ name, title, owner } = meta
+
 export default {
   api,
-  name: meta.name,
-  title: meta.title,
-  owner: meta.owner,
+  name,
+  title,
+  owner,
   author,
   menuItems,
   monitoring,

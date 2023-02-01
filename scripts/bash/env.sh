@@ -93,6 +93,35 @@ else
     echo BUGSNAG_API_KEY="$BUGSNAG_API_KEY" >> "$ENV_FILE"
   fi
 
+  if [-z "${EMAILJS_BASE_URL}"]; then
+    echo "Missing EMAILJS_BASE_URL key"
+  else
+    echo EMAILJS_BASE_URL="$EMAILJS_BASE_URL" >> "$ENV_FILE"
+  fi
+
+  if [-z "${EMAILJS_SERVICE_ID}"]; then
+    echo "Missing EMAILJS_SERVICE_ID key"
+  else
+    echo EMAILJS_SERVICE_ID="$EMAILJS_SERVICE_ID" >> "$ENV_FILE"
+  fi
+
+  if [-z "${EMAILJS_TEMPLATE_ID}"]; then
+    echo "Missing EMAILJS_TEMPLATE_ID key"
+  else
+    echo EMAILJS_TEMPLATE_ID="$EMAILJS_TEMPLATE_ID" >> "$ENV_FILE"
+  fi
+
+  if [-z "${EMAILJS_USER_ID}"]; then
+    echo "Missing EMAILJS_USER_ID key"
+  else
+    echo EMAILJS_USER_ID="$EMAILJS_USER_ID" >> "$ENV_FILE"
+  fi
+
+  if [-z "${EMAILJS_ACCESS_TOKEN}"]; then
+    echo "Missing EMAILJS_ACCESS_TOKEN key"
+  else
+    echo EMAILJS_ACCESS_TOKEN="$EMAILJS_ACCESS_TOKEN" >> "$ENV_FILE"
+  fi
 fi
 
 # Add assignment

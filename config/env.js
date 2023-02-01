@@ -109,6 +109,7 @@ function getClientEnvironment(publicUrl) {
         EMAILJS_SERVICE_ID: process.env.EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID: process.env.EMAILJS_TEMPLATE_ID,
         EMAILJS_USER_ID: process.env.EMAILJS_USER_ID,
+        EMAILJS_ACCESS_TOKEN: process.env.EMAILJS_ACCESS_TOKEN,
       },
     );
   // Stringify all values so we can feed into webpack DefinePlugin

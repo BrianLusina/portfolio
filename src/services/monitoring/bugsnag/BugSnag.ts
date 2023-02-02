@@ -10,7 +10,7 @@ const {
   env: { nodeEnv: NODE_ENV, env: ENV },
 } = config;
 
-export const inititializeBugSnag = (): void => {
+export const initializeBugSnag = (): void => {
   if (NODE_ENV === 'production' || ENV === 'production') {
     Bugsnag.start({
       apiKey,
@@ -25,5 +25,7 @@ export const inititializeBugSnag = (): void => {
 };
 
 export const captureBugSnagError = (error: Error): void => {
-  Bugsnag.notify(error);
+  if (NODE_ENV === 'production' || ENV === 'production') {
+    Bugsnag.notify(error);
+  }
 };

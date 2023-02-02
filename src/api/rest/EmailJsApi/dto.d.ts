@@ -1,5 +1,5 @@
-declare type EmailJsSendEmailRequest = {
+declare type SendEmailRequest = {
     name: string;
-    from_email: string;
+    email: string;
     message: string;
 }

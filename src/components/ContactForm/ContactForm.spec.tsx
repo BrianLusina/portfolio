@@ -5,12 +5,11 @@ import ContactForm from './ContactForm';
 
 describe('ContactForm', () => {
   it('should render', () => {
-    render(<ContactForm onSubmit={jest.fn} />);
+    render(<ContactForm />);
   });
 
   it('should not be able to submit form with missing values', () => {
-    const onSubmit = jest.fn();
-    const { container } = render(<ContactForm onSubmit={onSubmit} />);
+    const { container } = render(<ContactForm />);
 
     const submitButton = container.querySelector('input[type=submit]') as Element;
     userEvent.click(submitButton);
@@ -19,8 +18,7 @@ describe('ContactForm', () => {
   });
 
   it('should be able to submit form with valid values', () => {
-    const onSubmit = jest.fn();
-    const { container } = render(<ContactForm onSubmit={onSubmit} />);
+    const { container } = render(<ContactForm />);
 
     const emailText = faker.internet.email();
     const messageText = faker.lorem.paragraph();
@@ -46,8 +44,7 @@ describe('ContactForm', () => {
   });
 
   describe('should not be able to submit form with invalid', () => {
-    const onSubmit = jest.fn();
-    const { container } = render(<ContactForm onSubmit={onSubmit} />);
+    const { container } = render(<ContactForm />);
 
     const nameInputField = container.querySelector('input[name=name]') as Element;
     const emailInputField = container.querySelector('input[type=email]') as Element;

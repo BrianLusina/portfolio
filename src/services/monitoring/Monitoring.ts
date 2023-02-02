@@ -1,4 +1,5 @@
 import { ErrorInfo } from 'react';
+import config from '@config';
 import {
   initializeSentry,
   captureAndLogSentryError,
@@ -8,14 +9,18 @@ import {
   SentryBreadcrumb,
   SentryScope,
 } from './sentry';
-import { inititializeBugSnag, captureBugSnagError } from './bugsnag';
+import { initializeBugSnag, captureBugSnagError } from './bugsnag';
+
+const {
+  env: { nodeEnv: NODE_ENV, env: ENV },
+} = config;
 
 /**
  * Initializes monitoring service
  */
 export const initializeMonitoring = (): void => {
   initializeSentry();
-  inititializeBugSnag();
+  initializeBugSnag();
 };
 
 /**
@@ -24,8 +29,10 @@ export const initializeMonitoring = (): void => {
  * @param errorInfo Error information from React
  */
 export const captureAndLogError = (error: Error, errorInfo: ErrorInfo): void => {
-  captureAndLogSentryError(error, errorInfo);
-  captureBugSnagError(error);
+  if (NODE_ENV === 'production' || ENV === 'production') {
+    captureAndLogSentryError(error, errorInfo);
+    captureBugSnagError(error);
+  }
 };
 
 /**
@@ -37,8 +44,10 @@ export const captureException = (
   scope?: SentryScope,
   errorMessage = 'Error Caught',
 ): void => {
-  captureSentryException(error, scope, errorMessage);
-  captureBugSnagError(error);
+  if (NODE_ENV === 'production' || ENV === 'production') {
+    captureSentryException(error, scope, errorMessage);
+    captureBugSnagError(error);
+  }
 };
 
 export const captureScope = (data: SentryBreadcrumb, level: Severity): SentryScope => {

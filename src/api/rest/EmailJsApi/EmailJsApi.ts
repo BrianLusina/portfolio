@@ -4,9 +4,9 @@ import config from '@config';
 import BaseApi from '../BaseApi';
 import { BaseApiException } from '../exceptions';
 
-const { name, owner } = config;
+const { title } = config;
 const {
-  emailJs: { baseUrl, serviceId, templateId, userId, accessToken },
+  emailJs: { baseUrl, serviceId, templateId, userId },
 } = apiConfig;
 
 export class EmailJsApi extends BaseApi {
@@ -14,13 +14,12 @@ export class EmailJsApi extends BaseApi {
    * Send Email API request
    * @param {EmailJsSendEmailRequest} payload Email payload
    * */
-  async send(payload: EmailJsSendEmailRequest): Promise<void> {
+  async send(payload: SendEmailRequest): Promise<void> {
     try {
       const templateParams = {
         ...payload,
-        site: name,
-        to_name: owner,
-        reply_to: payload.from_email,
+        site: title,
+        reply_to: payload.email,
       };
 
       const data = {
@@ -28,7 +27,6 @@ export class EmailJsApi extends BaseApi {
         templateId,
         userId,
         templateParams,
-        accessToken,
       };
 
       await this.restClient.post(`${this.baseUrl}/send`, data);

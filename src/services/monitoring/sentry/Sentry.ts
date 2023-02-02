@@ -15,7 +15,6 @@ import { ErrorInfo } from 'react';
 import { Scope, Breadcrumb, Severity } from '@sentry/react';
 import { Integrations } from '@sentry/tracing';
 import config from '@config';
-// import log from '@log';
 
 const {
   monitoring: {
@@ -29,7 +28,6 @@ const {
  */
 export const initializeSentry = (): void => {
   if (NODE_ENV === 'production' || ENV === 'production') {
-    // log.info('Initializing Monitoring');
     // configuration options can be found here as well
     // ref: https://docs.sentry.io/platforms/javascript/guides/react/configuration/options/
     Sentry.init({
@@ -74,8 +72,10 @@ export const captureSentryException = (
   scope?: Scope,
   errorMessage = 'Error Caught',
 ): void => {
-  Sentry.captureMessage(errorMessage, scope);
-  Sentry.captureException(error);
+  if (NODE_ENV === 'production' || ENV === 'production') {
+    Sentry.captureMessage(errorMessage, scope);
+    Sentry.captureException(error);
+  }
 };
 
 export const captureSentryScope = (data: Breadcrumb, level: Severity): Scope => {

@@ -332,6 +332,7 @@ module.exports = function (webpackEnv) {
         '@scss': path.resolve('src/styles/scss/'),
         '@css': path.resolve('src/styles/css/'),
         '@testUtils': path.resolve('src/test/'),
+        '@notification': path.resolve('src/containers/notification/notify.ts'),
         // Allows for better profiling with ReactDevTools
         ...(isEnvProductionProfile && {
           'react-dom$': 'react-dom/profiling',

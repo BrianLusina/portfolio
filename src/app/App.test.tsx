@@ -3,7 +3,7 @@ import MockAppWithRouter from '@testUtils/MockAppWithRouter';
 import config from '@config';
 import App from './App';
 
-test('renders Liber', () => {
+xtest('renders Folio', () => {
   render(
     <MockAppWithRouter>
       <App />

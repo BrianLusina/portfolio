@@ -37,4 +37,6 @@ export class EmailJsApi extends BaseApi {
   }
 }
 
-export default new EmailJsApi(baseUrl);
+const emailApi = new EmailJsApi(baseUrl);
+
+export default emailApi;

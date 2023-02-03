@@ -37,7 +37,7 @@
       "@services/*": ["services/*"],
       "@monitoring": ["services/monitoring/index.ts"],
       "@analytics": ["services/analytics/index.ts"],
-      "@notification": ["containers/notification/notify.ts"],
+      "@notification": ["containers/Notification/notify.ts"],
       "@testUtils/*": ["test/*"],
       "@styles/*": ["styles/*"],
       "@styled/*": ["styles/ts/*"],

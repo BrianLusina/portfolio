@@ -1,9 +1,20 @@
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import faker from 'faker';
+import { captureException as mockCaptureException } from '@services/monitoring';
+import mockEmailJsApi from 'api/rest/EmailJsApi';
 import ContactForm from './ContactForm';
 
+jest.mock('@services/monitoring', () => {
+  return {
+    captureException: jest.fn(),
+  };
+});
+jest.mock('api/rest/EmailJsApi');
+
 describe('ContactForm', () => {
+  afterEach(() => jest.resetAllMocks());
+
   it('should render', () => {
     render(<ContactForm />);
   });
@@ -14,7 +25,8 @@ describe('ContactForm', () => {
     const submitButton = container.querySelector('input[type=submit]') as Element;
     userEvent.click(submitButton);
 
-    expect(onSubmit).not.toHaveBeenCalled();
+    expect(mockCaptureException).not.toHaveBeenCalled();
+    expect(mockEmailJsApi.send).not.toHaveBeenCalled();
   });
 
   it('should be able to submit form with valid values', () => {
@@ -35,8 +47,8 @@ describe('ContactForm', () => {
     const submitButton = container.querySelector('input[type=submit]') as Element;
     userEvent.click(submitButton);
 
-    expect(onSubmit).toHaveBeenCalled();
-    expect(onSubmit).toHaveBeenCalledWith({
+    expect(mockCaptureException).not.toHaveBeenCalled();
+    expect(mockEmailJsApi.send).toHaveBeenCalledWith({
       email: emailText,
       message: messageText,
       name: nameText,
@@ -65,7 +77,8 @@ describe('ContactForm', () => {
 
       userEvent.click(submitButton);
 
-      expect(onSubmit).not.toHaveBeenCalled();
+      expect(mockCaptureException).not.toHaveBeenCalled();
+      expect(mockEmailJsApi.send).not.toHaveBeenCalled();
     });
 
     it('message text', () => {
@@ -78,7 +91,8 @@ describe('ContactForm', () => {
 
       userEvent.click(submitButton);
 
-      expect(onSubmit).not.toHaveBeenCalled();
+      expect(mockCaptureException).not.toHaveBeenCalled();
+      expect(mockEmailJsApi.send).not.toHaveBeenCalled();
     });
 
     it('name text', () => {
@@ -91,7 +105,8 @@ describe('ContactForm', () => {
 
       userEvent.click(submitButton);
 
-      expect(onSubmit).not.toHaveBeenCalled();
+      expect(mockCaptureException).not.toHaveBeenCalled();
+      expect(mockEmailJsApi.send).not.toHaveBeenCalled();
     });
   });
 });

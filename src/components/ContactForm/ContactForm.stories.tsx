@@ -1,6 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import ContactForm from './ContactForm';
-import { ContactFormValues } from './types';
 
 export default {
   title: 'Components/contact/ContactForm',
@@ -10,8 +9,4 @@ export default {
 const Template: ComponentStory<typeof ContactForm> = (args) => <ContactForm {...args} />;
 
 export const SimpleContactForm = Template.bind({});
-SimpleContactForm.args = {
-  onSubmit: (values: ContactFormValues) => {
-    console.log(`submitting form. ${JSON.stringify(values)}`);
-  },
-};
+SimpleContactForm.args = {};

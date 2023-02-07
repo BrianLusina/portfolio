@@ -4,6 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { initializeMonitoring } from '@monitoring';
 import config from '@config';
+import NotificationContainer from '@containers/Notification';
 import ErrorBoundary from './components/Errors/PageErrorBoundary';
 import GraphqlProvider from './providers/graphql/GraphqlProvider';
 import GraphqlClient from './api/graphql/GraphqlClient';
@@ -20,6 +21,7 @@ ReactDOM.render(
     <GraphqlProvider client={GraphqlClient}>
       <Helmet titleTemplate={`${config.title} | %s `} defaultTitle={`${config.title}`} />
       <ErrorBoundary>
+        <NotificationContainer />
         <Router>
           <App />
         </Router>

@@ -3,6 +3,24 @@ import faker from 'faker';
 import MetaInfo from './MetaInfo';
 
 describe('MetaInfo', () => {
+  beforeAll(() => {
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+  });
+
+  afterAll(() => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    console.error.mockRestore();
+  });
+
+  afterEach(() => {
+    jest.resetAllMocks();
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    console.error.mockClear();
+  });
+
   it('should render with provided meta info displayed', () => {
     const props = {
       author: {

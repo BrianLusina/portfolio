@@ -1,3 +1,3 @@
-import ContactForm from './ContactFormContainer';
+import ContactForm from './ContactForm';
 
 export default ContactForm;

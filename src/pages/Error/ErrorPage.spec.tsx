@@ -3,6 +3,24 @@ import MockAppWithRouter from '@testUtils/MockAppWithRouter';
 import ErrorPage from './ErrorPage';
 
 describe('ErrorPage', () => {
+  beforeAll(() => {
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+  });
+
+  afterAll(() => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    console.error.mockRestore();
+  });
+
+  afterEach(() => {
+    jest.resetAllMocks();
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    console.error.mockClear();
+  });
+
   it('Should render & display text', () => {
     render(
       <MockAppWithRouter>
@@ -10,7 +28,7 @@ describe('ErrorPage', () => {
       </MockAppWithRouter>,
     );
 
-    const titleElement = screen.getByText('Oops! Well, this is embarassing...');
+    const titleElement = screen.getByText('Oops! Well, this is embarrassing...');
     expect(titleElement).toBeInTheDocument();
   });
 

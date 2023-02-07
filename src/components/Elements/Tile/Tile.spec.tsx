@@ -4,6 +4,24 @@ import faker from 'faker';
 import Tile from './Tile';
 
 describe('Tile', () => {
+  beforeAll(() => {
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+  });
+
+  afterAll(() => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    console.error.mockRestore();
+  });
+
+  afterEach(() => {
+    jest.resetAllMocks();
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    console.error.mockClear();
+  });
+
   it('should render', () => {
     const title = faker.lorem.word();
     const description = faker.lorem.sentence();

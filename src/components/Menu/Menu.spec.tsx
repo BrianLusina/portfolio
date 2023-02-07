@@ -4,6 +4,24 @@ import faker from 'faker';
 import Menu from './Menu';
 
 describe('Menu', () => {
+  beforeAll(() => {
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+  });
+
+  afterAll(() => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    console.error.mockRestore();
+  });
+
+  afterEach(() => {
+    jest.resetAllMocks();
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    console.error.mockClear();
+  });
+
   it('should render with provided menu info displayed', () => {
     const props = {
       items: [

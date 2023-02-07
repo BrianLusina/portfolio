@@ -5,6 +5,24 @@ import { MockedResponseType } from '@testUtils/MockAppWithGqlProvider';
 import ProjectList from './ProjectList';
 
 describe('ProjectList', () => {
+  beforeAll(() => {
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+  });
+
+  afterAll(() => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    console.error.mockRestore();
+  });
+
+  afterEach(() => {
+    jest.resetAllMocks();
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    console.error.mockClear();
+  });
+
   it('should render', () => {
     const projectMock: MockedResponseType[] = [];
     render(

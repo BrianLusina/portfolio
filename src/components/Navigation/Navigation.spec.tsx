@@ -1,8 +1,7 @@
-import config from '@config';
-import { render, screen } from '@testing-library/react';
-import Logo from './Logo';
+import { render } from '@testing-library/react';
+import Navigation from './Navigation';
 
-describe('Logo', () => {
+describe('Navigation', () => {
   beforeAll(() => {
     // eslint-disable-next-line @typescript-eslint/no-empty-function
     jest.spyOn(console, 'error').mockImplementation(() => {});
@@ -22,13 +21,6 @@ describe('Logo', () => {
   });
 
   it('should render', () => {
-    render(<Logo />);
-  });
-
-  xit('should render and display title', () => {
-    render(<Logo />);
-
-    const titleElement = screen.getByText(config.title);
-    expect(titleElement).toBeInTheDocument();
+    render(<Navigation />);
   });
 });

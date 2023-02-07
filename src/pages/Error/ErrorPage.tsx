@@ -4,7 +4,7 @@ import { ErrorPageContainer, ErrorPageTitle, ErrorPageText } from './styles';
 import { ErrorPageProps } from './ErrorPage.interface';
 
 const ErrorPage: FunctionComponent<ErrorPageProps> = ({
-  title = 'Oops! Well, this is embarassing...',
+  title = 'Oops! Well, this is embarrassing...',
   message = 'Something terrible went wrong and we regret that you had to experience this! <b /> We are working to fix this.',
 }: ErrorPageProps) => {
   return (

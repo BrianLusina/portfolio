@@ -806,11 +806,6 @@
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.23.0.tgz#da950e622420bf96ca0d0f2909cdddac3acd8719"
   integrity sha512-vvPKKdMemU85V9WE/l5wZEmImpCtLqbnTvqDS2U1fJ96KrxoW7KrXhNsNCblQlg8Ck4b85yxdTyelsMUgFUXiw==
 
-"@babel/parser@^7.22.15":
-  version "7.23.0"
-  resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.23.0.tgz#da950e622420bf96ca0d0f2909cdddac3acd8719"
-  integrity sha512-vvPKKdMemU85V9WE/l5wZEmImpCtLqbnTvqDS2U1fJ96KrxoW7KrXhNsNCblQlg8Ck4b85yxdTyelsMUgFUXiw==
-
 "@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression@^7.22.15":
   version "7.22.15"
   resolved "https://registry.yarnpkg.com/@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression/-/plugin-bugfix-safari-id-destructuring-collision-in-function-expression-7.22.15.tgz#02dc8a03f613ed5fdc29fb2f728397c78146c962"
@@ -1816,15 +1811,6 @@
     globals "^11.1.0"
 
 "@babel/types@^7.0.0", "@babel/types@^7.11.0", "@babel/types@^7.12.1", "@babel/types@^7.12.11", "@babel/types@^7.12.5", "@babel/types@^7.12.6", "@babel/types@^7.12.7", "@babel/types@^7.14.9", "@babel/types@^7.15.6", "@babel/types@^7.16.0", "@babel/types@^7.18.10", "@babel/types@^7.18.6", "@babel/types@^7.19.0", "@babel/types@^7.19.3", "@babel/types@^7.19.4", "@babel/types@^7.2.0", "@babel/types@^7.20.0", "@babel/types@^7.20.7", "@babel/types@^7.21.0", "@babel/types@^7.21.4", "@babel/types@^7.21.5", "@babel/types@^7.22.0", "@babel/types@^7.22.15", "@babel/types@^7.22.19", "@babel/types@^7.22.3", "@babel/types@^7.22.5", "@babel/types@^7.23.0", "@babel/types@^7.3.0", "@babel/types@^7.3.3", "@babel/types@^7.4.4", "@babel/types@^7.7.0":
-  version "7.23.0"
-  resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.23.0.tgz#8c1f020c9df0e737e4e247c0619f58c68458aaeb"
-  integrity sha512-0oIyUfKoI3mSqMvsxBdclDwxXKXAUA8v/apZbc+iSyARYou1o8ZGDxbUYyLFoW2arqS2jDGqJuZvv1d/io1axg==
-  dependencies:
-    "@babel/helper-string-parser" "^7.22.5"
-    "@babel/helper-validator-identifier" "^7.22.20"
-    to-fast-properties "^2.0.0"
-
-"@babel/types@^7.23.0":
   version "7.23.0"
   resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.23.0.tgz#8c1f020c9df0e737e4e247c0619f58c68458aaeb"
   integrity sha512-0oIyUfKoI3mSqMvsxBdclDwxXKXAUA8v/apZbc+iSyARYou1o8ZGDxbUYyLFoW2arqS2jDGqJuZvv1d/io1axg==
@@ -4873,9 +4859,9 @@
   integrity sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==
 
 "@types/webfontloader@^1.6.33":
-  version "1.6.35"
-  resolved "https://registry.yarnpkg.com/@types/webfontloader/-/webfontloader-1.6.35.tgz#c9cedff2995c61ee9b2064714e7f7d7763ac50bd"
-  integrity sha512-IJlrsiDWq6KghQ7tPlL5tcwSUyOxLDceT+AFUY7Ylj0Fcv3/h3QkANqQxZ0B5mEpEKxhTw76vDmvrruSMV9n9Q==
+  version "1.6.36"
+  resolved "https://registry.yarnpkg.com/@types/webfontloader/-/webfontloader-1.6.36.tgz#d722e073a874447893cf19f1bf09894b46c20fa7"
+  integrity sha512-zi18nVXGF9m7GFqWCJHZvu1Hxzcsr7B+FFExY9cbuOzq60sqOiaDW1X1BUoDUwQaXxWaiDYXOgFHnlsnSvPasw==
 
 "@types/webpack-env@^1.16.0":
   version "1.16.3"

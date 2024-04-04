@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react';
 import Logo from '@components/Elements/Logo';
 import { HeaderWrapper } from './styles';
-import { HeaderProps } from './Header.interface';
+import { HeaderProps } from './HeaderProps';
 
 const Header: FunctionComponent<HeaderProps> = ({ children }: HeaderProps) => {
   return (

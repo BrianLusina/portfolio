@@ -1,5 +1,5 @@
 import { StrictMode } from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { initializeMonitoring } from '@monitoring';
@@ -16,7 +16,10 @@ import './styles/css/index.css';
 
 initializeMonitoring();
 
-ReactDOM.render(
+const container = document.getElementById('root')!;
+const root = createRoot(container);
+
+root.render(
   <StrictMode>
     <GraphqlProvider client={GraphqlClient}>
       <Helmet titleTemplate={`${config.title} | %s `} defaultTitle={`${config.title}`} />
@@ -28,7 +31,6 @@ ReactDOM.render(
       </ErrorBoundary>
     </GraphqlProvider>
   </StrictMode>,
-  document.getElementById('root'),
 );
 
 // If you want to start measuring performance in your app, pass a function

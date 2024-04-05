@@ -2,11 +2,11 @@ const {
   _env_
 } = window
 
-const NODE_ENV = _env_ ? _env_.NODE_ENV : process.env.NODE_ENV || 'development'
-const ENV = _env_ ? _env_.ENV : process.env.ENV || 'development'
+const NODE_ENV = _env_ ? _env_.NODE_ENV : import.meta.env.NODE_ENV || 'development'
+const ENV = _env_ ? _env_.ENV : import.meta.env.ENV || 'development'
 
 export default {
     nodeEnv: NODE_ENV,
     env: ENV,
-    debug: process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'test',
+    debug: import.meta.env.NODE_ENV === 'development' || import.meta.env.NODE_ENV === 'test',
 };

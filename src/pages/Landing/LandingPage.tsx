@@ -2,11 +2,14 @@ import { FunctionComponent } from 'react';
 import ProjectList from '@containers/ProjectList';
 import MetaInfo from '@components/MetaInfo';
 import config from '@config';
+import Hero from '@components/ui/Hero';
+import About from './components/about';
 
 const LandingPage: FunctionComponent = () => {
   return (
     <>
-      <MetaInfo
+      <Hero />
+      {/* <MetaInfo
         author={{
           name: config.author.name,
           url: config.author.linkedIn,
@@ -21,7 +24,13 @@ const LandingPage: FunctionComponent = () => {
             tooling used as well as the reasons for the projects.
           </p>
         }
-      />
+      /> */}
+
+      <About />
+      
+      {/* maybe service area */}
+      {/* portfolio */}
+        
       <ProjectList />
     </>
   );

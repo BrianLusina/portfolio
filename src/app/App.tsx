@@ -6,13 +6,10 @@ import config from '@config';
 import RouteErrorBoundary from '@components/Errors/RouteErrorBoundary';
 import ContactForm from '@components/ContactForm';
 import MainLayout from '@layouts/MainLayout';
-import Menu from '@components/Menu';
 import Footer from '@components/Footer';
-import Header from '@components/Header';
 import PageLoader from '@components/Elements/Loaders/PageLoader';
 import ScrollToTop from '@components/ScrollToTop';
 import SocialCard from '@components/SocialCard';
-import Navigation from '@components/Navigation';
 import usePageViews from '@hooks/analytics/usePageView';
 
 import { AppWrapper } from './styles';
@@ -27,9 +24,6 @@ const App: FunctionComponent = () => {
   return (
     <>
       <AppWrapper id="wrapper">
-        <Header>
-          <Navigation />
-        </Header>
         <MainLayout>
           <ScrollToTop />
           <Suspense fallback={<PageLoader />}>
@@ -62,7 +56,7 @@ const App: FunctionComponent = () => {
           <SocialCard />
         </Footer>
       </AppWrapper>
-      <Menu items={config.menuItems} />
+      {/* <Menu items={config.menuItems} /> */}
     </>
   );
 };

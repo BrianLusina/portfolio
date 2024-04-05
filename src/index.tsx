@@ -10,9 +10,10 @@ import GraphqlProvider from './providers/graphql/GraphqlProvider';
 import GraphqlClient from './api/graphql/GraphqlClient';
 import App from './app';
 import reportWebVitals from './reportWebVitals';
-import './styles/css/animate.min.css';
-import './styles/css/noscript.css';
-import './styles/css/index.css';
+// import './styles/css/animate.min.css';
+// import './styles/css/noscript.css';
+// import './styles/css/index.css';
+import './assets/styles/scss/index.scss';
 
 initializeMonitoring();
 

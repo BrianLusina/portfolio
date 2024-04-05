@@ -53,7 +53,9 @@
       "@styles/*": ["styles/*"],
       "@styled/*": ["styles/ts/*"],
       "@scss/*": ["styles/scss/*"],
-      "@css/*": ["styles/css/*"]
+      "@css/*": ["styles/css/*"],
+      "@assets/*": ["assets/*"],
+      "@images/*": ["assets/images/*"]
     }
   },
   "exclude": [

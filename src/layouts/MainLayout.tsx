@@ -1,3 +1,4 @@
+import Header from '@components/Header';
 import { FunctionComponent, ReactNode } from 'react';
 import { Helmet } from 'react-helmet';
 
@@ -12,8 +13,9 @@ const MainLayout: FunctionComponent<MainLayoutProps> = ({ title, children }: Mai
       <Helmet>
         <title>{title}</title>
       </Helmet>
+      <Header />
       <main id="main">
-        <div className="inner">{children}</div>
+        {children}
       </main>
     </>
   );

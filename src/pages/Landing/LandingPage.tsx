@@ -29,9 +29,12 @@ const LandingPage: FunctionComponent = () => {
       <About />
       
       {/* maybe service area */}
+      
       {/* portfolio */}
-        
       <ProjectList />
+
+      {/* 3 of the latest blogs that lead to the blog site */}
+      
     </>
   );
 };

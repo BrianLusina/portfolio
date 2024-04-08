@@ -24,7 +24,7 @@ const Button: FunctionComponent<ButtonProps> = ({
   isLoading,
   ...props
 }: ButtonProps) => {
-  const className = ['button', variant, size, isLoading && 'is-loading'].filter(Boolean).join(' ');
+  const className = ['rn-button-style--2 btn-solid', variant, size, isLoading && 'is-loading'].filter(Boolean).join(' ');
   return (
     // eslint-disable-next-line react/button-has-type
     <button type={type} className={className} {...props}>

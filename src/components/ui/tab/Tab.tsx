@@ -15,11 +15,11 @@ const Tabs: FunctionComponent<TabProps> = ({ tabstyle = 'tab-style--1', tabs }) 
               <ReactTabs>
                 <TabList className={`${tabstyle}`}>
                   {tabTitles.map((tab) => (
-                    <ReactTab>{tab}</ReactTab>
+                    <ReactTab key={tab}>{tab}</ReactTab>
                   ))}
                 </TabList>
-                {tabPanels.map((tab) => (
-                  <TabPanel>{tab}</TabPanel>
+                {tabPanels.map((tab, index) => (
+                  <TabPanel key={index}>{tab}</TabPanel>
                 ))}
               </ReactTabs>
             </div>

@@ -5,7 +5,6 @@ import { GET_REPOSITORIES } from '@graphQl/queries';
 import PageLoader from '@components/Elements/Loaders/PageLoader';
 import Button from '@components/Elements/Button';
 import ErrorPage from '@pages/Error';
-import { randomlyPickCssClass } from './utils';
 import { ProjectsButtonContainer } from './styles';
 
 const ProjectList: FunctionComponent = () => {
@@ -44,29 +43,50 @@ const ProjectList: FunctionComponent = () => {
   };
 
   return (
-    <>
-      <section className="tiles">
-        {data &&
-          fetchedProjects.map(({ name, description, owner: { login } }) => (
-            <Tile
-              key={name}
-              className={randomlyPickCssClass()}
-              title={name}
-              description={description}
-              link={`${name}?owner=${login}`}
-            />
-          ))}
-      </section>
-      {hasNextPage && (
-        <ProjectsButtonContainer className="row gtr-uniform">
-          <div className="col-12">
-            <Button variant="primary" onClick={handleSeeMore}>
-              Show more
-            </Button>
+    <div id="portfolio" className="fix">
+      <div className="portfolio-area ptb--120 bg_color--1">
+        <div className="portfolio-sacousel-inner">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-12">
+                <div className="section-title text-center service-style--3 mb--30 mb_sm--0">
+                  <h2 className="title">My Latest Projects</h2>
+                  <p>
+                    Some of the latest projects I have worked on
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <section className="row">
+              {data &&
+                fetchedProjects.map(({ name, description, owner: { login } }) => (
+                  <div className='col-lg-4 col-md-6 col-sm-6 col-12' key={name}>
+                    <Tile
+                      className="portfolio text-center mt--40"
+                      title={name}
+                      description={description}
+                      link={`${name}?owner=${login}`}
+                    />
+                  </div>
+                ))}
+            </section>
+
+            {hasNextPage && (
+              <ProjectsButtonContainer className="row gtr-uniform">
+                <div className="col-lg-12">
+                  <div className="view-more-btn mt--60 mt_sm--30 text-center">
+                    <Button variant="primary" onClick={handleSeeMore}>
+                      Show more
+                    </Button>
+                  </div>
+                </div>
+              </ProjectsButtonContainer>
+            )}
           </div>
-        </ProjectsButtonContainer>
-      )}
-    </>
+        </div>
+      </div>
+    </div>
   );
 };
 

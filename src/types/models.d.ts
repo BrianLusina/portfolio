@@ -10,3 +10,10 @@ declare type RepositoryObject = {
     owner: RepositoryOwner
     object: any
 }
+
+declare type BlogPostItem = {
+    imageUrl: string;
+    title: string;
+    category: string;
+    link: string;
+}

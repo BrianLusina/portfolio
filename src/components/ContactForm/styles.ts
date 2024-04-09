@@ -1,4 +1,6 @@
 import styled from 'styled-components';
 
 // eslint-disable-next-line import/prefer-default-export
-export const ContactFormWrapper = styled.form``;
+export const ContactFormWrapper = styled.div``;
+
+export const ContactForm = styled.form``;

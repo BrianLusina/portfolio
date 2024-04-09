@@ -4,7 +4,6 @@ import { withProfiler } from '@sentry/react';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import config from '@config';
 import RouteErrorBoundary from '@components/Errors/RouteErrorBoundary';
-import ContactForm from '@components/ContactForm';
 import MainLayout from '@layouts/MainLayout';
 import Footer from '@components/Footer';
 import PageLoader from '@components/Elements/Loaders/PageLoader';
@@ -52,7 +51,6 @@ const App: FunctionComponent = () => {
           </Suspense>
         </MainLayout>
         <Footer>
-          <ContactForm />
           <SocialCard />
         </Footer>
       </AppWrapper>

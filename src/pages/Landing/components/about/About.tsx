@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react';
 import { AboutProps } from './About.props';
 import Tabs from '@components/ui/tab';
-import aboutImage from '@assets/images/about/about-1.jpg';
+import mountainPosterImage from '@assets/images/posters/mountain.jpg';
 
 const About: FunctionComponent<AboutProps> = ({
   title = 'About Me',
@@ -17,7 +17,7 @@ const About: FunctionComponent<AboutProps> = ({
                 <div className="thumbnail">
                   <img
                     className="w-100"
-                    src={aboutImage}
+                    src={mountainPosterImage}
                     alt="About Me"
                   />
                 </div>

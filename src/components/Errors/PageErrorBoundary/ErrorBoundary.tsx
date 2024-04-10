@@ -1,4 +1,4 @@
-import { Component, ReactChildren, ReactElement, ErrorInfo, ReactNode } from 'react';
+import React, { Component, ReactElement, ErrorInfo, ReactNode, JSXElementConstructor } from 'react';
 import { captureAndLogError } from '@monitoring';
 import ErrorPage from '@pages/Error';
 import { ErrorBoundaryState, ErrorBoundaryProps } from './ErrorBoundary.interface';
@@ -28,7 +28,8 @@ export default class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBo
     };
   }
 
-  render(): ReactChildren | ReactElement | ReactNode {
+  // @ts-ignore
+  render(): ReactNode | typeof React.Children | ReactElement<any, string | JSXElementConstructor<any>> {
     const { children } = this.props;
     const { error, hasError } = this.state;
 

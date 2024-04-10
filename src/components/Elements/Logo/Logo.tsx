@@ -9,7 +9,7 @@ type LogoProps = {
 
 const Logo: FunctionComponent<LogoProps> = ({ icon }: LogoProps) => {
   return (
-    <LogoContainer href="/" className="logo">
+    <LogoContainer className="logo">
       <LogoWrapper className="symbol">
         <LogoImage src={(icon as string) || logo} alt="Liber Logo" />
       </LogoWrapper>

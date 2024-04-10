@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const LogoContainer = styled.a``;
+export const LogoContainer = styled.div``;
 
 export const LogoWrapper = styled.span``;
 

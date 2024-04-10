@@ -1,7 +1,5 @@
 import { FunctionComponent } from 'react';
 import ProjectList from '@containers/ProjectList';
-import MetaInfo from '@components/MetaInfo';
-import config from '@config';
 import Hero from '@components/ui/Hero';
 import ContactForm from '@components/ContactForm';
 import About from './components/about';

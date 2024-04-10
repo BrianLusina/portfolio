@@ -8,7 +8,6 @@ import {
   SocialCardTitle,
   SocialCardWrapper,
 } from './styles';
-
 import { SocialCardItem } from './SocialCard.props';
 
 const socialCardItems: SocialCardItem[] = [

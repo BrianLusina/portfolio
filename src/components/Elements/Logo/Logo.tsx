@@ -1,19 +1,16 @@
-import config from '@config';
 import { FunctionComponent, ReactNode } from 'react';
-import { LogoContainer, LogoWrapper, LogoImage, LogoText } from './styles';
-import logo from './logo.svg';
+import { LogoContainer, LogoLink } from './styles';
 
 type LogoProps = {
-  icon?: ReactNode;
+  children?: ReactNode;
 };
 
-const Logo: FunctionComponent<LogoProps> = ({ icon }: LogoProps) => {
+const Logo: FunctionComponent<LogoProps> = ({ children }: LogoProps) => {
   return (
     <LogoContainer className="logo">
-      <LogoWrapper className="symbol">
-        <LogoImage src={(icon as string) || logo} alt="Liber Logo" />
-      </LogoWrapper>
-      <LogoText className="title">{config.title}</LogoText>
+        <LogoLink href="/">
+          {children}
+        </LogoLink>
     </LogoContainer>
   );
 };

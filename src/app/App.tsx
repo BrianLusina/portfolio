@@ -8,7 +8,6 @@ import MainLayout from '@layouts/MainLayout';
 import Footer from '@components/Footer';
 import PageLoader from '@components/Elements/Loaders/PageLoader';
 import usePageViews from '@hooks/analytics/usePageView';
-
 import { AppWrapper } from './styles';
 
 const LandingPage = lazy(() => import('@pages/Landing'));
@@ -19,37 +18,36 @@ const App: FunctionComponent = () => {
   usePageViews();
 
   return (
-    <>
-      <AppWrapper id="wrapper">
-        <MainLayout>
-          <Suspense fallback={<PageLoader />}>
-            <TransitionGroup>
-              <CSSTransition key={location.pathname} classNames="fade" timeout={300}>
-                <Routes location={location}>
-                  <Route
-                    path="/"
-                    element={
-                      <RouteErrorBoundary location="/">
-                        <LandingPage />{' '}
-                      </RouteErrorBoundary>
-                    }
-                  />
-                  <Route
-                    path="/:slug"
-                    element={
-                      <RouteErrorBoundary location="/:slug">
-                        <ProjectPage />
-                      </RouteErrorBoundary>
-                    }
-                  />
-                </Routes>
-              </CSSTransition>
-            </TransitionGroup>
-          </Suspense>
-        </MainLayout>
-        <Footer />
-      </AppWrapper>
-    </>
+    <AppWrapper id="wrapper">
+      <MainLayout>
+        {/* TODO: move this to Project list component */}
+        <Suspense fallback={<PageLoader />}>
+          <TransitionGroup>
+            <CSSTransition key={location.pathname} classNames="fade" timeout={300}>
+              <Routes location={location}>
+                <Route
+                  path="/"
+                  element={
+                    <RouteErrorBoundary location="/">
+                      <LandingPage />
+                    </RouteErrorBoundary>
+                  }
+                />
+                <Route
+                  path="/:slug"
+                  element={
+                    <RouteErrorBoundary location="/:slug">
+                      <ProjectPage />
+                    </RouteErrorBoundary>
+                  }
+                />
+              </Routes>
+            </CSSTransition>
+          </TransitionGroup>
+        </Suspense>
+      </MainLayout>
+      <Footer />
+    </AppWrapper>
   );
 };
 

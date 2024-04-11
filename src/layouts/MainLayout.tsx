@@ -1,7 +1,7 @@
-import Header from '@components/Header';
 import { FunctionComponent, ReactNode } from 'react';
+import Header from '@components/Header';
 import { Helmet } from 'react-helmet';
-import { FiChevronUp } from "react-icons/fi";
+import { FiChevronUp } from 'react-icons/fi';
 import { WindowScrollToTop, ScrollToTopButton } from '@components/ScrollToTop';
 
 type MainLayoutProps = {
@@ -16,14 +16,11 @@ const MainLayout: FunctionComponent<MainLayoutProps> = ({ title, children }: Mai
         <title>{title}</title>
       </Helmet>
       <Header />
-      <main id="main">
-        <WindowScrollToTop />
-        {children}
-      </main>
-      {/* Start Back To Top */}
+      <WindowScrollToTop />
+      {children}
       <div className="backto-top">
         <ScrollToTopButton showUnder={160}>
-            <FiChevronUp />
+          <FiChevronUp />
         </ScrollToTopButton>
       </div>
     </>

@@ -1,15 +1,13 @@
 import { FunctionComponent } from 'react';
 import Logo from '@components/Elements/Logo';
 import { FiX, FiMenu } from 'react-icons/fi';
-import { HeaderWrapper } from './styles';
 import { HeaderProps } from './HeaderProps';
 import Navigation from '@components/Navigation';
 import SocialCard from '@components/SocialCard';
+import logo from '@assets/images/logos/lusina_signature_light.png';
+import { HeaderWrapper } from './styles';
 
-const Header: FunctionComponent<HeaderProps> = ({
-  color = 'default-color',
-}: HeaderProps) => {
-
+const Header: FunctionComponent<HeaderProps> = ({ color = 'default-color' }: HeaderProps) => {
   const menuTrigger = () => {
     document.querySelector('.header-wrapper')?.classList.toggle('menu-open');
   };
@@ -18,16 +16,24 @@ const Header: FunctionComponent<HeaderProps> = ({
     document.querySelector('.header-wrapper')?.classList.remove('menu-open');
   };
 
+  // TODO: use useEffect or useLayoutEffect
+
+  window.addEventListener('scroll', function () {
+    var value = window.scrollY;
+    if (value > 100) {
+      document.querySelector('.header--fixed')?.classList.add('sticky');
+    } else {
+      document.querySelector('.header--fixed')?.classList.remove('sticky');
+    }
+  });
+
   return (
     <HeaderWrapper className={`header-area header-style-two header--fixed ${color}`}>
       <div className="header-wrapper">
         <div className="header-left d-flex align-items-center">
-          <div className="logo">
-            <a href="/">
-              <Logo />
-            </a>
-          </div>
-
+          <Logo>
+            <img src={logo} alt="Folio" />
+          </Logo>
           <Navigation />
         </div>
 

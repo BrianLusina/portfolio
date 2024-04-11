@@ -30,10 +30,8 @@ const LandingPage: FunctionComponent = () => {
       
       {/* maybe service area */}
       
-      {/* portfolio */}
       <ProjectList />
 
-      {/* 3 of the latest blogs that lead to the blog site */}
       <BlogSection blogs={[]} />
  
       <div id="contact" className="fix">
@@ -41,7 +39,6 @@ const LandingPage: FunctionComponent = () => {
           <ContactForm />
         </div>
       </div>
- 
     </>
   );
 };

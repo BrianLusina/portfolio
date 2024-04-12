@@ -27,6 +27,16 @@ const Header: FunctionComponent<HeaderProps> = ({ color = 'default-color' }: Hea
     }
   });
 
+  // var elements = document.querySelectorAll('.has-droupdown > a');
+  // for(var i in elements) {
+  //     if(elements.hasOwnProperty(i)) {
+  //         elements[i].onclick = function() {
+  //             parentElement.querySelector('.submenu').classList.toggle("active");
+  //             classList.toggle("open");
+  //         }
+  //     }
+  // }  
+
   return (
     <HeaderWrapper className={`header-area header-style-two header--fixed ${color}`}>
       <div className="header-wrapper">

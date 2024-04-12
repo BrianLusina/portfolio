@@ -28,7 +28,7 @@ const LandingPage: FunctionComponent = () => {
 
       <About />
       
-      {/* maybe service area */}
+      {/* TODO: maybe service area */}
       
       <ProjectList />
 

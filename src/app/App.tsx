@@ -12,6 +12,7 @@ import { AppWrapper } from './styles';
 
 const LandingPage = lazy(() => import('@pages/Landing'));
 const ProjectPage = lazy(() => import('@pages/Project'));
+const NotFoundPage = lazy(() => import('@pages/NotFound'));
 
 const App: FunctionComponent = () => {
   const location = useLocation();
@@ -27,6 +28,7 @@ const App: FunctionComponent = () => {
               <Routes location={location}>
                 <Route
                   path="/"
+                  index
                   element={
                     <RouteErrorBoundary location="/">
                       <LandingPage />
@@ -40,6 +42,14 @@ const App: FunctionComponent = () => {
                       <ProjectPage />
                     </RouteErrorBoundary>
                   }
+                />
+                <Route
+                  path='/404'
+                  element={
+                    <RouteErrorBoundary location='/404'>
+                      <NotFoundPage />
+                    </RouteErrorBoundary>
+                  } 
                 />
               </Routes>
             </CSSTransition>

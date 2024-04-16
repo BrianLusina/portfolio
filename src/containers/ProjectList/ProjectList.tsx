@@ -6,6 +6,7 @@ import PageLoader from '@components/Elements/Loaders/PageLoader';
 import Button from '@components/Elements/Button';
 import ErrorPage from '@pages/Error';
 import { ProjectsButtonContainer } from './styles';
+import { unsluggify } from '@utils';
 
 const ProjectList: FunctionComponent = () => {
   const itemsPerPage = 20;
@@ -64,7 +65,7 @@ const ProjectList: FunctionComponent = () => {
                   <div className='col-lg-4 col-md-6 col-sm-6 col-12' key={name}>
                     <Tile
                       className="portfolio text-center mt--40"
-                      title={name}
+                      title={unsluggify(name)}
                       description={description}
                       link={`${name}?owner=${login}`}
                     />

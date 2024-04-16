@@ -1,18 +1,16 @@
-import { Suspense, FunctionComponent, lazy } from 'react';
+import { FunctionComponent, lazy } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { withProfiler } from '@sentry/react';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import config from '@config';
 import RouteErrorBoundary from '@components/Errors/RouteErrorBoundary';
 import MainLayout from '@layouts/MainLayout';
-import Footer from '@components/Footer';
-import PageLoader from '@components/Elements/Loaders/PageLoader';
 import usePageViews from '@hooks/analytics/usePageView';
 import { AppWrapper } from './styles';
 
 const LandingPage = lazy(() => import('@pages/Landing'));
 const ProjectPage = lazy(() => import('@pages/Project'));
-const NotFoundPage = lazy(() => import('@pages/NotFound'));
+const ErrorPage = lazy(() => import('@pages/Error'));
 
 const App: FunctionComponent = () => {
   const location = useLocation();
@@ -21,42 +19,49 @@ const App: FunctionComponent = () => {
   return (
     <AppWrapper id="wrapper">
       <MainLayout>
-        {/* TODO: move this to Project list component */}
-        <Suspense fallback={<PageLoader />}>
-          <TransitionGroup>
-            <CSSTransition key={location.pathname} classNames="fade" timeout={300}>
-              <Routes location={location}>
-                <Route
-                  path="/"
-                  index
-                  element={
-                    <RouteErrorBoundary location="/">
-                      <LandingPage />
-                    </RouteErrorBoundary>
-                  }
-                />
-                <Route
-                  path="/:slug"
-                  element={
-                    <RouteErrorBoundary location="/:slug">
-                      <ProjectPage />
-                    </RouteErrorBoundary>
-                  }
-                />
-                <Route
-                  path='/404'
-                  element={
-                    <RouteErrorBoundary location='/404'>
-                      <NotFoundPage />
-                    </RouteErrorBoundary>
-                  } 
-                />
-              </Routes>
-            </CSSTransition>
-          </TransitionGroup>
-        </Suspense>
+        <TransitionGroup>
+          <CSSTransition key={location.pathname} classNames="fade" timeout={300}>
+            <Routes location={location}>
+              <Route
+                path="/"
+                index
+                element={
+                  <RouteErrorBoundary location="/">
+                    <LandingPage />
+                  </RouteErrorBoundary>
+                }
+              />
+              <Route
+                path="/:slug"
+                element={
+                  <RouteErrorBoundary location="/:slug">
+                    <ProjectPage />
+                  </RouteErrorBoundary>
+                }
+              />
+              <Route
+                path="*"
+                element={
+                  <RouteErrorBoundary location="/404">
+                    <ErrorPage
+                      title="404"
+                      subtitle="Page does not exist"
+                      message="Little bots scoured this site, but could not find the page you are looking for"
+                      cta={
+                        <div className="error-button">
+                          <a className="rn-button-style--2 btn-solid" href="/">
+                            Back To Homepage
+                          </a>
+                        </div>
+                      }
+                    />
+                  </RouteErrorBoundary>
+                }
+              />
+            </Routes>
+          </CSSTransition>
+        </TransitionGroup>
       </MainLayout>
-      <Footer />
     </AppWrapper>
   );
 };

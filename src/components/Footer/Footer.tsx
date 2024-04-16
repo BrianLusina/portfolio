@@ -16,7 +16,7 @@ const Footer: FunctionComponent<FooterProps> = () => {
                 <h2>
                   Let's get <br /> to work
                 </h2>
-                <a className="rn-button-style--2" href="#contact">
+                <a className="rn-button-style--2" href="/#contact">
                   <span>Contact Me</span>
                 </a>
               </div>
@@ -38,7 +38,7 @@ const Footer: FunctionComponent<FooterProps> = () => {
                         <a href="/about">About</a>
                       </li>
                       <li>
-                        <a href="/blog">Blog</a>
+                        <a href="https://blog.brianlusina.com" target='_blank'>Blog</a>
                       </li>
                     </ul>
                   </div>

@@ -43,7 +43,7 @@
     "url": "https://github.com/BrianLusina/portfolio/issues"
   },
   "dependencies": {
-    "@apollo/client": "^3.4.16",
+    "@apollo/client": "^3.9.11",
     "@bugsnag/js": "^7.14.1",
     "@bugsnag/plugin-react": "^7.14.0",
     "@reduxjs/toolkit": "^1.6.0",

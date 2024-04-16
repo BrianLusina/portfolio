@@ -3,6 +3,7 @@ import Header from '@components/Header';
 import { Helmet } from 'react-helmet';
 import { FiChevronUp } from 'react-icons/fi';
 import { WindowScrollToTop, ScrollToTopButton } from '@components/ScrollToTop';
+import Footer from '@components/Footer';
 
 type MainLayoutProps = {
   title?: string;
@@ -23,6 +24,7 @@ const MainLayout: FunctionComponent<MainLayoutProps> = ({ title, children }: Mai
           <FiChevronUp />
         </ScrollToTopButton>
       </div>
+      <Footer />
     </>
   );
 };

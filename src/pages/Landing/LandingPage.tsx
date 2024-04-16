@@ -1,7 +1,8 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, Suspense } from 'react';
 import ProjectList from '@containers/ProjectList';
 import Hero from '@components/ui/Hero';
 import ContactForm from '@components/ContactForm';
+import PageLoader from '@components/Elements/Loaders/PageLoader';
 import About from './components/about';
 import BlogSection from './components/blog';
 
@@ -9,28 +10,12 @@ const LandingPage: FunctionComponent = () => {
   return (
     <>
       <Hero />
-      {/* <MetaInfo
-        author={{
-          name: config.author.name,
-          url: config.author.linkedIn,
-        }}
-        project={{
-          name: config.title,
-          url: config.author.githubRepos,
-        }}
-        description={
-          <p>
-            This documents some of the projects I have done over the years. With details on the
-            tooling used as well as the reasons for the projects.
-          </p>
-        }
-      /> */}
 
       <About />
-      
-      {/* TODO: maybe service area */}
-      
-      <ProjectList />
+
+      <Suspense fallback={<PageLoader />}>
+        <ProjectList />
+      </Suspense>
 
       <BlogSection blogs={[]} />
  

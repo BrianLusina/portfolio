@@ -32,9 +32,17 @@ const App: FunctionComponent = () => {
                 }
               />
               <Route
-                path="/:slug"
+                path="/projects"
                 element={
-                  <RouteErrorBoundary location="/:slug">
+                  <RouteErrorBoundary location="/projects">
+                    <ProjectPage />
+                  </RouteErrorBoundary>
+                }
+              />
+              <Route
+                path="/project/:slug"
+                element={
+                  <RouteErrorBoundary location="/project/:slug">
                     <ProjectPage />
                   </RouteErrorBoundary>
                 }

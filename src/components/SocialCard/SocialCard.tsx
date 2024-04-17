@@ -40,11 +40,12 @@ const socialCardItems: SocialCardItem[] = [
 const SocialCard: FunctionComponent<SocialCardProps> = ({
   title,
   items = socialCardItems,
+  iconColor = 'black'
 }: SocialCardProps) => {
   return (
     <SocialCardWrapper className='social-share-inner'>
       {title && <SocialCardTitle>Follow</SocialCardTitle>}
-      <SocialCardList className="social-share social-style--2 color-black d-flex justify-content-start liststyle">
+      <SocialCardList className={`social-share social-style--2 color-${iconColor} d-flex justify-content-start liststyle`}>
         {items.map(({ label, link, icon }) => (
           <SocialCardListItem key={label}>
             <SocialCardLink href={link} className={`icon brands style2`}>

@@ -10,4 +10,5 @@ export type SocialCardItem = {
 export type SocialCardProps = {
   title?: string;
   items?: SocialCardItem[];
+  iconColor?: 'light' | 'black'
 };

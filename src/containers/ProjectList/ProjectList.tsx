@@ -67,7 +67,7 @@ const ProjectList: FunctionComponent = () => {
                       className="portfolio text-center mt--40"
                       title={unsluggify(name)}
                       description={description}
-                      link={`${name}?owner=${login}`}
+                      link={`/project/${name}?owner=${login}`}
                     />
                   </div>
                 ))}

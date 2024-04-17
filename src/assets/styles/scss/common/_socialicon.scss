@@ -96,6 +96,18 @@ ul {
 
                 }
             }
+            &.color-white{
+                li {
+                    a {
+                        opacity: 0.8;
+                        &:hover {
+                            color: $theme-color;
+                            opacity: 1;
+                        }
+                    }
+
+                }
+            }
         }
 
     }

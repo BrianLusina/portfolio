@@ -12,7 +12,7 @@ const Footer: FunctionComponent<FooterProps> = () => {
           <div className="col-lg-6">
             <FooterLeft className="footer-left">
               <div className="inner">
-                <span>Ready To Do This</span>
+                <span>Ready To Do This?</span>
                 <h2>
                   Let's get <br /> to work
                 </h2>
@@ -29,10 +29,13 @@ const Footer: FunctionComponent<FooterProps> = () => {
                 {/* Start Single Widget  */}
                 <div className="col-lg-6 col-sm-6 col-12">
                   <div className="footer-link">
-                    <h4>Quick Link</h4>
+                    <h4>Quick Links</h4>
                     <ul className="ft-link">
                       <li>
-                        <a href="/portfolio">Work</a>
+                        <a href="/projects">Projects</a>
+                      </li>
+                      <li>
+                        <a href="/oss">OSS</a>
                       </li>
                       <li>
                         <a href="/about">About</a>
@@ -49,16 +52,13 @@ const Footer: FunctionComponent<FooterProps> = () => {
                     <h4>Say Hello</h4>
                     <ul className="ft-link">
                       <li>
-                        <a href="mailto:admin@example.com">admin@example.com</a>
-                      </li>
-                      <li>
-                        <a href="mailto:hr@example.com">hr@example.com</a>
+                        <a href="mailto:mail@brianlusina.com">mail@brianlusina.com</a>
                       </li>
                     </ul>
 
                     <div className="social-share-inner">
                       <ul className="social-share social-style--2 d-flex justify-content-start liststyle mt--15">
-                        <SocialCard />
+                        <SocialCard iconColor='light'/>
                       </ul>
                     </div>
                   </div>
@@ -67,9 +67,6 @@ const Footer: FunctionComponent<FooterProps> = () => {
                 <FooterCopyright className="col-lg-12">
                   <div className="copyright-text">
                     <p>Copyright © {new Date().getFullYear()} TheLusina. All Rights Reserved.</p>
-                    <p>
-                      OSS: <a href="https://github.com/BrianLusina/portfolio">Portfolio</a>
-                    </p>
                   </div>
                 </FooterCopyright>
               </div>

@@ -32,7 +32,7 @@ export class Analytics {
         logEvent(this.analytics, eventName, eventParams);
       }
     } else {
-      console.log(`Analytics Stubbed: EventName: ${eventName}, EventParams: ${eventParams}`);
+      console.log(`Analytics Stubbed: EventName: ${eventName}, EventParams: ${JSON.stringify(eventParams)}`);
     }
   }
 }

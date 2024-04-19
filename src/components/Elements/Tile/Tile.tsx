@@ -21,7 +21,9 @@ const Tile: FunctionComponent<TileProps> = ({
   description,
   link,
   poster,
-  thumbnail
+  thumbnail,
+  buttonClassName = 'portfolio-button',
+  buttonText = 'View Details'
 }: TileProps) => {
   return (
     <TileContainer className={`${className}`}>
@@ -39,8 +41,8 @@ const Tile: FunctionComponent<TileProps> = ({
           <Link to={link}>
             <TileDescription>{description}</TileDescription>
           </Link>
-          <TileButton>
-            <Link to={link} className='rn-button'>View Details</Link>
+          <TileButton className={buttonClassName}>
+            <Link to={link} className='rn-btn'>{buttonText}</Link>
           </TileButton>
         </TileContent>
       </TileContentWrapper>

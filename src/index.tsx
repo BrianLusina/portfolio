@@ -13,7 +13,10 @@ import reportWebVitals from './reportWebVitals';
 import './assets/styles/css/animate.min.css';
 // import './styles/css/noscript.css';
 // import './styles/css/index.css';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import './assets/styles/scss/index.scss';
+
 
 initializeMonitoring();
 

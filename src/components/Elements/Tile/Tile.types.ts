@@ -6,4 +6,6 @@ export type TileProps = {
   link: string;
   poster?: string;
   thumbnail?: string;
+  buttonClassName?: string;
+  buttonText?: string;
 };

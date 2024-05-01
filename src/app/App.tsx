@@ -11,6 +11,7 @@ import { AppWrapper } from './styles';
 const LandingPage = lazy(() => import('@pages/Landing'));
 const ProjectPage = lazy(() => import('@pages/Project'));
 const ErrorPage = lazy(() => import('@pages/Error'));
+const OssProjectsPage = lazy(() => import('@pages/Projects/oss'));
 const ProjectsPage = lazy(() => import("@pages/Projects"))
 
 const App: FunctionComponent = () => {
@@ -36,7 +37,15 @@ const App: FunctionComponent = () => {
                 path="/oss"
                 element={
                   <RouteErrorBoundary location="/oss">
-                    <ProjectsPage />
+                    <OssProjectsPage />
+                  </RouteErrorBoundary>
+                }
+              />
+              <Route
+                path="/oss/:slug"
+                element={
+                  <RouteErrorBoundary location="/oss/:slug">
+                    <ProjectPage />
                   </RouteErrorBoundary>
                 }
               />
@@ -44,7 +53,7 @@ const App: FunctionComponent = () => {
                 path="/projects"
                 element={
                   <RouteErrorBoundary location="/projects">
-                    <ProjectPage />
+                    <ProjectsPage />
                   </RouteErrorBoundary>
                 }
               />

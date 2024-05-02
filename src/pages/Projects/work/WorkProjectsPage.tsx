@@ -1,12 +1,16 @@
 import { useQuery } from '@apollo/client';
 import { GET_REPOSITORIES } from '@graphQl/queries';
 import { FunctionComponent, useState } from 'react';
+import { redirect } from 'react-router-dom';
+import PageLoader from '@components/Elements/Loaders/PageLoader';
+import ErrorPage from '@pages/Error';
 import ProjectPageLayout from '../ProjectPageLayout';
 
 /**
- * OSS Projects Page that fetches all open projects as a list and displays them
+ * Work Projects Page that fetches work/client projects as a list
  */
-const OssProjectsPage: FunctionComponent = () => {
+// @ts-ignore
+const WorkProjectsPage: FunctionComponent = () => {
   const itemsPerPage = 20;
   const [currentSize, setCurrentSize] = useState<number>(itemsPerPage);
   const { loading, error, data, fetchMore } = useQuery<
@@ -23,7 +27,13 @@ const OssProjectsPage: FunctionComponent = () => {
   const fetchedProjects = data ? data.viewer.repositories.nodes : [];
   const hasNextPage = data ? data.viewer.repositories.pageInfo.hasNextPage : false;
   let fetchedSize = fetchedProjects.length;
-  
+
+  if (loading) return <PageLoader />;
+
+  if (error) return <ErrorPage />;
+
+  if (!data) return redirect('/404');
+
   const handleSeeMore = (): void => {
     if (hasNextPage) {
       fetchedSize += currentSize;
@@ -36,24 +46,24 @@ const OssProjectsPage: FunctionComponent = () => {
       });
     }
   };
-
-  const ossProjects = fetchedProjects.map(({ name, description, owner: { login } }) => ({
+  
+  const workProjects = fetchedProjects.map(({ name, description, owner: { login } }) => ({
     name,
     description,
-    link: `/projects/oss/${name}?owner=${login}`,
+    link: `/projects/work/${name}?owner=${login}`,
   }))
 
   return (
-      <ProjectPageLayout
-        title='OSS'
-        description='Open Source Software'
-        projects={ossProjects}
-        hasNextPage={hasNextPage} 
-        loading={loading}
-        error={error}
-        fetchMoreCallback={handleSeeMore}
-      />
+    <ProjectPageLayout
+      title='Work'
+      description='Client Projects'
+      projects={workProjects}
+      hasNextPage={hasNextPage} 
+      loading={loading}
+      error={error}
+      fetchMoreCallback={handleSeeMore}
+    />
   );
 };
 
-export default OssProjectsPage;
+export default WorkProjectsPage;

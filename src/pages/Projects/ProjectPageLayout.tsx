@@ -9,7 +9,7 @@ import Slider from 'react-slick';
 import Tile from '@components/Elements/Tile';
 import Button from '@components/Elements/Button';
 import HexagonBackgroundImage from '@assets/images/bg/grayhexagons.jpg';
-import ProjectImage from './ProjectImage.jpg';
+import ProjectImage from './assets/images/ProjectImage.jpg';
 import { ProjectPageLayoutProps } from './ProjectPageLayout.types';
 
 /**

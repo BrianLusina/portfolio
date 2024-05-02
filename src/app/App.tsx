@@ -9,10 +9,11 @@ import usePageViews from '@hooks/analytics/usePageView';
 import { AppWrapper } from './styles';
 
 const LandingPage = lazy(() => import('@pages/Landing'));
-const ProjectPage = lazy(() => import('@pages/Project'));
 const ErrorPage = lazy(() => import('@pages/Error'));
 const OssProjectsPage = lazy(() => import('@pages/Projects/oss'));
-const ProjectsPage = lazy(() => import("@pages/Projects"))
+const OssProjectItemPage = lazy(() => import('@pages/Projects/oss/OssProjectItemPage'));
+const WorkProjectsPage = lazy(() => import("@pages/Projects/work"))
+const WorkProjectItemPage = lazy(() => import('@pages/Projects/work/WorkProjectItemPage'));
 
 const App: FunctionComponent = () => {
   const location = useLocation();
@@ -34,7 +35,7 @@ const App: FunctionComponent = () => {
                 }
               />
               <Route
-                path="/oss"
+                path="/projects/oss"
                 element={
                   <RouteErrorBoundary location="/oss">
                     <OssProjectsPage />
@@ -42,26 +43,26 @@ const App: FunctionComponent = () => {
                 }
               />
               <Route
-                path="/oss/:slug"
+                path="/projects/oss/:slug"
                 element={
                   <RouteErrorBoundary location="/oss/:slug">
-                    <ProjectPage />
+                    <OssProjectItemPage />
                   </RouteErrorBoundary>
                 }
               />
               <Route
-                path="/projects"
+                path="/projects/work"
                 element={
                   <RouteErrorBoundary location="/projects">
-                    <ProjectsPage />
+                    <WorkProjectsPage />
                   </RouteErrorBoundary>
                 }
               />
               <Route
-                path="/project/:slug"
+                path="/projects/work/:slug"
                 element={
                   <RouteErrorBoundary location="/project/:slug">
-                    <ProjectPage />
+                    <WorkProjectItemPage />
                   </RouteErrorBoundary>
                 }
               />

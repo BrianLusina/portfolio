@@ -1,3 +1,9 @@
-import ProjectsPage from './ProjectsPage';
+import OssProjectsPage, { OssProjectItemPage } from './oss';
+import WorkProjectsPage, { WorkProjectItemPage } from './work';
 
-export default ProjectsPage;
+export { 
+    WorkProjectsPage,
+    WorkProjectItemPage,
+    OssProjectsPage,
+    OssProjectItemPage
+}

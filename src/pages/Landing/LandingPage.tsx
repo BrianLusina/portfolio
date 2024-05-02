@@ -1,10 +1,9 @@
-import { FunctionComponent, Suspense } from 'react';
-import ProjectList from '@containers/ProjectList';
+import { FunctionComponent } from 'react';
 import Hero from '@components/ui/Hero';
 import ContactForm from '@components/ContactForm';
-import PageLoader from '@components/Elements/Loaders/PageLoader';
 import About from './components/about';
 import BlogSection from './components/blog';
+import WorkSection from './components/work';
 
 const LandingPage: FunctionComponent = () => {
   return (
@@ -13,9 +12,7 @@ const LandingPage: FunctionComponent = () => {
 
       <About />
 
-      <Suspense fallback={<PageLoader />}>
-        <ProjectList />
-      </Suspense>
+      <WorkSection />
 
       <BlogSection blogs={[]} />
  

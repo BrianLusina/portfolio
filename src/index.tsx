@@ -17,7 +17,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './assets/styles/scss/index.scss';
 
-
 initializeMonitoring();
 
 const container = document.getElementById('root')!;

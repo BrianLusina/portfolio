@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
-import { FiCast , FiLayers , FiUsers , FiMonitor } from "react-icons/fi";
+import { FiLayers , FiMonitor } from "react-icons/fi";
 
 type WorkSectionListProps = {
     item: number;
@@ -8,53 +8,41 @@ type WorkSectionListProps = {
 
 const ServiceList = [
     {
-        icon: <FiCast />,
-        title: 'Business Stratagy',
-        description: 'I throw myself down among the tall grass by the stream as I lie close to the earth.'
-    },
-    {
         icon: <FiLayers />,
-        title: 'Website Development',
-        description: 'I throw myself down among the tall grass by the stream as I lie close to the earth.'
+        title: 'Open Source Development',
+        description: 'Open source projects I have built',
+        link: "/projects/oss"
     },
-    {
-        icon: <FiUsers />,
-        title: 'Marketing & Reporting',
-        description: 'I throw myself down among the tall grass by the stream as I lie close to the earth.'
+    { 
+        icon: <FiMonitor />,
+        title: 'Client Projects',
+        description: 'Some of the client projects I have worked on.',
+        link: "/projects/work"
     },
     { 
         icon: <FiMonitor />,
         title: 'Mobile App Development',
-        description: 'I throw myself down among the tall grass by the stream as I lie close to the earth.'
-    },
-    {
-        icon: <FiUsers />,
-        title: 'Marketing & Reporting',
-        description: 'I throw myself down among the tall grass by the stream as I lie close to the earth.'
-    },
-    { 
-        icon: <FiMonitor />,
-        title: 'Mobile App Development',
-        description: 'I throw myself down among the tall grass by the stream as I lie close to the earth.'
+        description: 'Mobile applications I have built',
+        link: "/projects/mobile"
     }
 ]
 
 
 const WorkSectionList: FunctionComponent<WorkSectionListProps> = ({ column, item }) => {
-    const ServiceContent = ServiceList.slice(0 , item);
+    const services = ServiceList.slice(0 , item);
 
     return(
         <div className="row">
-            {ServiceContent.map( (val , i) => (
+            {services.map(({icon, title, description, link} , i) => (
                 <div className={`${column}`} key={i}>
-                    <a href="/service-details">
+                    <a href={link}>
                         <div className="service service__style--2">
                             <div className="icon">
-                                {val.icon}
+                                {icon}
                             </div>
                             <div className="content">
-                                <h3 className="title">{val.title}</h3>
-                                <p>{val.description}</p>
+                                <h3 className="title">{title}</h3>
+                                <p>{description}</p>
                             </div>
                         </div>
                     </a>

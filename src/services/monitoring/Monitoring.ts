@@ -33,7 +33,7 @@ export const captureAndLogError = (error: Error, errorInfo: ErrorInfo): void => 
     captureAndLogSentryError(error, errorInfo);
     captureBugSnagError(error);
   } else {
-    console.error(`Caught error: ${error}. Info: ${JSON.stringify(errorInfo)}`);
+    console.error(`Caught error: ${error}. Info: ${errorInfo}`);
   }
 };
 

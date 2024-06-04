@@ -1,9 +1,10 @@
 import { FunctionComponent, ReactNode } from 'react';
 import PageLoader from '@components/Elements/Loaders/PageLoader';
 import ErrorPage from '@pages/Error';
+import { Helmet } from 'react-helmet';
+import Header from '@components/Header';
 import ProjectImage from './assets/images/ProjectImage.jpg';
 import { ProjectPageHero } from './styles';
-import { Helmet } from 'react-helmet';
 
 type ProjectItemPageLayoutProps = {
   title: string;
@@ -37,6 +38,8 @@ const ProjectItemPageLayout: FunctionComponent<ProjectItemPageLayoutProps> = ({
         <title>{title}</title>
         <meta name="description" content={description} />
       </Helmet>
+      <Header />
+
       <ProjectPageHero
         className="rn-page-title-area pt--120 pb--190 bg_image"
         data-black-overlay="7"

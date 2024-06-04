@@ -3,8 +3,8 @@ import { HeroProps } from './Hero.props';
 
 const Hero: FunctionComponent<HeroProps> = ({
   textPosition = 'text-left',
-  category = 'Freelance digital designer',
-  title = 'Hello, I’m <span>Lusina</span> Welcome to my World.',
+  category = 'Software Engineer',
+  title = 'Hello, I’m <span>Lusina</span> Welcome to my digital world.',
   description = '',
   buttonText = '',
   buttonLink = ''

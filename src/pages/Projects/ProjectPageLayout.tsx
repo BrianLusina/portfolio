@@ -9,8 +9,11 @@ import Slider from 'react-slick';
 import Tile from '@components/Elements/Tile';
 import Button from '@components/Elements/Button';
 import HexagonBackgroundImage from '@assets/images/bg/grayhexagons.jpg';
-import ProjectImage from './assets/images/ProjectImage.jpg';
+import Header from '@components/Header';
+import signatureLogo from '@assets/images/logos/lusina_signature_dark.png';
 import { ProjectPageLayoutProps } from './ProjectPageLayout.types';
+import ProjectImage from './assets/images/ProjectImage.jpg';
+
 
 /**
  * Project page layout that is common for all project page types
@@ -35,6 +38,7 @@ const ProjectPageLayout: FunctionComponent<ProjectPageLayoutProps> = ({
         <title>{title}</title>
         <meta name="description" content={description} />
       </Helmet>
+      <Header logo={signatureLogo}/>
       <Breadcrumb title={title} description={description} backgroundImage={HexagonBackgroundImage} />
 
       <ProjectsPageWrapper className="page-wrapper">

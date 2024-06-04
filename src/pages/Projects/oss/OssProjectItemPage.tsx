@@ -27,7 +27,10 @@ const OssProjectItemPage: FunctionComponent = () => {
     },
   );
 
-  if (!data) return redirect('/404');
+  // TODO: what to do if data is not available
+  if(!data) {
+    return
+  }
 
   const { repository } = data;
   const { name, description, url, object } = repository;

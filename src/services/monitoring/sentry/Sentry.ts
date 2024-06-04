@@ -75,6 +75,8 @@ export const captureSentryException = (
   if (NODE_ENV === 'production' || ENV === 'production') {
     Sentry.captureMessage(errorMessage, scope);
     Sentry.captureException(error);
+  } else {
+    console.error(`[Sentry]: caught error: ${error}. Info: ${errorMessage}`);
   }
 };
 

@@ -32,10 +32,10 @@ const Footer: FunctionComponent<FooterProps> = () => {
                     <h4>Quick Links</h4>
                     <ul className="ft-link">
                       <li>
-                        <a href="/projects">Projects</a>
+                        <a href="/projects/work">Projects</a>
                       </li>
                       <li>
-                        <a href="/oss">OSS</a>
+                        <a href="/projects/oss">OSS</a>
                       </li>
                       <li>
                         <a href="/about">About</a>

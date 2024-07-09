@@ -1,26 +1,16 @@
-import {
-    IDLE_ACTION_TYPE,
-    PENDING_ACTION_TYPE,
-    REJECTED_ACTION_TYPE,
-    RESOLVED_ACTION_TYPE,
-  } from './actionTypes';
-  
-  type status =
-    | typeof IDLE_ACTION_TYPE
-    | typeof PENDING_ACTION_TYPE
-    | typeof REJECTED_ACTION_TYPE
-    | typeof RESOLVED_ACTION_TYPE;
-  
-  export type AsyncState = {
-    status: status;
-    data: unknown | null | undefined;
-    error: Error | null | undefined;
-  };
-  
-  const initialState: AsyncState = {
-    status: IDLE_ACTION_TYPE,
-    data: null,
-    error: null,
-  };
-  
-  export default initialState;
+import { LOADING_STATES } from '@constants';
+import { IDLE_ACTION_TYPE } from './actionTypes';
+
+export type AsyncState<T> = {
+  status: LOADING_STATES;
+  data: T | null | undefined;
+  error: Error | null | undefined;
+};
+
+const initialState: AsyncState<unknown> = {
+  status: IDLE_ACTION_TYPE,
+  data: null,
+  error: null,
+};
+
+export default initialState;

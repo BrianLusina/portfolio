@@ -3,11 +3,14 @@ import { AboutProps } from './About.props';
 import Tabs from '@components/ui/tab';
 import mountainPosterImage from '@assets/images/posters/mountain.jpg';
 import { aboutTabSectionData } from './data';
+import useFetchMainSkills from '@hooks/api/about/useFetchMainSkills';
 
 const About: FunctionComponent<AboutProps> = ({
   title = 'About Me',
   description = 'I am a Software Engineer building "engines" with crayons and legos for fun and profit. This showcases some of the work I have done & projects involved in. Enjoy!',
 }) => {
+  const { status, data } = useFetchMainSkills()
+
   return (
     <div id="about" className="fix">
       <div className="about-area ptb--120  bg_color--1">

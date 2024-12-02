@@ -2,7 +2,7 @@ import { useQuery } from '@apollo/client';
 import { GET_REPOSITORY } from '@graphQl/queries';
 import { unsluggify } from '@utils';
 import { FunctionComponent } from 'react';
-import { redirect, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import useParseQuery from '@hooks/useParseQuery';

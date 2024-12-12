@@ -47,7 +47,6 @@ class RestClient {
     return responses;
   }
 
-  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   async allSettled<T>(requests: (T | Promise<T>)[]) {
     const responses = Promise.allSettled(requests);
     return responses;

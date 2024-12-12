@@ -3,7 +3,6 @@ import Footer from './Footer';
 
 describe('Footer', () => {
   beforeAll(() => {
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
     jest.spyOn(console, 'error').mockImplementation(() => {});
   });
 

@@ -19,7 +19,7 @@ const Header: FunctionComponent<HeaderProps> = ({ color = 'default-color' }: Hea
   // TODO: use useEffect or useLayoutEffect
 
   window.addEventListener('scroll', function () {
-    var value = window.scrollY;
+    const value = window.scrollY;
     if (value > 100) {
       document.querySelector('.header--fixed')?.classList.add('sticky');
     } else {

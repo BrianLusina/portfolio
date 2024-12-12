@@ -18,7 +18,6 @@ type ProjectItemPageLayoutProps = {
 /**
  * Project Item Page layout for common pages for items
  */
-// @ts-ignore
 const ProjectItemPageLayout: FunctionComponent<ProjectItemPageLayoutProps> = ({
   title,
   description,

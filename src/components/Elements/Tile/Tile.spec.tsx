@@ -5,7 +5,6 @@ import Tile from './Tile';
 
 describe('Tile', () => {
   beforeAll(() => {
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
     jest.spyOn(console, 'error').mockImplementation(() => {});
   });
 

@@ -31,7 +31,6 @@ export const initializeSentry = (): void => {
     // configuration options can be found here as well
     // ref: https://docs.sentry.io/platforms/javascript/guides/react/configuration/options/
     Sentry.init({
-      // eslint-disable-next-line no-underscore-dangle
       dsn: SENTRY_DSN,
       integrations: [new Integrations.BrowserTracing()],
       tracesSampleRate: tracesSampleRate as number,
@@ -40,7 +39,6 @@ export const initializeSentry = (): void => {
         // Modify the event here
         if (event.user) {
           // Don't send user's email address
-          // eslint-disable-next-line no-param-reassign
           delete event.user.email;
         }
         return event;

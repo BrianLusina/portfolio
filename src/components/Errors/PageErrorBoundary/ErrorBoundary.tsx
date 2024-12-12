@@ -28,8 +28,9 @@ export default class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBo
     };
   }
 
-  // @ts-ignore
-  render(): ReactNode | typeof React.Children | ReactElement<any, string | JSXElementConstructor<any>> {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-expect-error
+  render(): ReactNode | typeof React.Children | ReactElement<unknown, string | JSXElementConstructor<unknown>> {
     const { children } = this.props;
     const { error, hasError } = this.state;
 

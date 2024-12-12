@@ -1,19 +1,19 @@
 import { FunctionComponent, ButtonHTMLAttributes } from 'react';
 
-const variants = {
+type variants = {
   primary: 'primary',
   default: 'default',
 };
 
-const sizes = {
+type sizes = {
   large: 'large',
   small: 'small',
   default: 'default',
 };
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-  variant?: keyof typeof variants;
-  size?: keyof typeof sizes;
+  variant?: keyof variants;
+  size?: keyof sizes;
   isLoading?: boolean;
 };
 
@@ -26,7 +26,6 @@ const Button: FunctionComponent<ButtonProps> = ({
 }: ButtonProps) => {
   const className = ['rn-button-style--2 btn-solid', variant, size, isLoading && 'is-loading'].filter(Boolean).join(' ');
   return (
-    // eslint-disable-next-line react/button-has-type
     <button type={type} className={className} {...props}>
       {props.children}
     </button>

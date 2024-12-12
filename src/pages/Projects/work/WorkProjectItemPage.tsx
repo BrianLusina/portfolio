@@ -2,14 +2,14 @@ import { useQuery } from '@apollo/client';
 import { GET_REPOSITORY } from '@graphQl/queries';
 import { unsluggify } from '@utils';
 import { FunctionComponent } from 'react';
-import { redirect, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import useParseQuery from '@hooks/useParseQuery';
 import config from '@config';
 import ProjectItemPageLayout from '../ProjectItemPageLayout';
+import NotFoundPage from '@pages/Error/NotFoundPage';
 
-// @ts-ignore
 const WorkProjectItemPage: FunctionComponent = () => {
   const { slug } = useParams();
   const query = useParseQuery();
@@ -27,7 +27,7 @@ const WorkProjectItemPage: FunctionComponent = () => {
     },
   );
 
-  if (!data) return redirect('/404');
+  if (!data) return <NotFoundPage />;
 
   const { repository } = data;
   const { name, description, url, object } = repository;
@@ -98,6 +98,8 @@ const WorkProjectItemPage: FunctionComponent = () => {
       </div>
 
       <div className="inner">
+        {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+        {/* @ts-expect-error */}
         <ReactMarkdown remarkPlugins={[remarkGfm]}>{object.text}</ReactMarkdown>
         <p>
           View full project on <a href={url}>GitHub</a>

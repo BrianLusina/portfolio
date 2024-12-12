@@ -14,7 +14,6 @@ jest.mock('api/rest/EmailJsApi');
 
 describe('ContactForm', () => {
   beforeAll(() => {
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
     jest.spyOn(console, 'error').mockImplementation(() => {});
   });
 

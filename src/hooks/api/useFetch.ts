@@ -15,8 +15,8 @@ const fetchOssData = async (
     GetRepositoriesVariables
   >(GET_REPOSITORIES, {
     variables: {
-      direction: 'ASC',
-      field: 'NAME',
+      direction: direction,
+      field: field,
       first: currentSize,
     },
   });

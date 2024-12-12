@@ -26,7 +26,6 @@ root.render(
   <StrictMode>
     <GraphqlProvider client={GraphqlClient}>
       <Helmet titleTemplate={`${config.title} | %s `} defaultTitle={`${config.title}`} />
-      {/* @ts-ignore */}
       <ErrorBoundary>
         <NotificationContainer />
         <Router>

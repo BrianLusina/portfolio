@@ -3,7 +3,6 @@ import Logo from './Logo';
 
 describe('Logo', () => {
   beforeAll(() => {
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
     jest.spyOn(console, 'error').mockImplementation(() => {});
   });
 

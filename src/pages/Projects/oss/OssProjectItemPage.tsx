@@ -9,7 +9,6 @@ import useParseQuery from '@hooks/useParseQuery';
 import config from '@config';
 import ProjectItemPageLayout from '../ProjectItemPageLayout';
 
-// @ts-ignore
 const OssProjectItemPage: FunctionComponent = () => {
   const { slug } = useParams();
   const query = useParseQuery();
@@ -101,6 +100,8 @@ const OssProjectItemPage: FunctionComponent = () => {
       </div>
 
       <div className="inner">
+        {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+        {/* @ts-expect-error */}
         <ReactMarkdown remarkPlugins={[remarkGfm]}>{object.text}</ReactMarkdown>
         <p>
           View full project on <a href={url}>GitHub</a>

@@ -18,7 +18,6 @@ import ProjectImage from './assets/images/ProjectImage.jpg';
 /**
  * Project page layout that is common for all project page types
  * */
-// @ts-ignore
 const ProjectPageLayout: FunctionComponent<ProjectPageLayoutProps> = ({
   title,
   description,

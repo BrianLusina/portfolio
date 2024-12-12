@@ -47,7 +47,7 @@ const SocialCard: FunctionComponent<SocialCardProps> = ({
       {title && <SocialCardTitle>Follow</SocialCardTitle>}
       <SocialCardList className={`social-share social-style--2 color-${iconColor} d-flex justify-content-start liststyle`}>
         {items.map(({ label, link, icon }) => (
-          <SocialCardListItem key={label}>
+          <SocialCardListItem key={label} id={label} data-testid={label}>
             <SocialCardLink href={link} className={`icon brands style2`}>
               {icon}
             </SocialCardLink>

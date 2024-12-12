@@ -28,7 +28,7 @@ describe('ErrorPage', () => {
       </MockAppWithRouter>,
     );
 
-    const titleElement = screen.getByText('Oops! Well, this is embarrassing...');
+    const titleElement = screen.getByText('Well, this is embarrassing...');
     expect(titleElement).toBeInTheDocument();
   });
 

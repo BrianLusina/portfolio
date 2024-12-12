@@ -15,13 +15,13 @@ import {
 } from './styles';
 
 const Tile: FunctionComponent<TileProps> = ({
-  className,
   title,
   subtitle,
   description,
   link,
   poster,
   thumbnail,
+  className = '',
   buttonClassName = 'portfolio-button',
   buttonText = 'View Details'
 }: TileProps) => {

@@ -1,5 +1,4 @@
 import api from './api';
-import menuItems from './menu';
 import author from './author';
 import monitoring from './monitoring';
 import env from './env';
@@ -16,7 +15,6 @@ export default {
   title,
   owner,
   author,
-  menuItems,
   monitoring,
   env,
   firebase,

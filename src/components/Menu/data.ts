@@ -1,4 +1,4 @@
-const menuItems = [
+export const menuItems = [
     {
         link: '/',
         label: 'Home',
@@ -10,5 +10,3 @@ const menuItems = [
         isExternal: true
     },
 ];
-
-export default menuItems;

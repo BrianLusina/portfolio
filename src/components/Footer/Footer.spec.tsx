@@ -23,7 +23,7 @@ describe('Footer', () => {
   it('should render', () => {
     render(<Footer />);
 
-    const copyrightText = screen.getByText(/© TheLusina. All rights reserved/);
+    const copyrightText = screen.getByText(`Copyright © ${new Date().getFullYear()} TheLusina. All Rights Reserved.`);
     expect(copyrightText).toBeInTheDocument();
   });
 });

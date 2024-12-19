@@ -36,10 +36,23 @@ jobs:
       env:
         CI: true
     
+    - name: Test Reporters
+      run: bun run test:reporters
+      continue-on-error: true
+      env:
+        CI: true
+
+    - name: Upload test results to Codecov
+      if: ${{ !cancelled() }}
+      uses: codecov/test-results-action@v1
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+
     # Ref: https://github.com/codecov/codecov-action
     - name: Upload Test Coverage
       uses: codecov/codecov-action@v5
       with:
+        token: ${{ secrets.CODECOV_TOKEN }}
         flags: unittests
         fail_ci_if_error: true
         verbose: true

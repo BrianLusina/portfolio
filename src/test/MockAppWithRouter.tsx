@@ -1,8 +1,8 @@
-import { FunctionComponent, ReactChildren, ReactNode } from 'react';
+import { FunctionComponent, ReactNode } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
 export type MockAppRouterProps = {
-  children?: ReactNode | ReactChildren;
+  children?: ReactNode;
 };
 
 /**

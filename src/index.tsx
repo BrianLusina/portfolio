@@ -1,4 +1,4 @@
-import { StrictMode } from 'react';
+import { StrictMode, lazy } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
@@ -8,7 +8,6 @@ import NotificationContainer from '@containers/Notification';
 import ErrorBoundary from './components/Errors/PageErrorBoundary';
 import GraphqlProvider from './providers/graphql/GraphqlProvider';
 import GraphqlClient from './api/graphql/GraphqlClient';
-import App from './app';
 import reportWebVitals from './reportWebVitals';
 import './assets/styles/css/animate.min.css';
 // import './styles/css/noscript.css';
@@ -22,10 +21,14 @@ initializeMonitoring();
 const container = document.getElementById('root')!;
 const root = createRoot(container);
 
+const App = lazy(() => import('./app'));
+
 root.render(
   <StrictMode>
     <GraphqlProvider client={GraphqlClient}>
       <Helmet titleTemplate={`${config.title} | %s `} defaultTitle={`${config.title}`} />
+      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+      {/* @ts-ignore */}
       <ErrorBoundary>
         <NotificationContainer />
         <Router>

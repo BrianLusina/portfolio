@@ -3,7 +3,6 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { withProfiler } from '@sentry/react';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import config from '@config';
-import RouteErrorBoundary from '@components/Errors/RouteErrorBoundary';
 import MainLayout from '@layouts/MainLayout';
 import usePageViews from '@hooks/analytics/usePageView';
 import { AppWrapper } from './styles';
@@ -14,6 +13,7 @@ const OssProjectsPage = lazy(() => import('@pages/Projects/oss'));
 const OssProjectItemPage = lazy(() => import('@pages/Projects/oss/OssProjectItemPage'));
 const WorkProjectsPage = lazy(() => import("@pages/Projects/work"))
 const WorkProjectItemPage = lazy(() => import('@pages/Projects/work/WorkProjectItemPage'));
+const RouteErrorBoundary = lazy(() => import('@components/Errors/RouteErrorBoundary'));
 
 const App: FunctionComponent = () => {
   const location = useLocation();

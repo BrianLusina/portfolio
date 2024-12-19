@@ -12,7 +12,7 @@ import capitalize from 'lodash/capitalize';
 export const camelCaseObjectKeys = (
   obj: Record<string | number, unknown>,
 ): Record<string | number, unknown> => {
-  return mapKeys(obj, (v, k) => camelCase(k));
+  return mapKeys(obj, (_v, k) => camelCase(k));
 };
 
 /**
@@ -23,7 +23,7 @@ export const camelCaseObjectKeys = (
 export const snakeCaseObjectKeys = (
   obj: Record<string | number, unknown>,
 ): Record<string | number, unknown> => {
-  return mapKeys(obj, (v, k) => snakeCase(k));
+  return mapKeys(obj, (_v, k) => snakeCase(k));
 };
 
 /**

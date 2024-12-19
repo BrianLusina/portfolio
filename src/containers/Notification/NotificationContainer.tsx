@@ -1,4 +1,6 @@
 import { FunctionComponent } from 'react';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import { ToastContainer, Slide, ToastTransition } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 

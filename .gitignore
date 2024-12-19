@@ -34,3 +34,4 @@ bin/trivy
 env-config.js
 .idea/
 junit.xml
+dist/

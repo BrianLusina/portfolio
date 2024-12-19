@@ -35,5 +35,7 @@ export default function useAsync<T>(state = initialState): {
     );
   }, []);
 
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   return { ...currentState, run };
 }

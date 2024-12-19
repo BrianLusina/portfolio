@@ -14,9 +14,11 @@ type RejectedAction = {
   error: Error;
 } & Omit<Action, 'error'>;
 
-type ResolvedAction = {
+type ResolvedAction<T> = {
   type: typeof RESOLVED_ACTION_TYPE;
-  data: unknown;
+  data: T;
 } & Omit<Action, 'data'>;
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 export type AsyncActions = PendingAction | RejectedAction | ResolvedAction;

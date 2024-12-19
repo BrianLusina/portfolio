@@ -1,10 +1,8 @@
-import config from '@config';
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import Logo from './Logo';
 
 describe('Logo', () => {
   beforeAll(() => {
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
     jest.spyOn(console, 'error').mockImplementation(() => {});
   });
 
@@ -25,10 +23,10 @@ describe('Logo', () => {
     render(<Logo />);
   });
 
-  xit('should render and display title', () => {
-    render(<Logo />);
+  it('should render and display title', () => {
+    const { getByText } = render(<Logo><h1>Some Logo</h1></Logo>);
 
-    const titleElement = screen.getByText(config.title);
+    const titleElement = getByText("Some Logo");
     expect(titleElement).toBeInTheDocument();
   });
 });

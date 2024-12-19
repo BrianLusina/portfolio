@@ -10,3 +10,4 @@ server/
 scripts/
 config/
 jest.config.js
+public/scripts/js/*

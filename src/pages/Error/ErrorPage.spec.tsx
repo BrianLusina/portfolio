@@ -4,7 +4,6 @@ import ErrorPage from './ErrorPage';
 
 describe('ErrorPage', () => {
   beforeAll(() => {
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
     jest.spyOn(console, 'error').mockImplementation(() => {});
   });
 
@@ -28,7 +27,7 @@ describe('ErrorPage', () => {
       </MockAppWithRouter>,
     );
 
-    const titleElement = screen.getByText('Oops! Well, this is embarrassing...');
+    const titleElement = screen.getByText('Well, this is embarrassing...');
     expect(titleElement).toBeInTheDocument();
   });
 

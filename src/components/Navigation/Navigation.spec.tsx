@@ -3,7 +3,6 @@ import Navigation from './Navigation';
 
 describe('Navigation', () => {
   beforeAll(() => {
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
     jest.spyOn(console, 'error').mockImplementation(() => {});
   });
 

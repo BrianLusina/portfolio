@@ -14,7 +14,6 @@ jest.mock('api/rest/EmailJsApi');
 
 describe('ContactForm', () => {
   beforeAll(() => {
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
     jest.spyOn(console, 'error').mockImplementation(() => {});
   });
 
@@ -38,7 +37,7 @@ describe('ContactForm', () => {
   it('should not be able to submit form with missing values', () => {
     const { container } = render(<ContactForm />);
 
-    const submitButton = container.querySelector('input[type=submit]') as Element;
+    const submitButton = container.querySelector('button[type=submit]') as Element;
     userEvent.click(submitButton);
 
     expect(mockCaptureException).not.toHaveBeenCalled();
@@ -60,7 +59,7 @@ describe('ContactForm', () => {
     userEvent.type(emailInputField, emailText);
     userEvent.type(messageTextAreaField, messageText);
 
-    const submitButton = container.querySelector('input[type=submit]') as Element;
+    const submitButton = container.querySelector('button[type=submit]') as Element;
     userEvent.click(submitButton);
 
     expect(mockCaptureException).not.toHaveBeenCalled();
@@ -77,7 +76,7 @@ describe('ContactForm', () => {
     const nameInputField = container.querySelector('input[name=name]') as Element;
     const emailInputField = container.querySelector('input[type=email]') as Element;
     const messageTextAreaField = container.querySelector('textarea[name=message]') as Element;
-    const submitButton = container.querySelector('input[type=submit]') as Element;
+    const submitButton = container.querySelector('button[type=submit]') as Element;
 
     const validEmailText = faker.internet.email();
     const validMessageText = faker.lorem.paragraph();

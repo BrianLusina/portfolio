@@ -17,6 +17,9 @@ const RouteErrorBoundary: FunctionComponent<RouteErrorBoundaryProps> = ({
       beforeCapture={(scope) => {
         scope.setTag('location', location);
       }}
+      onError={(error: Error, componentStack: string, eventId: string) => {
+        console.error(`Failed with error ${error}. componentStack:${componentStack}, EventID: ${eventId}`)
+      }}
     >
       {children}
     </ErrorBoundary>

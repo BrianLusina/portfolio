@@ -1,3 +1,7 @@
-import ScrollToTop from './ScrollToTop';
+import ScrollToTopButton from './ScrollToTopButton';
+import WindowScrollToTop from './WindowScrollToTop';
 
-export default ScrollToTop;
+export { 
+    WindowScrollToTop,
+    ScrollToTopButton
+};

@@ -4,7 +4,6 @@ import MetaInfo from './MetaInfo';
 
 describe('MetaInfo', () => {
   beforeAll(() => {
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
     jest.spyOn(console, 'error').mockImplementation(() => {});
   });
 

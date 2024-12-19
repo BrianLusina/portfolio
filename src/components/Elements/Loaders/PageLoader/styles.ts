@@ -11,7 +11,6 @@ const SpinnerKeyFrame = keyframes`
 `;
 
 /* Absolute Center Spinner */
-// eslint-disable-next-line import/prefer-default-export
 export const PageLoaderContainer = styled.div`
   position: fixed;
   z-index: 999;

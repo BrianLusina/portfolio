@@ -1,5 +1,10 @@
 [context.production]
     command = "yarn build"
     [context.production.environment]
-        SENTRY_TRACES_SAMPLE_RATE = "0.5"
+        SENTRY_TRACES_SAMPLE_RATE = "0.1"
         ENV = "production"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

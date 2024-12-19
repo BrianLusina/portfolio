@@ -2,11 +2,25 @@ module.exports = {
   presets: [
     'react-app',
     '@babel/preset-typescript',
-    '@babel/preset-env',
+    [
+      '@babel/preset-env',
+      {
+        targets: {
+          node: 'current',
+        },
+      },
+    ],
     [
       '@babel/preset-react',
       {
         runtime: 'automatic',
+      },
+    ],
+    [
+      'babel-preset-vite',
+      {
+        env: true,
+        glob: false,
       },
     ],
   ],

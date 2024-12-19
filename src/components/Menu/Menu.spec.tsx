@@ -5,7 +5,6 @@ import Menu from './Menu';
 
 describe('Menu', () => {
   beforeAll(() => {
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
     jest.spyOn(console, 'error').mockImplementation(() => {});
   });
 

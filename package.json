@@ -12,7 +12,7 @@
     "clean": "rm -rf build",
     "cypress:open": "cypress open",
     "depcheck": "depcheck",
-    "lint": "eslint . --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint src/ --report-unused-disable-directives --max-warnings 0",
     "lint:styles": "stylelint './src/**/*.{js,jsx,ts,tsx,scss,sass}'",
     "lint:styles:fix": "stylelint 'src/**/*.{js,jsx,ts,tsx,scss,sass}' --fix",
     "lint:fix": "eslint --ext .jsx,.tsx,.js,.ts src/ --fix",

@@ -25,7 +25,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "serve": "serve -s build",
-    "deploy:staging": "surge build --domain lfolio.surge.sh"
+    "deploy:staging": "surge dist --domain lfolio.surge.sh"
   },
   "repository": {
     "type": "git",

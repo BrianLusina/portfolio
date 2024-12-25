@@ -1,5 +1,7 @@
+[build]
+  command = "bun run build"
+
 [context.production]
-    command = "yarn build"
     [context.production.environment]
         SENTRY_TRACES_SAMPLE_RATE = "0.1"
         ENV = "production"

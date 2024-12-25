@@ -1,0 +1,6 @@
+import { IDLE, PENDING, REJECTED, RESOLVED } from "@constants";
+
+export const IDLE_ACTION_TYPE = IDLE;
+export const PENDING_ACTION_TYPE = PENDING;
+export const RESOLVED_ACTION_TYPE = RESOLVED;
+export const REJECTED_ACTION_TYPE = REJECTED;

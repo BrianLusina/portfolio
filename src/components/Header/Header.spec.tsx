@@ -3,7 +3,6 @@ import Header from './Header';
 
 describe('Header', () => {
   beforeAll(() => {
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
     jest.spyOn(console, 'error').mockImplementation(() => {});
   });
 

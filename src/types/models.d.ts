@@ -8,5 +8,12 @@ declare type RepositoryObject = {
     description: string;
     url: string;
     owner: RepositoryOwner
-    object: any
+    object: unknown
+}
+
+declare type BlogPostItem = {
+    imageUrl: string;
+    title: string;
+    category: string;
+    link: string;
 }

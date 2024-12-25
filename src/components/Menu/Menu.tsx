@@ -1,10 +1,10 @@
-import config from '@config';
 import { FunctionComponent } from 'react';
 import { Link } from 'react-router-dom';
 import { MenuProps } from './Menu.interface';
 import { MenuCloseButton, MenuContainer, MenuList, MenuListItem, MenuTitle } from './styles';
+import { menuItems } from './data';
 
-const Menu: FunctionComponent<MenuProps> = ({ items = config.menuItems }: MenuProps) => {
+const Menu: FunctionComponent<MenuProps> = ({ items = menuItems }: MenuProps) => {
   return (
     <MenuContainer id="menu">
       <div className="inner">

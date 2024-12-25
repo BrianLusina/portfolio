@@ -1,7 +1,6 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const { createProxyMiddleware } = require('http-proxy-middleware');
+import { createProxyMiddleware } from 'http-proxy-middleware';
 
-module.exports = function proxy(app) {
+export default function proxy(app) {
   app.use(
     '/api',
     createProxyMiddleware({
@@ -9,4 +8,4 @@ module.exports = function proxy(app) {
       changeOrigin: true,
     }),
   );
-};
+}

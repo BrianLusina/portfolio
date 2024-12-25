@@ -31,58 +31,90 @@ echoos:
 	@echo $(OSFLAG)
 
 setup-trivy:
+	@echo "Setting up trivy for application"
 	curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b ./bin v0.16.0
+	@echo "Done setting up trivy for application"
 
 install:
-	yarn install
+	@echo "Installing application"
+	bun run install
+	@echo "Done with installing application"
 
 start:
-	yarn start
+	@echo "Starting application"
+	bun run start
 
 test:
-	yarn test
+	@echo "Testing application"
+	bun run test
+	@echo "Done with testing application"
 
 test-cover:
-	yarn test:coverage
+	@echo "Running test coverage"
+	bun run test:coverage
+	@echo "Done with test coverage"
 
 scan-frontend:
-	yarn audit --audit-level=critical
+	@echo "Scanning Docker Image: $(IMAGE)"
+	bun run audit --audit-level=critical
+	@echo "Done with scanning Docker Image: $(IMAGE)"
 
 scan-licenses:
-	yarn scan:licenses
+	@echo "Scanning licenses"
+	bun run scan:licenses
+	@echo "Done with scanning licenses"
 
 scan-docker-image:
 	@echo "Scanning Docker Image: $(IMAGE)"
 	./bin/trivy $(IMAGE)
+	@echo "Done with scanning docker Image: $(IMAGE)"
 
 # See local hadolint install instructions: https://github.com/hadolint/hadolint
 # This is linter for Dockerfiles
 lint-docker:
+	@echo "Linting Docker Image: $(IMAGE)"
 	docker run --rm -i hadolint/hadolint < Dockerfile
+	@echo "Done with linting docker $(IMAGE)"
 
 lint:
-	yarn lint
+	@echo "Run linting"
+	bun run lint
+	@echo "Done linting"
 
 lint-styles:
-	yarn lint:styles
+	@echo "Linting styles"
+	bun run lint:styles
+	@echo "Done with linting styles"
 
 lint-fix:
-	yarn lint:fix
+	@echo "Run lint fix"
+	bun run lint:fix
+	@echo "Done with fixing linting"
 
 setup-env:
+	@echo "Setting up env for application"
 	./scripts/bash/env.sh
+	@echo "Done setting up env for application"
 
 build:
-	yarn build
+	@echo "Building application"
+	bun run build
+	@echo "Done with building application"
 
 build-docker:
+	@echo "Building docker image for application"
 	./scripts/docker/build_docker.sh
+	@echo "Done building docker image for application"
 
 push-docker:
+	@echo "Pushing Docker image for application"
 	./scripts/docker/push_docker.sh
+	@echo "Done pushing Docker image for application"
 
 # Validates codecov yml
 validate-codecov:
+	@echo "Validating codecov configuration"
 	curl --data-binary @codecov.yml https://codecov.io/validate
+	@echo "Done validating codecov configuration"
 
 all: install lint lint-docker test

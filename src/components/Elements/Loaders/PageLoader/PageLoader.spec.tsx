@@ -3,7 +3,6 @@ import PageLoader from './PageLoader';
 
 describe('PageLoader', () => {
   beforeAll(() => {
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
     jest.spyOn(console, 'error').mockImplementation(() => {});
   });
 

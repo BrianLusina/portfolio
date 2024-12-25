@@ -32,3 +32,6 @@ bin/hadolint
 bin/trivy
 .eslintcache
 env-config.js
+.idea/
+junit.xml
+dist/

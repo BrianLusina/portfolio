@@ -14,5 +14,5 @@ DefaultLogo.args = {};
 
 export const LogoWithIcon = Template.bind({});
 LogoWithIcon.args = {
-  icon: logo,
+  children: logo,
 };
